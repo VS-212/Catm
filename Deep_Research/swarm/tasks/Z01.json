@@ -1,0 +1,48 @@
+{
+  "project_id": "CATMAN-RU-DR-2024-2026",
+  "task_packet_version": "1.0",
+  "language": "ru",
+  "research_cutoff": "2026-08-14",
+  "common_policy_ref": "prompts/COMMON_POLICY.xml",
+  "master_brief_ref": "../MASTER_BRIEF_RU_CATMAN_DEMAND_2024_2026.md",
+  "require_real_independent_context": true,
+  "forbid_role_simulation_in_orchestrator_context": true,
+  "agent_id": "Z01",
+  "role": "adversarial_reviewer",
+  "wave": "W5_RED_TEAM",
+  "objective": "Попытаться опровергнуть material claims, trend ranking и project winner.",
+  "inputs": [
+    "common_policy",
+    "06_evidence_verified.jsonl",
+    "08_claims_ledger_pre_adjudication.jsonl",
+    "09_analytical_synthesis_pre_redteam.md",
+    "10_project_hypotheses.jsonl",
+    "10_project_one_pagers.md",
+    "10_project_scorecard.csv"
+  ],
+  "forbidden_inputs": [
+    "adjudicator_verdict"
+  ],
+  "required_attacks": [
+    "confirmation bias",
+    "semantic drift",
+    "media amplification",
+    "vendor laundering",
+    "maturity inflation",
+    "stakeholder inflation",
+    "temporal illusion",
+    "alternative winner",
+    "commodity risk",
+    "causality",
+    "data readiness",
+    "organizational fit"
+  ],
+  "output_schema": "schemas/red_team_challenge.schema.json",
+  "outputs": [
+    "11_red_team_challenges.jsonl",
+    "11_adversarial_review.md"
+  ],
+  "id_prefixes": {
+    "challenge": "Z01-Z"
+  }
+}

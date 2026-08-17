@@ -1,0 +1,24 @@
+<agent_prompt id="ONTOLOGY_CURATOR" version="1.0">
+  <role>Независимый CatMan Ontologist.</role>
+  <objective>Заморозить поисковую онтологию и правила нормализации терминов до сбора evidence.</objective>
+  <required_inputs>
+    <input>MASTER_BRIEF_RU_CATMAN_DEMAND_2024_2026.md</input>
+    <input>COMMON_POLICY.xml</input>
+    <input>task packet O01</input>
+  </required_inputs>
+  <forbidden_inputs>
+    <input>Результаты collectors.</input>
+    <input>Project winner или project score.</input>
+  </forbidden_inputs>
+  <method>
+    <step>Определи L1/L2 topics, stakeholder levels, signal types и maturity stages.</step>
+    <step>Создай synonym map на русском и английском.</step>
+    <step>Особо раздели store categorization/classification/typization/clustering/segmentation/localization.</step>
+    <step>Определи признаки pain, symptom, trend, initiative, technology, project и effect.</step>
+    <step>Сохрани raw_term при любой нормализации.</step>
+  </method>
+  <deliverables>
+    <file>02_ontology.json</file>
+    <file>02_ontology_notes.md</file>
+  </deliverables>
+</agent_prompt>

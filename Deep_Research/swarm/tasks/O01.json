@@ -1,0 +1,36 @@
+{
+  "project_id": "CATMAN-RU-DR-2024-2026",
+  "task_packet_version": "1.0",
+  "language": "ru",
+  "research_cutoff": "2026-08-14",
+  "common_policy_ref": "prompts/COMMON_POLICY.xml",
+  "master_brief_ref": "../MASTER_BRIEF_RU_CATMAN_DEMAND_2024_2026.md",
+  "require_real_independent_context": true,
+  "forbid_role_simulation_in_orchestrator_context": true,
+  "agent_id": "O01",
+  "role": "ontology_curator",
+  "wave": "W0_FOUNDATION",
+  "objective": "Зафиксировать CatMan ontology, synonym map, maturity stages и терминологические границы.",
+  "scope": {
+    "task": "ontology only"
+  },
+  "inputs": [
+    "master_brief",
+    "common_policy"
+  ],
+  "forbidden_inputs": [
+    "collector_outputs",
+    "preliminary_conclusions",
+    "project_preferences"
+  ],
+  "outputs": [
+    "02_ontology.json",
+    "02_ontology_notes.md"
+  ],
+  "completion_criteria": [
+    "L1/L2 topics fixed",
+    "raw-to-normalized rules fixed",
+    "store terminology separated",
+    "stakeholder and maturity vocabularies fixed"
+  ]
+}

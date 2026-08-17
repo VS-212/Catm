@@ -1,0 +1,42 @@
+{
+  "project_id": "CATMAN-RU-DR-2024-2026",
+  "task_packet_version": "1.0",
+  "language": "ru",
+  "research_cutoff": "2026-08-14",
+  "common_policy_ref": "prompts/COMMON_POLICY.xml",
+  "master_brief_ref": "../MASTER_BRIEF_RU_CATMAN_DEMAND_2024_2026.md",
+  "require_real_independent_context": true,
+  "forbid_role_simulation_in_orchestrator_context": true,
+  "agent_id": "N01",
+  "role": "blind_analyst",
+  "wave": "W3_ANALYSIS",
+  "objective": "Построить temporal waves 2024→2025→2026 YTD и проверить H1 Лента-2025→рынок-2026 против H0.",
+  "analytical_lane": "temporal_trends",
+  "inputs": [
+    "common_policy",
+    "01_retailer_universe.json",
+    "02_ontology.json",
+    "06_evidence_verified.jsonl",
+    "06_dataset_freeze_manifest.json"
+  ],
+  "forbidden_inputs": [
+    "project_winner",
+    "peer_analysis",
+    "user_conversation_outside_brief"
+  ],
+  "output_schema": "schemas/claim.schema.json",
+  "required_outputs": [
+    "trend claims",
+    "first observed signals",
+    "maturity transitions",
+    "H1 verdict candidates",
+    "counterexplanations"
+  ],
+  "outputs": [
+    "N01_claims.jsonl",
+    "N01_analysis.md"
+  ],
+  "id_prefixes": {
+    "claim": "N01-K"
+  }
+}

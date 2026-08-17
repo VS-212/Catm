@@ -1,0 +1,1229 @@
+{
+  "bundle_version": "1.0",
+  "tasks": [
+    {
+      "project_id": "CATMAN-RU-DR-2024-2026",
+      "task_packet_version": "1.0",
+      "language": "ru",
+      "research_cutoff": "2026-08-14",
+      "common_policy_ref": "prompts/COMMON_POLICY.xml",
+      "master_brief_ref": "../MASTER_BRIEF_RU_CATMAN_DEMAND_2024_2026.md",
+      "require_real_independent_context": true,
+      "forbid_role_simulation_in_orchestrator_context": true,
+      "agent_id": "F01",
+      "role": "blind_fact_checker",
+      "wave": "W2_FACT_CHECK",
+      "objective": "Проверить assigned records; specialty: quote/date/number/speaker provenance.",
+      "assignment": {
+        "primary_partition": "stable_hash(evidence_id) mod 3 == 0",
+        "overlays": [
+          "all records with numbers/KPI",
+          "all C-level/C-1 records",
+          "all maturity >= 4"
+        ],
+        "focus": "quote/date/number/speaker provenance"
+      },
+      "inputs": [
+        "common_policy",
+        "01_retailer_universe.json",
+        "02_ontology.json",
+        "03_source_registry_raw.jsonl",
+        "04_evidence_raw.jsonl"
+      ],
+      "forbidden_inputs": [
+        "preliminary_conclusions",
+        "trend_rankings",
+        "project_shortlist",
+        "peer_fact_check_outputs"
+      ],
+      "output_schema": "schemas/fact_check.schema.json",
+      "outputs": [
+        "F01_fact_checks.jsonl",
+        "F01_exceptions.md"
+      ],
+      "id_prefixes": {
+        "check": "F01-C"
+      }
+    },
+    {
+      "project_id": "CATMAN-RU-DR-2024-2026",
+      "task_packet_version": "1.0",
+      "language": "ru",
+      "research_cutoff": "2026-08-14",
+      "common_policy_ref": "prompts/COMMON_POLICY.xml",
+      "master_brief_ref": "../MASTER_BRIEF_RU_CATMAN_DEMAND_2024_2026.md",
+      "require_real_independent_context": true,
+      "forbid_role_simulation_in_orchestrator_context": true,
+      "agent_id": "F02",
+      "role": "blind_fact_checker",
+      "wave": "W2_FACT_CHECK",
+      "objective": "Проверить assigned records; specialty: source independence, vendor laundering and deduplication.",
+      "assignment": {
+        "primary_partition": "stable_hash(evidence_id) mod 3 == 1",
+        "overlays": [
+          "all vendor records",
+          "all secondary media",
+          "all duplicate independence groups"
+        ],
+        "focus": "source independence, vendor laundering and deduplication"
+      },
+      "inputs": [
+        "common_policy",
+        "01_retailer_universe.json",
+        "02_ontology.json",
+        "03_source_registry_raw.jsonl",
+        "04_evidence_raw.jsonl"
+      ],
+      "forbidden_inputs": [
+        "preliminary_conclusions",
+        "trend_rankings",
+        "project_shortlist",
+        "peer_fact_check_outputs"
+      ],
+      "output_schema": "schemas/fact_check.schema.json",
+      "outputs": [
+        "F02_fact_checks.jsonl",
+        "F02_exceptions.md"
+      ],
+      "id_prefixes": {
+        "check": "F02-C"
+      }
+    },
+    {
+      "project_id": "CATMAN-RU-DR-2024-2026",
+      "task_packet_version": "1.0",
+      "language": "ru",
+      "research_cutoff": "2026-08-14",
+      "common_policy_ref": "prompts/COMMON_POLICY.xml",
+      "master_brief_ref": "../MASTER_BRIEF_RU_CATMAN_DEMAND_2024_2026.md",
+      "require_real_independent_context": true,
+      "forbid_role_simulation_in_orchestrator_context": true,
+      "agent_id": "F03",
+      "role": "blind_fact_checker",
+      "wave": "W2_FACT_CHECK",
+      "objective": "Проверить assigned records; specialty: terminology, timestamps, maturity and temporal integrity.",
+      "assignment": {
+        "primary_partition": "stable_hash(evidence_id) mod 3 == 2",
+        "overlays": [
+          "all video-derived records",
+          "all store terminology records",
+          "all H1 timeline records"
+        ],
+        "focus": "terminology, timestamps, maturity and temporal integrity"
+      },
+      "inputs": [
+        "common_policy",
+        "01_retailer_universe.json",
+        "02_ontology.json",
+        "03_source_registry_raw.jsonl",
+        "04_evidence_raw.jsonl"
+      ],
+      "forbidden_inputs": [
+        "preliminary_conclusions",
+        "trend_rankings",
+        "project_shortlist",
+        "peer_fact_check_outputs"
+      ],
+      "output_schema": "schemas/fact_check.schema.json",
+      "outputs": [
+        "F03_fact_checks.jsonl",
+        "F03_exceptions.md"
+      ],
+      "id_prefixes": {
+        "check": "F03-C"
+      }
+    },
+    {
+      "project_id": "CATMAN-RU-DR-2024-2026",
+      "task_packet_version": "1.0",
+      "language": "ru",
+      "research_cutoff": "2026-08-14",
+      "common_policy_ref": "prompts/COMMON_POLICY.xml",
+      "master_brief_ref": "../MASTER_BRIEF_RU_CATMAN_DEMAND_2024_2026.md",
+      "require_real_independent_context": true,
+      "forbid_role_simulation_in_orchestrator_context": true,
+      "agent_id": "J01",
+      "role": "adjudicator",
+      "wave": "W6_ADJUDICATION",
+      "objective": "Разрешить material conflicts, утвердить allowed wording и собрать финальный handoff bundle.",
+      "inputs": [
+        "all frozen outputs through W5",
+        "00_capability_attestation.json",
+        "00_run_manifest.json"
+      ],
+      "repair_budget": {
+        "max_runs": 4,
+        "only_for": [
+          "invalid schema",
+          "broken critical citation",
+          "critical coverage gap",
+          "material unresolved conflict"
+        ]
+      },
+      "output_schemas": [
+        "schemas/adjudication.schema.json",
+        "schemas/run_manifest.schema.json",
+        "schemas/quality_report.schema.json"
+      ],
+      "outputs": [
+        "12_adjudication.jsonl",
+        "13_final_report.md",
+        "14_research_gaps.md",
+        "15_bibliography.md",
+        "90_ARENA_HANDOFF.json",
+        "90_ARENA_HANDOFF.md",
+        "99_run_quality_report.json"
+      ],
+      "id_prefixes": {
+        "adjudication": "J01-J"
+      }
+    },
+    {
+      "project_id": "CATMAN-RU-DR-2024-2026",
+      "task_packet_version": "1.0",
+      "language": "ru",
+      "research_cutoff": "2026-08-14",
+      "common_policy_ref": "prompts/COMMON_POLICY.xml",
+      "master_brief_ref": "../MASTER_BRIEF_RU_CATMAN_DEMAND_2024_2026.md",
+      "require_real_independent_context": true,
+      "forbid_role_simulation_in_orchestrator_context": true,
+      "agent_id": "N01",
+      "role": "blind_analyst",
+      "wave": "W3_ANALYSIS",
+      "objective": "Построить temporal waves 2024→2025→2026 YTD и проверить H1 Лента-2025→рынок-2026 против H0.",
+      "analytical_lane": "temporal_trends",
+      "inputs": [
+        "common_policy",
+        "01_retailer_universe.json",
+        "02_ontology.json",
+        "06_evidence_verified.jsonl",
+        "06_dataset_freeze_manifest.json"
+      ],
+      "forbidden_inputs": [
+        "project_winner",
+        "peer_analysis",
+        "user_conversation_outside_brief"
+      ],
+      "output_schema": "schemas/claim.schema.json",
+      "required_outputs": [
+        "trend claims",
+        "first observed signals",
+        "maturity transitions",
+        "H1 verdict candidates",
+        "counterexplanations"
+      ],
+      "outputs": [
+        "N01_claims.jsonl",
+        "N01_analysis.md"
+      ],
+      "id_prefixes": {
+        "claim": "N01-K"
+      }
+    },
+    {
+      "project_id": "CATMAN-RU-DR-2024-2026",
+      "task_packet_version": "1.0",
+      "language": "ru",
+      "research_cutoff": "2026-08-14",
+      "common_policy_ref": "prompts/COMMON_POLICY.xml",
+      "master_brief_ref": "../MASTER_BRIEF_RU_CATMAN_DEMAND_2024_2026.md",
+      "require_real_independent_context": true,
+      "forbid_role_simulation_in_orchestrator_context": true,
+      "agent_id": "N02",
+      "role": "blind_analyst",
+      "wave": "W3_ANALYSIS",
+      "objective": "Построить pain chains и содержательно разделить C-level, CCO, CatMan, PM и смежных owners.",
+      "analytical_lane": "pain_stakeholder",
+      "inputs": [
+        "common_policy",
+        "01_retailer_universe.json",
+        "02_ontology.json",
+        "06_evidence_verified.jsonl",
+        "06_dataset_freeze_manifest.json"
+      ],
+      "forbidden_inputs": [
+        "project_winner",
+        "peer_analysis",
+        "user_conversation_outside_brief"
+      ],
+      "output_schema": "schemas/claim.schema.json",
+      "required_outputs": [
+        "pain claims",
+        "stakeholder ownership",
+        "KPI mechanisms",
+        "current response and limitations",
+        "gaps"
+      ],
+      "outputs": [
+        "N02_claims.jsonl",
+        "N02_analysis.md"
+      ],
+      "id_prefixes": {
+        "claim": "N02-K"
+      }
+    },
+    {
+      "project_id": "CATMAN-RU-DR-2024-2026",
+      "task_packet_version": "1.0",
+      "language": "ru",
+      "research_cutoff": "2026-08-14",
+      "common_policy_ref": "prompts/COMMON_POLICY.xml",
+      "master_brief_ref": "../MASTER_BRIEF_RU_CATMAN_DEMAND_2024_2026.md",
+      "require_real_independent_context": true,
+      "forbid_role_simulation_in_orchestrator_context": true,
+      "agent_id": "N03",
+      "role": "blind_analyst",
+      "wave": "W3_ANALYSIS",
+      "objective": "Сравнить широту/зрелость конкурирующих CatMan-направлений без проектного дизайна и confirmation bias.",
+      "analytical_lane": "alternative_hypotheses",
+      "inputs": [
+        "common_policy",
+        "01_retailer_universe.json",
+        "02_ontology.json",
+        "06_evidence_verified.jsonl",
+        "06_dataset_freeze_manifest.json"
+      ],
+      "forbidden_inputs": [
+        "project_winner",
+        "peer_analysis",
+        "user_conversation_outside_brief"
+      ],
+      "output_schema": "schemas/claim.schema.json",
+      "required_outputs": [
+        "topic demand breadth",
+        "maturity comparison",
+        "media-vs-demand separation",
+        "strongest alternatives",
+        "commodity and evidence risks"
+      ],
+      "outputs": [
+        "N03_claims.jsonl",
+        "N03_analysis.md"
+      ],
+      "id_prefixes": {
+        "claim": "N03-K"
+      }
+    },
+    {
+      "project_id": "CATMAN-RU-DR-2024-2026",
+      "task_packet_version": "1.0",
+      "language": "ru",
+      "research_cutoff": "2026-08-14",
+      "common_policy_ref": "prompts/COMMON_POLICY.xml",
+      "master_brief_ref": "../MASTER_BRIEF_RU_CATMAN_DEMAND_2024_2026.md",
+      "require_real_independent_context": true,
+      "forbid_role_simulation_in_orchestrator_context": true,
+      "agent_id": "O01",
+      "role": "ontology_curator",
+      "wave": "W0_FOUNDATION",
+      "objective": "Зафиксировать CatMan ontology, synonym map, maturity stages и терминологические границы.",
+      "scope": {
+        "task": "ontology only"
+      },
+      "inputs": [
+        "master_brief",
+        "common_policy"
+      ],
+      "forbidden_inputs": [
+        "collector_outputs",
+        "preliminary_conclusions",
+        "project_preferences"
+      ],
+      "outputs": [
+        "02_ontology.json",
+        "02_ontology_notes.md"
+      ],
+      "completion_criteria": [
+        "L1/L2 topics fixed",
+        "raw-to-normalized rules fixed",
+        "store terminology separated",
+        "stakeholder and maturity vocabularies fixed"
+      ]
+    },
+    {
+      "project_id": "CATMAN-RU-DR-2024-2026",
+      "task_packet_version": "1.0",
+      "language": "ru",
+      "research_cutoff": "2026-08-14",
+      "common_policy_ref": "prompts/COMMON_POLICY.xml",
+      "master_brief_ref": "../MASTER_BRIEF_RU_CATMAN_DEMAND_2024_2026.md",
+      "require_real_independent_context": true,
+      "forbid_role_simulation_in_orchestrator_context": true,
+      "agent_id": "P01",
+      "role": "project_designer",
+      "wave": "W4_PROJECTS",
+      "objective": "Сформировать 5-7 evidence-linked CatMan проектов, top-3 и условного лидера.",
+      "inputs": [
+        "common_policy",
+        "06_evidence_verified.jsonl",
+        "08_claims_ledger_pre_adjudication.jsonl",
+        "N01_analysis.md",
+        "N02_analysis.md",
+        "N03_analysis.md",
+        "master_brief_project_rules"
+      ],
+      "forbidden_inputs": [
+        "red_team_output",
+        "user_conversation_outside_brief"
+      ],
+      "mandatory_alternatives": [
+        "store clustering/local assortment",
+        "AI assortment",
+        "SKU/full cost",
+        "space",
+        "fresh/OOS/waste",
+        "promo/RGM",
+        "private label/e-grocery",
+        "supplier collaboration",
+        "data foundation"
+      ],
+      "output_schema": "schemas/project_hypothesis.schema.json",
+      "outputs": [
+        "10_project_hypotheses.jsonl",
+        "10_project_one_pagers.md",
+        "10_project_scorecard.csv"
+      ]
+    },
+    {
+      "project_id": "CATMAN-RU-DR-2024-2026",
+      "task_packet_version": "1.0",
+      "language": "ru",
+      "research_cutoff": "2026-08-14",
+      "common_policy_ref": "prompts/COMMON_POLICY.xml",
+      "master_brief_ref": "../MASTER_BRIEF_RU_CATMAN_DEMAND_2024_2026.md",
+      "require_real_independent_context": true,
+      "forbid_role_simulation_in_orchestrator_context": true,
+      "agent_id": "R01",
+      "role": "retailer_researcher",
+      "wave": "W1_COLLECTION",
+      "objective": "Собрать retailer-specific evidence для сети rank 1 frozen universe.",
+      "dynamic_assignment": {
+        "retailer_selector": {
+          "rank": 1,
+          "from": "01_retailer_universe.json"
+        }
+      },
+      "inputs": [
+        "common_policy",
+        "assigned_retailer_card_only",
+        "02_ontology.json"
+      ],
+      "forbidden_inputs": [
+        "peer_collector_outputs",
+        "preliminary_conclusions",
+        "project_shortlist",
+        "user_conversation"
+      ],
+      "search_requirements": [
+        "2024",
+        "2025",
+        "2026_YTD",
+        "all_L1_topics",
+        "P0_P1_first",
+        "implementation_signals",
+        "disconfirming_search",
+        "not_found_log"
+      ],
+      "output_schemas": [
+        "schemas/source_record.schema.json",
+        "schemas/evidence_record.schema.json"
+      ],
+      "outputs": [
+        "R01_sources.jsonl",
+        "R01_evidence.jsonl",
+        "R01_search_log.md",
+        "R01_gaps.md"
+      ],
+      "id_prefixes": {
+        "source": "R01-S",
+        "evidence": "R01-E"
+      }
+    },
+    {
+      "project_id": "CATMAN-RU-DR-2024-2026",
+      "task_packet_version": "1.0",
+      "language": "ru",
+      "research_cutoff": "2026-08-14",
+      "common_policy_ref": "prompts/COMMON_POLICY.xml",
+      "master_brief_ref": "../MASTER_BRIEF_RU_CATMAN_DEMAND_2024_2026.md",
+      "require_real_independent_context": true,
+      "forbid_role_simulation_in_orchestrator_context": true,
+      "agent_id": "R02",
+      "role": "retailer_researcher",
+      "wave": "W1_COLLECTION",
+      "objective": "Собрать retailer-specific evidence для сети rank 2 frozen universe.",
+      "dynamic_assignment": {
+        "retailer_selector": {
+          "rank": 2,
+          "from": "01_retailer_universe.json"
+        }
+      },
+      "inputs": [
+        "common_policy",
+        "assigned_retailer_card_only",
+        "02_ontology.json"
+      ],
+      "forbidden_inputs": [
+        "peer_collector_outputs",
+        "preliminary_conclusions",
+        "project_shortlist",
+        "user_conversation"
+      ],
+      "search_requirements": [
+        "2024",
+        "2025",
+        "2026_YTD",
+        "all_L1_topics",
+        "P0_P1_first",
+        "implementation_signals",
+        "disconfirming_search",
+        "not_found_log"
+      ],
+      "output_schemas": [
+        "schemas/source_record.schema.json",
+        "schemas/evidence_record.schema.json"
+      ],
+      "outputs": [
+        "R02_sources.jsonl",
+        "R02_evidence.jsonl",
+        "R02_search_log.md",
+        "R02_gaps.md"
+      ],
+      "id_prefixes": {
+        "source": "R02-S",
+        "evidence": "R02-E"
+      }
+    },
+    {
+      "project_id": "CATMAN-RU-DR-2024-2026",
+      "task_packet_version": "1.0",
+      "language": "ru",
+      "research_cutoff": "2026-08-14",
+      "common_policy_ref": "prompts/COMMON_POLICY.xml",
+      "master_brief_ref": "../MASTER_BRIEF_RU_CATMAN_DEMAND_2024_2026.md",
+      "require_real_independent_context": true,
+      "forbid_role_simulation_in_orchestrator_context": true,
+      "agent_id": "R03",
+      "role": "retailer_researcher",
+      "wave": "W1_COLLECTION",
+      "objective": "Собрать retailer-specific evidence для сети rank 3 frozen universe.",
+      "dynamic_assignment": {
+        "retailer_selector": {
+          "rank": 3,
+          "from": "01_retailer_universe.json"
+        }
+      },
+      "inputs": [
+        "common_policy",
+        "assigned_retailer_card_only",
+        "02_ontology.json"
+      ],
+      "forbidden_inputs": [
+        "peer_collector_outputs",
+        "preliminary_conclusions",
+        "project_shortlist",
+        "user_conversation"
+      ],
+      "search_requirements": [
+        "2024",
+        "2025",
+        "2026_YTD",
+        "all_L1_topics",
+        "P0_P1_first",
+        "implementation_signals",
+        "disconfirming_search",
+        "not_found_log"
+      ],
+      "output_schemas": [
+        "schemas/source_record.schema.json",
+        "schemas/evidence_record.schema.json"
+      ],
+      "outputs": [
+        "R03_sources.jsonl",
+        "R03_evidence.jsonl",
+        "R03_search_log.md",
+        "R03_gaps.md"
+      ],
+      "id_prefixes": {
+        "source": "R03-S",
+        "evidence": "R03-E"
+      }
+    },
+    {
+      "project_id": "CATMAN-RU-DR-2024-2026",
+      "task_packet_version": "1.0",
+      "language": "ru",
+      "research_cutoff": "2026-08-14",
+      "common_policy_ref": "prompts/COMMON_POLICY.xml",
+      "master_brief_ref": "../MASTER_BRIEF_RU_CATMAN_DEMAND_2024_2026.md",
+      "require_real_independent_context": true,
+      "forbid_role_simulation_in_orchestrator_context": true,
+      "agent_id": "R04",
+      "role": "retailer_researcher",
+      "wave": "W1_COLLECTION",
+      "objective": "Собрать retailer-specific evidence для сети rank 4 frozen universe.",
+      "dynamic_assignment": {
+        "retailer_selector": {
+          "rank": 4,
+          "from": "01_retailer_universe.json"
+        }
+      },
+      "inputs": [
+        "common_policy",
+        "assigned_retailer_card_only",
+        "02_ontology.json"
+      ],
+      "forbidden_inputs": [
+        "peer_collector_outputs",
+        "preliminary_conclusions",
+        "project_shortlist",
+        "user_conversation"
+      ],
+      "search_requirements": [
+        "2024",
+        "2025",
+        "2026_YTD",
+        "all_L1_topics",
+        "P0_P1_first",
+        "implementation_signals",
+        "disconfirming_search",
+        "not_found_log"
+      ],
+      "output_schemas": [
+        "schemas/source_record.schema.json",
+        "schemas/evidence_record.schema.json"
+      ],
+      "outputs": [
+        "R04_sources.jsonl",
+        "R04_evidence.jsonl",
+        "R04_search_log.md",
+        "R04_gaps.md"
+      ],
+      "id_prefixes": {
+        "source": "R04-S",
+        "evidence": "R04-E"
+      }
+    },
+    {
+      "project_id": "CATMAN-RU-DR-2024-2026",
+      "task_packet_version": "1.0",
+      "language": "ru",
+      "research_cutoff": "2026-08-14",
+      "common_policy_ref": "prompts/COMMON_POLICY.xml",
+      "master_brief_ref": "../MASTER_BRIEF_RU_CATMAN_DEMAND_2024_2026.md",
+      "require_real_independent_context": true,
+      "forbid_role_simulation_in_orchestrator_context": true,
+      "agent_id": "R05",
+      "role": "retailer_researcher",
+      "wave": "W1_COLLECTION",
+      "objective": "Собрать retailer-specific evidence для сети rank 5 frozen universe.",
+      "dynamic_assignment": {
+        "retailer_selector": {
+          "rank": 5,
+          "from": "01_retailer_universe.json"
+        }
+      },
+      "inputs": [
+        "common_policy",
+        "assigned_retailer_card_only",
+        "02_ontology.json"
+      ],
+      "forbidden_inputs": [
+        "peer_collector_outputs",
+        "preliminary_conclusions",
+        "project_shortlist",
+        "user_conversation"
+      ],
+      "search_requirements": [
+        "2024",
+        "2025",
+        "2026_YTD",
+        "all_L1_topics",
+        "P0_P1_first",
+        "implementation_signals",
+        "disconfirming_search",
+        "not_found_log"
+      ],
+      "output_schemas": [
+        "schemas/source_record.schema.json",
+        "schemas/evidence_record.schema.json"
+      ],
+      "outputs": [
+        "R05_sources.jsonl",
+        "R05_evidence.jsonl",
+        "R05_search_log.md",
+        "R05_gaps.md"
+      ],
+      "id_prefixes": {
+        "source": "R05-S",
+        "evidence": "R05-E"
+      }
+    },
+    {
+      "project_id": "CATMAN-RU-DR-2024-2026",
+      "task_packet_version": "1.0",
+      "language": "ru",
+      "research_cutoff": "2026-08-14",
+      "common_policy_ref": "prompts/COMMON_POLICY.xml",
+      "master_brief_ref": "../MASTER_BRIEF_RU_CATMAN_DEMAND_2024_2026.md",
+      "require_real_independent_context": true,
+      "forbid_role_simulation_in_orchestrator_context": true,
+      "agent_id": "R06",
+      "role": "retailer_researcher",
+      "wave": "W1_COLLECTION",
+      "objective": "Собрать retailer-specific evidence для сети rank 6 frozen universe.",
+      "dynamic_assignment": {
+        "retailer_selector": {
+          "rank": 6,
+          "from": "01_retailer_universe.json"
+        }
+      },
+      "inputs": [
+        "common_policy",
+        "assigned_retailer_card_only",
+        "02_ontology.json"
+      ],
+      "forbidden_inputs": [
+        "peer_collector_outputs",
+        "preliminary_conclusions",
+        "project_shortlist",
+        "user_conversation"
+      ],
+      "search_requirements": [
+        "2024",
+        "2025",
+        "2026_YTD",
+        "all_L1_topics",
+        "P0_P1_first",
+        "implementation_signals",
+        "disconfirming_search",
+        "not_found_log"
+      ],
+      "output_schemas": [
+        "schemas/source_record.schema.json",
+        "schemas/evidence_record.schema.json"
+      ],
+      "outputs": [
+        "R06_sources.jsonl",
+        "R06_evidence.jsonl",
+        "R06_search_log.md",
+        "R06_gaps.md"
+      ],
+      "id_prefixes": {
+        "source": "R06-S",
+        "evidence": "R06-E"
+      }
+    },
+    {
+      "project_id": "CATMAN-RU-DR-2024-2026",
+      "task_packet_version": "1.0",
+      "language": "ru",
+      "research_cutoff": "2026-08-14",
+      "common_policy_ref": "prompts/COMMON_POLICY.xml",
+      "master_brief_ref": "../MASTER_BRIEF_RU_CATMAN_DEMAND_2024_2026.md",
+      "require_real_independent_context": true,
+      "forbid_role_simulation_in_orchestrator_context": true,
+      "agent_id": "R07",
+      "role": "retailer_researcher",
+      "wave": "W1_COLLECTION",
+      "objective": "Собрать retailer-specific evidence для сети rank 7 frozen universe.",
+      "dynamic_assignment": {
+        "retailer_selector": {
+          "rank": 7,
+          "from": "01_retailer_universe.json"
+        }
+      },
+      "inputs": [
+        "common_policy",
+        "assigned_retailer_card_only",
+        "02_ontology.json"
+      ],
+      "forbidden_inputs": [
+        "peer_collector_outputs",
+        "preliminary_conclusions",
+        "project_shortlist",
+        "user_conversation"
+      ],
+      "search_requirements": [
+        "2024",
+        "2025",
+        "2026_YTD",
+        "all_L1_topics",
+        "P0_P1_first",
+        "implementation_signals",
+        "disconfirming_search",
+        "not_found_log"
+      ],
+      "output_schemas": [
+        "schemas/source_record.schema.json",
+        "schemas/evidence_record.schema.json"
+      ],
+      "outputs": [
+        "R07_sources.jsonl",
+        "R07_evidence.jsonl",
+        "R07_search_log.md",
+        "R07_gaps.md"
+      ],
+      "id_prefixes": {
+        "source": "R07-S",
+        "evidence": "R07-E"
+      }
+    },
+    {
+      "project_id": "CATMAN-RU-DR-2024-2026",
+      "task_packet_version": "1.0",
+      "language": "ru",
+      "research_cutoff": "2026-08-14",
+      "common_policy_ref": "prompts/COMMON_POLICY.xml",
+      "master_brief_ref": "../MASTER_BRIEF_RU_CATMAN_DEMAND_2024_2026.md",
+      "require_real_independent_context": true,
+      "forbid_role_simulation_in_orchestrator_context": true,
+      "agent_id": "R08",
+      "role": "retailer_researcher",
+      "wave": "W1_COLLECTION",
+      "objective": "Собрать retailer-specific evidence для сети rank 8 frozen universe.",
+      "dynamic_assignment": {
+        "retailer_selector": {
+          "rank": 8,
+          "from": "01_retailer_universe.json"
+        }
+      },
+      "inputs": [
+        "common_policy",
+        "assigned_retailer_card_only",
+        "02_ontology.json"
+      ],
+      "forbidden_inputs": [
+        "peer_collector_outputs",
+        "preliminary_conclusions",
+        "project_shortlist",
+        "user_conversation"
+      ],
+      "search_requirements": [
+        "2024",
+        "2025",
+        "2026_YTD",
+        "all_L1_topics",
+        "P0_P1_first",
+        "implementation_signals",
+        "disconfirming_search",
+        "not_found_log"
+      ],
+      "output_schemas": [
+        "schemas/source_record.schema.json",
+        "schemas/evidence_record.schema.json"
+      ],
+      "outputs": [
+        "R08_sources.jsonl",
+        "R08_evidence.jsonl",
+        "R08_search_log.md",
+        "R08_gaps.md"
+      ],
+      "id_prefixes": {
+        "source": "R08-S",
+        "evidence": "R08-E"
+      }
+    },
+    {
+      "project_id": "CATMAN-RU-DR-2024-2026",
+      "task_packet_version": "1.0",
+      "language": "ru",
+      "research_cutoff": "2026-08-14",
+      "common_policy_ref": "prompts/COMMON_POLICY.xml",
+      "master_brief_ref": "../MASTER_BRIEF_RU_CATMAN_DEMAND_2024_2026.md",
+      "require_real_independent_context": true,
+      "forbid_role_simulation_in_orchestrator_context": true,
+      "agent_id": "R09",
+      "role": "retailer_researcher",
+      "wave": "W1_COLLECTION",
+      "objective": "Собрать retailer-specific evidence для сети rank 9 frozen universe.",
+      "dynamic_assignment": {
+        "retailer_selector": {
+          "rank": 9,
+          "from": "01_retailer_universe.json"
+        }
+      },
+      "inputs": [
+        "common_policy",
+        "assigned_retailer_card_only",
+        "02_ontology.json"
+      ],
+      "forbidden_inputs": [
+        "peer_collector_outputs",
+        "preliminary_conclusions",
+        "project_shortlist",
+        "user_conversation"
+      ],
+      "search_requirements": [
+        "2024",
+        "2025",
+        "2026_YTD",
+        "all_L1_topics",
+        "P0_P1_first",
+        "implementation_signals",
+        "disconfirming_search",
+        "not_found_log"
+      ],
+      "output_schemas": [
+        "schemas/source_record.schema.json",
+        "schemas/evidence_record.schema.json"
+      ],
+      "outputs": [
+        "R09_sources.jsonl",
+        "R09_evidence.jsonl",
+        "R09_search_log.md",
+        "R09_gaps.md"
+      ],
+      "id_prefixes": {
+        "source": "R09-S",
+        "evidence": "R09-E"
+      }
+    },
+    {
+      "project_id": "CATMAN-RU-DR-2024-2026",
+      "task_packet_version": "1.0",
+      "language": "ru",
+      "research_cutoff": "2026-08-14",
+      "common_policy_ref": "prompts/COMMON_POLICY.xml",
+      "master_brief_ref": "../MASTER_BRIEF_RU_CATMAN_DEMAND_2024_2026.md",
+      "require_real_independent_context": true,
+      "forbid_role_simulation_in_orchestrator_context": true,
+      "agent_id": "R10",
+      "role": "retailer_researcher",
+      "wave": "W1_COLLECTION",
+      "objective": "Собрать retailer-specific evidence для сети rank 10 frozen universe.",
+      "dynamic_assignment": {
+        "retailer_selector": {
+          "rank": 10,
+          "from": "01_retailer_universe.json"
+        }
+      },
+      "inputs": [
+        "common_policy",
+        "assigned_retailer_card_only",
+        "02_ontology.json"
+      ],
+      "forbidden_inputs": [
+        "peer_collector_outputs",
+        "preliminary_conclusions",
+        "project_shortlist",
+        "user_conversation"
+      ],
+      "search_requirements": [
+        "2024",
+        "2025",
+        "2026_YTD",
+        "all_L1_topics",
+        "P0_P1_first",
+        "implementation_signals",
+        "disconfirming_search",
+        "not_found_log"
+      ],
+      "output_schemas": [
+        "schemas/source_record.schema.json",
+        "schemas/evidence_record.schema.json"
+      ],
+      "outputs": [
+        "R10_sources.jsonl",
+        "R10_evidence.jsonl",
+        "R10_search_log.md",
+        "R10_gaps.md"
+      ],
+      "id_prefixes": {
+        "source": "R10-S",
+        "evidence": "R10-E"
+      }
+    },
+    {
+      "project_id": "CATMAN-RU-DR-2024-2026",
+      "task_packet_version": "1.0",
+      "language": "ru",
+      "research_cutoff": "2026-08-14",
+      "common_policy_ref": "prompts/COMMON_POLICY.xml",
+      "master_brief_ref": "../MASTER_BRIEF_RU_CATMAN_DEMAND_2024_2026.md",
+      "require_real_independent_context": true,
+      "forbid_role_simulation_in_orchestrator_context": true,
+      "agent_id": "U01",
+      "role": "universe_curator",
+      "wave": "W0_FOUNDATION",
+      "objective": "Определить воспроизводимый Top-10 grocery/FMCG-ритейлеров РФ по авторитетному ranking source.",
+      "scope": {
+        "market": "Russia grocery/FMCG retail",
+        "task": "universe only"
+      },
+      "inputs": [
+        "master_brief",
+        "common_policy"
+      ],
+      "forbidden_inputs": [
+        "collector_outputs",
+        "preliminary_conclusions",
+        "project_preferences"
+      ],
+      "outputs": [
+        "01_retailer_universe.json",
+        "01_universe_decision.md"
+      ],
+      "completion_criteria": [
+        "ranking publisher/year/metric fixed",
+        "Top-10 IDs R01..R10 assigned",
+        "adjacent group separated",
+        "sensitivity alternative documented"
+      ]
+    },
+    {
+      "project_id": "CATMAN-RU-DR-2024-2026",
+      "task_packet_version": "1.0",
+      "language": "ru",
+      "research_cutoff": "2026-08-14",
+      "common_policy_ref": "prompts/COMMON_POLICY.xml",
+      "master_brief_ref": "../MASTER_BRIEF_RU_CATMAN_DEMAND_2024_2026.md",
+      "require_real_independent_context": true,
+      "forbid_role_simulation_in_orchestrator_context": true,
+      "agent_id": "X01",
+      "role": "cross_source_researcher",
+      "wave": "W1_COLLECTION",
+      "objective": "Провести cross-retailer поиск в lane official_corporate.",
+      "source_lane": {
+        "lane": "official_corporate",
+        "scope": [
+          "annual reports",
+          "strategy",
+          "CMD/investor presentations",
+          "official retailer news",
+          "regulatory filings"
+        ],
+        "special_rules": [
+          "Prefer original documents",
+          "Capture page/slide for quotes and numbers"
+        ]
+      },
+      "inputs": [
+        "common_policy",
+        "01_retailer_universe.json",
+        "02_ontology.json"
+      ],
+      "forbidden_inputs": [
+        "retailer_collector_outputs",
+        "preliminary_conclusions",
+        "project_shortlist"
+      ],
+      "output_schemas": [
+        "schemas/source_record.schema.json",
+        "schemas/evidence_record.schema.json"
+      ],
+      "outputs": [
+        "X01_sources.jsonl",
+        "X01_evidence.jsonl",
+        "X01_lane_log.md"
+      ],
+      "id_prefixes": {
+        "source": "X01-S",
+        "evidence": "X01-E"
+      }
+    },
+    {
+      "project_id": "CATMAN-RU-DR-2024-2026",
+      "task_packet_version": "1.0",
+      "language": "ru",
+      "research_cutoff": "2026-08-14",
+      "common_policy_ref": "prompts/COMMON_POLICY.xml",
+      "master_brief_ref": "../MASTER_BRIEF_RU_CATMAN_DEMAND_2024_2026.md",
+      "require_real_independent_context": true,
+      "forbid_role_simulation_in_orchestrator_context": true,
+      "agent_id": "X02",
+      "role": "cross_source_researcher",
+      "wave": "W1_COLLECTION",
+      "objective": "Провести cross-retailer поиск в lane commitment_signals.",
+      "source_lane": {
+        "lane": "commitment_signals",
+        "scope": [
+          "vacancies",
+          "RFP/tenders",
+          "procurement notices",
+          "partnerships",
+          "organizational changes"
+        ],
+        "special_rules": [
+          "Commitment is not outcome",
+          "Record job/RFP expiry and archived URL where possible"
+        ]
+      },
+      "inputs": [
+        "common_policy",
+        "01_retailer_universe.json",
+        "02_ontology.json"
+      ],
+      "forbidden_inputs": [
+        "retailer_collector_outputs",
+        "preliminary_conclusions",
+        "project_shortlist"
+      ],
+      "output_schemas": [
+        "schemas/source_record.schema.json",
+        "schemas/evidence_record.schema.json"
+      ],
+      "outputs": [
+        "X02_sources.jsonl",
+        "X02_evidence.jsonl",
+        "X02_lane_log.md"
+      ],
+      "id_prefixes": {
+        "source": "X02-S",
+        "evidence": "X02-E"
+      }
+    },
+    {
+      "project_id": "CATMAN-RU-DR-2024-2026",
+      "task_packet_version": "1.0",
+      "language": "ru",
+      "research_cutoff": "2026-08-14",
+      "common_policy_ref": "prompts/COMMON_POLICY.xml",
+      "master_brief_ref": "../MASTER_BRIEF_RU_CATMAN_DEMAND_2024_2026.md",
+      "require_real_independent_context": true,
+      "forbid_role_simulation_in_orchestrator_context": true,
+      "agent_id": "X03",
+      "role": "cross_source_researcher",
+      "wave": "W1_COLLECTION",
+      "objective": "Провести cross-retailer поиск в lane video_and_conferences.",
+      "source_lane": {
+        "lane": "video_and_conferences",
+        "scope": [
+          "official videos",
+          "conference videos",
+          "webinars",
+          "podcasts",
+          "conference programs"
+        ],
+        "special_rules": [
+          "Build 15-30 video shortlist",
+          "Evidence requires transcript and verified timestamp",
+          "Program title is metadata only"
+        ]
+      },
+      "inputs": [
+        "common_policy",
+        "01_retailer_universe.json",
+        "02_ontology.json"
+      ],
+      "forbidden_inputs": [
+        "retailer_collector_outputs",
+        "preliminary_conclusions",
+        "project_shortlist"
+      ],
+      "output_schemas": [
+        "schemas/source_record.schema.json",
+        "schemas/evidence_record.schema.json"
+      ],
+      "outputs": [
+        "X03_sources.jsonl",
+        "X03_evidence.jsonl",
+        "X03_lane_log.md"
+      ],
+      "id_prefixes": {
+        "source": "X03-S",
+        "evidence": "X03-E"
+      }
+    },
+    {
+      "project_id": "CATMAN-RU-DR-2024-2026",
+      "task_packet_version": "1.0",
+      "language": "ru",
+      "research_cutoff": "2026-08-14",
+      "common_policy_ref": "prompts/COMMON_POLICY.xml",
+      "master_brief_ref": "../MASTER_BRIEF_RU_CATMAN_DEMAND_2024_2026.md",
+      "require_real_independent_context": true,
+      "forbid_role_simulation_in_orchestrator_context": true,
+      "agent_id": "X04",
+      "role": "cross_source_researcher",
+      "wave": "W1_COLLECTION",
+      "objective": "Провести cross-retailer поиск в lane media_research_vendor_disconfirmation.",
+      "source_lane": {
+        "lane": "media_research_vendor_disconfirmation",
+        "scope": [
+          "trade media",
+          "business media",
+          "industry research",
+          "vendor cases as leads",
+          "negative/disconfirming evidence"
+        ],
+        "special_rules": [
+          "Trace claims to originating source",
+          "Do not upgrade vendor claim",
+          "Group reposts"
+        ]
+      },
+      "inputs": [
+        "common_policy",
+        "01_retailer_universe.json",
+        "02_ontology.json"
+      ],
+      "forbidden_inputs": [
+        "retailer_collector_outputs",
+        "preliminary_conclusions",
+        "project_shortlist"
+      ],
+      "output_schemas": [
+        "schemas/source_record.schema.json",
+        "schemas/evidence_record.schema.json"
+      ],
+      "outputs": [
+        "X04_sources.jsonl",
+        "X04_evidence.jsonl",
+        "X04_lane_log.md"
+      ],
+      "id_prefixes": {
+        "source": "X04-S",
+        "evidence": "X04-E"
+      }
+    },
+    {
+      "project_id": "CATMAN-RU-DR-2024-2026",
+      "task_packet_version": "1.0",
+      "language": "ru",
+      "research_cutoff": "2026-08-14",
+      "common_policy_ref": "prompts/COMMON_POLICY.xml",
+      "master_brief_ref": "../MASTER_BRIEF_RU_CATMAN_DEMAND_2024_2026.md",
+      "require_real_independent_context": true,
+      "forbid_role_simulation_in_orchestrator_context": true,
+      "agent_id": "Z01",
+      "role": "adversarial_reviewer",
+      "wave": "W5_RED_TEAM",
+      "objective": "Попытаться опровергнуть material claims, trend ranking и project winner.",
+      "inputs": [
+        "common_policy",
+        "06_evidence_verified.jsonl",
+        "08_claims_ledger_pre_adjudication.jsonl",
+        "09_analytical_synthesis_pre_redteam.md",
+        "10_project_hypotheses.jsonl",
+        "10_project_one_pagers.md",
+        "10_project_scorecard.csv"
+      ],
+      "forbidden_inputs": [
+        "adjudicator_verdict"
+      ],
+      "required_attacks": [
+        "confirmation bias",
+        "semantic drift",
+        "media amplification",
+        "vendor laundering",
+        "maturity inflation",
+        "stakeholder inflation",
+        "temporal illusion",
+        "alternative winner",
+        "commodity risk",
+        "causality",
+        "data readiness",
+        "organizational fit"
+      ],
+      "output_schema": "schemas/red_team_challenge.schema.json",
+      "outputs": [
+        "11_red_team_challenges.jsonl",
+        "11_adversarial_review.md"
+      ],
+      "id_prefixes": {
+        "challenge": "Z01-Z"
+      }
+    }
+  ]
+}

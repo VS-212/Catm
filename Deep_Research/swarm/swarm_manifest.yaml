@@ -1,0 +1,194 @@
+manifest_version: "1.0"
+project_id: "CATMAN-RU-DR-2024-2026"
+research_cutoff: "2026-08-14"
+language: "ru"
+source_of_truth: "../MASTER_BRIEF_RU_CATMAN_DEMAND_2024_2026.md"
+common_policy: "prompts/COMMON_POLICY.xml"
+
+execution_policy:
+  require_real_subagents: true
+  require_separate_context_per_agent: true
+  forbid_single_context_role_simulation: true
+  require_web_access_for_collectors: true
+  require_file_output_per_agent: true
+  preferred_max_concurrency: 12
+  max_repair_runs: 4
+  stop_on_capability_failure: true
+  disclose_agent_run_ids: true
+  expose_chain_of_thought: false
+  require_decision_rationale_and_evidence_ids: true
+
+context_isolation:
+  collectors_cannot_see_peer_outputs: true
+  fact_checkers_cannot_see_synthesis: true
+  fact_checkers_cannot_see_project_preferences: true
+  analysts_cannot_see_peer_analysis_until_merge: true
+  project_designer_receives_verified_data_only: true
+  red_team_starts_after_project_freeze: true
+  adjudicator_receives_both_sides: true
+
+waves:
+  - id: W0_FOUNDATION
+    parallel: true
+    agents: [U01, O01]
+    completion_gate: "universe_and_ontology_frozen"
+  - id: W1_COLLECTION
+    parallel: true
+    agents: [R01, R02, R03, R04, R05, R06, R07, R08, R09, R10, X01, X02, X03, X04]
+    depends_on: [W0_FOUNDATION]
+    completion_gate: "raw_evidence_merged_and_deduplicated"
+  - id: W2_FACT_CHECK
+    parallel: true
+    agents: [F01, F02, F03]
+    depends_on: [W1_COLLECTION]
+    completion_gate: "verified_dataset_frozen"
+  - id: W3_ANALYSIS
+    parallel: true
+    agents: [N01, N02, N03]
+    depends_on: [W2_FACT_CHECK]
+    completion_gate: "analyst_outputs_frozen"
+  - id: W4_PROJECTS
+    parallel: false
+    agents: [P01]
+    depends_on: [W3_ANALYSIS]
+    completion_gate: "project_shortlist_frozen"
+  - id: W5_RED_TEAM
+    parallel: false
+    agents: [Z01]
+    depends_on: [W4_PROJECTS]
+    completion_gate: "red_team_complete"
+  - id: W6_ADJUDICATION
+    parallel: false
+    agents: [J01]
+    depends_on: [W5_RED_TEAM]
+    completion_gate: "handoff_bundle_complete"
+
+agents:
+  U01:
+    role: universe_curator
+    prompt: prompts/UNIVERSE_CURATOR.xml
+    task: tasks/U01.json
+    context: [master_brief, common_policy]
+    output_schemas: [schemas/retailer_universe.schema.json]
+    outputs: [01_retailer_universe.json, 01_universe_decision.md]
+
+  O01:
+    role: ontology_curator
+    prompt: prompts/ONTOLOGY_CURATOR.xml
+    task: tasks/O01.json
+    context: [master_brief, common_policy]
+    outputs: [02_ontology.json, 02_ontology_notes.md]
+
+  R01: &retailer_agent
+    role: retailer_researcher
+    prompt: prompts/RETAILER_RESEARCHER.xml
+    task: tasks/R01.json
+    context: [common_policy, assigned_retailer_card, frozen_ontology]
+    hidden: [peer_collector_outputs, preliminary_conclusions, project_preferences]
+    output_schemas: [schemas/source_record.schema.json, schemas/evidence_record.schema.json]
+  R02: {<<: *retailer_agent, task: tasks/R02.json}
+  R03: {<<: *retailer_agent, task: tasks/R03.json}
+  R04: {<<: *retailer_agent, task: tasks/R04.json}
+  R05: {<<: *retailer_agent, task: tasks/R05.json}
+  R06: {<<: *retailer_agent, task: tasks/R06.json}
+  R07: {<<: *retailer_agent, task: tasks/R07.json}
+  R08: {<<: *retailer_agent, task: tasks/R08.json}
+  R09: {<<: *retailer_agent, task: tasks/R09.json}
+  R10: {<<: *retailer_agent, task: tasks/R10.json}
+
+  X01: &cross_source_agent
+    role: cross_source_researcher
+    prompt: prompts/CROSS_SOURCE_RESEARCHER.xml
+    task: tasks/X01.json
+    context: [common_policy, frozen_universe, frozen_ontology]
+    hidden: [retailer_collector_outputs, preliminary_conclusions, project_preferences]
+    output_schemas: [schemas/source_record.schema.json, schemas/evidence_record.schema.json]
+  X02: {<<: *cross_source_agent, task: tasks/X02.json}
+  X03:
+    <<: *cross_source_agent
+    task: tasks/X03.json
+    output_schemas: [schemas/source_record.schema.json, schemas/evidence_record.schema.json, schemas/video_record.schema.json]
+  X04: {<<: *cross_source_agent, task: tasks/X04.json}
+
+  F01: &fact_checker
+    role: blind_fact_checker
+    prompt: prompts/FACT_CHECKER.xml
+    task: tasks/F01.json
+    context: [common_policy, frozen_universe, frozen_ontology, assigned_raw_records]
+    hidden: [preliminary_conclusions, trend_rankings, project_shortlist, peer_verdicts]
+    output_schemas: [schemas/fact_check.schema.json]
+  F02: {<<: *fact_checker, task: tasks/F02.json}
+  F03: {<<: *fact_checker, task: tasks/F03.json}
+
+  N01: &analyst
+    role: blind_analyst
+    prompt: prompts/ANALYST.xml
+    task: tasks/N01.json
+    context: [common_policy, frozen_universe, frozen_ontology, verified_dataset]
+    hidden: [project_winner, peer_analysis]
+    output_schemas: [schemas/claim.schema.json]
+  N02: {<<: *analyst, task: tasks/N02.json}
+  N03: {<<: *analyst, task: tasks/N03.json}
+
+  P01:
+    role: project_designer
+    prompt: prompts/PROJECT_DESIGNER.xml
+    task: tasks/P01.json
+    context: [common_policy, verified_dataset, frozen_analyst_claims, master_project_rules]
+    hidden: [red_team_output, user_conversation_outside_brief]
+    output_schemas: [schemas/project_hypothesis.schema.json]
+
+  Z01:
+    role: adversarial_reviewer
+    prompt: prompts/RED_TEAM.xml
+    task: tasks/Z01.json
+    context: [common_policy, verified_dataset, frozen_claims, frozen_project_shortlist]
+    hidden: [adjudicator_verdict]
+    output_schemas: [schemas/red_team_challenge.schema.json]
+
+  J01:
+    role: adjudicator
+    prompt: prompts/ADJUDICATOR.xml
+    task: tasks/J01.json
+    context: [common_policy, run_manifest, capability_attestation, frozen_universe, frozen_ontology, fact_checks, verified_dataset, claims, project_shortlist, red_team]
+    output_schemas: [schemas/adjudication.schema.json, schemas/run_manifest.schema.json, schemas/quality_report.schema.json]
+
+merge_policy:
+  source_identity_key: [canonical_url, source_title, publication_date]
+  evidence_identity_key: [retailer_id, source_id, verbatim_quote, normalized_topic_l2]
+  preserve_all_origin_agent_ids: true
+  never_raise_confidence_during_merge: true
+  conflict_action: create_unresolved_conflict_record
+  required_dataset_freeze_file: "06_dataset_freeze_manifest.json"
+
+repair_policy:
+  allowed_reasons: [invalid_schema, broken_citation, critical_coverage_gap, adjudicator_requested]
+  same_agent_retry_first: true
+  max_retries_per_agent: 1
+  no_scope_expansion: true
+
+required_handoff_bundle:
+  - 00_capability_attestation.json
+  - 00_run_manifest.json
+  - 01_retailer_universe.json
+  - 02_ontology.json
+  - 03_source_registry.jsonl
+  - 04_evidence_raw.jsonl
+  - 05_fact_checks.jsonl
+  - 06_evidence_verified.jsonl
+  - 06_dataset_freeze_manifest.json
+  - 07_video_registry.jsonl
+  - 08_claims_ledger.jsonl
+  - 09_analytical_synthesis.md
+  - 10_project_hypotheses.jsonl
+  - 10_project_one_pagers.md
+  - 10_project_scorecard.csv
+  - 11_red_team_challenges.jsonl
+  - 11_adversarial_review.md
+  - 12_adjudication.jsonl
+  - 13_final_report.md
+  - 14_research_gaps.md
+  - 15_bibliography.md
+  - 90_ARENA_HANDOFF.json
+  - 90_ARENA_HANDOFF.md
+  - 99_run_quality_report.json

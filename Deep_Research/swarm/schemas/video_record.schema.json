@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "video_record.schema.json",
+  "title": "VideoRecord",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["video_id", "url", "title", "platform", "publication_date", "speaker", "speaker_role", "retailer_id", "topic", "why_valuable", "transcript_status", "processed"],
+  "properties": {
+    "video_id": {"type": "string", "pattern": "^VID-[0-9]{4,}$"},
+    "url": {"type": "string", "format": "uri"},
+    "title": {"type": "string"},
+    "platform": {"type": "string"},
+    "organizer": {"type": ["string", "null"]},
+    "publication_date": {"type": ["string", "null"], "format": "date"},
+    "event_date": {"type": ["string", "null"], "format": "date"},
+    "duration": {"type": ["string", "null"]},
+    "speaker": {"type": ["string", "null"]},
+    "speaker_role": {"type": ["string", "null"]},
+    "retailer_id": {"type": ["string", "null"]},
+    "topic": {"type": "string"},
+    "why_valuable": {"type": "string"},
+    "transcript_status": {"type": "string", "enum": ["metadata_only", "transcript_available", "transcribed_by_agent", "manually_verified_excerpt", "unavailable", "private", "deleted"]},
+    "transcript_source": {"type": ["string", "null"]},
+    "processed": {"type": "boolean"},
+    "relevant_timestamps": {"type": "array", "items": {"type": "string"}},
+    "evidence_ids": {"type": "array", "items": {"type": "string"}},
+    "access_notes": {"type": "string"}
+  }
+}

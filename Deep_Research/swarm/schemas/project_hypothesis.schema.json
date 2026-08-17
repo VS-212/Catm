@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "project_hypothesis.schema.json",
+  "title": "ProjectHypothesis",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["project_id", "project_name", "pain_statement", "supporting_claim_ids", "retailers_with_demand_signal", "primary_owner", "project_hypothesis", "scope", "non_scope", "pilot_design", "primary_kpi", "expected_effect_status", "scores", "penalties", "total_after_penalties", "kill_criteria", "main_counterargument", "confidence"],
+  "properties": {
+    "project_id": {"type": "string", "pattern": "^PRJ-[0-9]{2,}$"},
+    "project_name": {"type": "string", "minLength": 1},
+    "pain_statement": {"type": "string"},
+    "supporting_claim_ids": {"type": "array", "items": {"type": "string"}, "minItems": 1, "uniqueItems": true},
+    "retailers_with_demand_signal": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "primary_owner": {"type": "string"},
+    "beneficiaries": {"type": "array", "items": {"type": "string"}},
+    "current_workaround": {"type": ["string", "null"]},
+    "why_current_solution_insufficient": {"type": ["string", "null"]},
+    "project_hypothesis": {"type": "string"},
+    "scope": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+    "non_scope": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+    "required_data": {"type": "array", "items": {"type": "string"}},
+    "operating_model_change": {"type": "string"},
+    "pilot_design": {"type": "string"},
+    "baseline": {"type": ["string", "null"]},
+    "primary_kpi": {"type": "string"},
+    "secondary_kpis": {"type": "array", "items": {"type": "string"}},
+    "guardrails": {"type": "array", "items": {"type": "string"}},
+    "expected_effect_status": {"type": "string", "enum": ["sourced", "assumption_A", "to_be_measured", "mixed"]},
+    "scores": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["demand_evidence", "business_value", "executive_urgency", "feasibility", "time_to_effect", "novelty", "pm_leverage", "scalability"],
+      "properties": {
+        "demand_evidence": {"type": "number", "minimum": 0, "maximum": 25},
+        "business_value": {"type": "number", "minimum": 0, "maximum": 20},
+        "executive_urgency": {"type": "number", "minimum": 0, "maximum": 10},
+        "feasibility": {"type": "number", "minimum": 0, "maximum": 15},
+        "time_to_effect": {"type": "number", "minimum": 0, "maximum": 10},
+        "novelty": {"type": "number", "minimum": 0, "maximum": 10},
+        "pm_leverage": {"type": "number", "minimum": 0, "maximum": 5},
+        "scalability": {"type": "number", "minimum": 0, "maximum": 5}
+      }
+    },
+    "penalties": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["evidence_debt", "vendor_only", "terminology", "data_change_risk", "commodity"],
+      "properties": {
+        "evidence_debt": {"type": "number", "minimum": -15, "maximum": 0},
+        "vendor_only": {"type": "number", "minimum": -10, "maximum": 0},
+        "terminology": {"type": "number", "minimum": -5, "maximum": 0},
+        "data_change_risk": {"type": "number", "minimum": -10, "maximum": 0},
+        "commodity": {"type": "number", "minimum": -10, "maximum": 0}
+      }
+    },
+    "total_after_penalties": {"type": "number", "minimum": 0, "maximum": 100},
+    "kill_criteria": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+    "main_counterargument": {"type": "string"},
+    "switch_conditions": {"type": "array", "items": {"type": "string"}},
+    "confidence": {"type": "string", "enum": ["high", "medium", "low"]}
+  }
+}
