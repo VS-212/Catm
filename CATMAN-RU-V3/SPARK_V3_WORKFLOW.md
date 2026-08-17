@@ -94,29 +94,17 @@ CATMAN-RU-V3/SOURCE_AND_QUERY_MAP.md
 CATMAN-RU-V3/KB_TARGET_ARCHITECTURE.md
 ```
 
-## Как V2 input — один объединенный файл
+## Как V2 input — компактный resource index
 
 Загрузите только:
 
 ```text
-CATMAN-RU-V3/V2_INPUT_BUNDLE_FOR_V3.json
+CATMAN-RU-V3/LITE/V2_RESOURCE_INDEX.json
 ```
 
-Не загружайте отдельные DOCX из `CATMAN-RU/v2`: bundle уже содержит structured handoff, repaired evidence, repair ledger, solution patterns, corpus registry, Red Team, adjudication, run/quality manifests, полный final report, Solution Pattern Atlas, Corpus Index, gaps и bibliography.
+Не загружайте monolithic bundle и все DOCX. Полные V2-данные находятся в `LITE/resources/v2/` как 44 небольших native shards. Orchestrator читает только index; каждый forensic worker загружает только назначенные evidence/source/corpus/pattern shards.
 
-В bundle дополнительно встроены:
-
-- trust policy `UNTRUSTED_PRIOR_RESEARCH_INPUT`;
-- SHA-256 manifest исходных DOCX;
-- обязательные forensic directives;
-- автоматическая сверка evidence counts;
-- список V2 patterns без явных evidence ID arrays;
-- 49 расхождений URL между corpus registry и narrative corpus index;
-- 17 placeholder-looking URL в narrative index;
-- контроль отсутствующих fetch/multimodal statuses;
-- observation о дубликате adjudication-файла.
-
-Эти observations — стартовая очередь аудита, а не автоматически доказанные ошибки фактов.
+Если эта monolithic Task снова начинает накапливать контекст, немедленно перейдите на четырехзадачный `LITE/LITE_MULTI_TASK_WORKFLOW.md`.
 
 ---
 

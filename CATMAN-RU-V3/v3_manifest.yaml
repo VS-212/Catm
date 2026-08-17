@@ -68,17 +68,17 @@ agents:
 
   Q01:
     role: v2_provenance_and_referential_auditor
-    inputs: [V2_INPUT_BUNDLE_FOR_V3.json]
+    inputs: [LITE/V2_RESOURCE_INDEX.json, assigned_evidence_source_shards]
     focus: [urls, citations, evidence_ids, source_tiers, dates, duplicates]
     hidden: [v2_project_winner]
   Q02:
     role: v2_economics_and_claim_auditor
-    inputs: [V2_INPUT_BUNDLE_FOR_V3.json]
+    inputs: [LITE/V2_RESOURCE_INDEX.json, pattern_and_economics_shards]
     focus: [sourced_economics, assumptions, KPI attribution, claim_strength]
     hidden: [v2_final_recommendation]
   Q03:
     role: v2_corpus_and_multimedia_auditor
-    inputs: [V2_INPUT_BUNDLE_FOR_V3.json]
+    inputs: [LITE/V2_RESOURCE_INDEX.json, corpus_and_multimedia_shards]
     focus: [registry_vs_index, fetch_status, transcript_status, placeholder_urls, content_access]
     hidden: [v2_final_recommendation]
   Q04:

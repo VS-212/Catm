@@ -29,8 +29,8 @@ V3 должен достичь **Sufficiency Level L4 — External Decision-Read
 - `SOURCE_AND_QUERY_MAP.md` — русские, английские, китайские, научные и GitHub-источники;
 - `V3_SCHEMAS.json` — контракты данных;
 - `KB_TARGET_ARCHITECTURE.md` — структура итоговой knowledge base;
-- `V2_INPUT_BUNDLE_FOR_V3.json` — все необходимые V2-артефакты и forensic audit seeds в одном AI-friendly файле;
-- `build_v2_input_bundle.py` — воспроизводимая сборка V2 bundle из исходных DOCX.
+- `LITE/V2_RESOURCE_INDEX.json` — компактный индекс V2-шардов для progressive loading;
+- `build_v2_input_bundle.py` — локальная диагностическая сборка monolithic bundle; результат не хранится в GitHub и не загружается в Spark.
 
 ## Runtime
 
