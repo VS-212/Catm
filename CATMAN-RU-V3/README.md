@@ -28,7 +28,9 @@ V3 должен достичь **Sufficiency Level L4 — External Decision-Read
 - `v3_manifest.yaml` — 30 specialist runs + 2 capability workers;
 - `SOURCE_AND_QUERY_MAP.md` — русские, английские, китайские, научные и GitHub-источники;
 - `V3_SCHEMAS.json` — контракты данных;
-- `KB_TARGET_ARCHITECTURE.md` — структура итоговой knowledge base.
+- `KB_TARGET_ARCHITECTURE.md` — структура итоговой knowledge base;
+- `V2_INPUT_BUNDLE_FOR_V3.json` — все необходимые V2-артефакты и forensic audit seeds в одном AI-friendly файле;
+- `build_v2_input_bundle.py` — воспроизводимая сборка V2 bundle из исходных DOCX.
 
 ## Runtime
 

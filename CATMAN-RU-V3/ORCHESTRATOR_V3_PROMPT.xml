@@ -10,7 +10,7 @@
     <file priority="4">V3_SCHEMAS.json</file>
     <file priority="5">SOURCE_AND_QUERY_MAP.md</file>
     <file priority="6">KB_TARGET_ARCHITECTURE.md</file>
-    <file priority="7">V2 handoff and artifacts as untrusted input to forensic audit</file>
+    <file priority="7">V2_INPUT_BUNDLE_FOR_V3.json — single untrusted V2 input; forensic audit required</file>
   </authoritative_files>
 
   <runtime>

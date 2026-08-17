@@ -92,31 +92,29 @@ CATMAN-RU-V3/SOURCE_AND_QUERY_MAP.md
 CATMAN-RU-V3/KB_TARGET_ARCHITECTURE.md
 ```
 
-## Как V2 input files
+## Как V2 input — один объединенный файл
 
-Минимум:
-
-```text
-CATMAN-RU/v2/90_V2_ARENA_HANDOFF.json.docx
-CATMAN-RU/v2/99_v2_quality_report.json.docx
-CATMAN-RU/v2/16_v2_solution_pattern_atlas.md.docx
-CATMAN-RU/v2/17_v2_corpus_index.md.docx
-CATMAN-RU/v2/20_v2_final_report.md.docx
-CATMAN-RU/v2/21_v2_research_gaps.md.docx
-CATMAN-RU/v2/22_v2_bibliography.md.docx
-CATMAN-RU/v2/00_v2_run_manifest.json.docx
-```
-
-Если compact handoff не извлекается, дополнительно:
+Загрузите только:
 
 ```text
-05_v2_repair_ledger.jsonl.docx
-06_v2_evidence_repaired.jsonl.docx
-16_v2_solution_patterns.jsonl.docx
-17_v2_corpus_registry.jsonl.docx
-18_v2_red_team_challenges.jsonl.docx
-19_v2_adjudication_rulings.jsonl.docx
+CATMAN-RU-V3/V2_INPUT_BUNDLE_FOR_V3.json
 ```
+
+Не загружайте отдельные DOCX из `CATMAN-RU/v2`: bundle уже содержит structured handoff, repaired evidence, repair ledger, solution patterns, corpus registry, Red Team, adjudication, run/quality manifests, полный final report, Solution Pattern Atlas, Corpus Index, gaps и bibliography.
+
+В bundle дополнительно встроены:
+
+- trust policy `UNTRUSTED_PRIOR_RESEARCH_INPUT`;
+- SHA-256 manifest исходных DOCX;
+- обязательные forensic directives;
+- автоматическая сверка evidence counts;
+- список V2 patterns без явных evidence ID arrays;
+- 49 расхождений URL между corpus registry и narrative corpus index;
+- 17 placeholder-looking URL в narrative index;
+- контроль отсутствующих fetch/multimodal statuses;
+- observation о дубликате adjudication-файла.
+
+Эти observations — стартовая очередь аудита, а не автоматически доказанные ошибки фактов.
 
 ---
 
