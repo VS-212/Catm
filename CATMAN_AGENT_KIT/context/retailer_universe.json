@@ -1,0 +1,228 @@
+{
+  "universe_version": "1.0",
+  "frozen_at": "2026-08-17T00:25:00Z",
+  "ranking_decision": {
+    "publisher": "INFOLine (INFOLine-Аналитика)",
+    "ranking_year": 2024,
+    "metric": "Net retail sales / revenue excl. VAT (RUB billion)",
+    "scope": "Top-10 FMCG and Food Retailers of the Russian Federation (Annual Industry Review 'Retail Food and Consumer Market of Russia / FMCG Retail Chains Rating')",
+    "source_url": "https://infoline.spb.ru/news/?news=298744",
+    "rationale": "INFOLine is the recognized primary industry benchmark and authoritative market research agency tracking Russian retail metrics since 2002. The annual FMCG Top-10 ranking based on Net Revenue (excl. VAT) provides a reproducible, methodologically rigorous, and consistent perimeter for all leading grocery and FMCG operators across omnichannel, offline, and q-commerce formats.",
+    "limitations": [
+      "Excludes pure marketplace 3P GMV non-retail turnover (e.g. Wildberries and Ozon total marketplace platform volumes), capturing strictly retail-oriented sales and direct inventory-bearing grocery models.",
+      "Reflects M&A consolidations completed during the 2023-2024 calendar cycle (such as Lenta's acquisition of Monetka and Magnit's consolidation of Sambéri).",
+      "Financial metrics for privately held groups (such as Mercury Retail Group and Torgservis/Svetofor) are calculated via aggregated statutory accounting records (RAS) and proprietary INFOLine audit estimates.",
+      "Self-reported data from public disclosures (IFRS) reconciled with INFOLine standardized methodology without VAT to ensure cross-company comparability."
+    ]
+  },
+  "retailers": [
+    {
+      "retailer_id": "R01",
+      "rank": 1,
+      "legal_group": "X5 Group (ПАО \"Корпоративный центр Икс 5\" / ООО \"Корпоративный центр Икс 5\")",
+      "consumer_brands": [
+        "Пятёрочка",
+        "Перекрёсток",
+        "Чижик",
+        "Красный Яр",
+        "Слата",
+        "Vprok.ru",
+        "Около"
+      ],
+      "ranking_value_raw": "3908.0 млрд руб.",
+      "business_scope": "Федеральный мультиформатный продуктовый ритейл: магазины у дома ('Пятёрочка'), супермаркеты ('Перекрёсток'), жёсткие дискаунтеры ('Чижик'), региональные сети ('Красный Яр', 'Слата'), e-grocery ('Vprok.ru', экспресс-доставка), франчайзинг ('Около').",
+      "include_primary_universe": true,
+      "rationale": "Бессменный лидер продуктового ритейла РФ с выручкой 3 908 млрд руб. (+24,2% YoY в 2024 г.), долей рынка свыше 16% и масштабным присутствием во всех ключевых форматах и цифровых каналах.",
+      "ownership_notes": "Публичная российская холдинговая компания (ПАО 'Корпоративный центр Икс 5', редомицилирована / переведена в юрисдикцию РФ по ФЗ-470). Контролирующий акционер — структура CTF Holdings / Альфа-Групп."
+    },
+    {
+      "retailer_id": "R02",
+      "rank": 2,
+      "legal_group": "ПАО \"Магнит\" (PJSC Magnit)",
+      "consumer_brands": [
+        "Магнит у дома",
+        "Магнит Семейный",
+        "Магнит Экстра",
+        "Магнит Косметик",
+        "Магнит Аптека",
+        "Дикси",
+        "Самбери",
+        "В1 (Первый выбор)",
+        "Магнит Маркет",
+        "Магнит Рядом"
+      ],
+      "ranking_value_raw": "3018.0 млрд руб.",
+      "business_scope": "Федеральный мультиформатный ритейлер: магазины у дома ('Магнит у дома'), мягкие дискаунтеры ('Дикси'), суперсторы/гипермаркеты ('Магнит Семейный' / 'Экстра'), дрогери ('Магнит Косметик'), фармацевтический ритейл ('Магнит Аптека'), хард-дискаунтеры ('В1'), дальневосточная сеть ('Самбери'), e-commerce ('Магнит Маркет').",
+      "include_primary_universe": true,
+      "rationale": "Второй по объему выручки ритейлер России (3 018 млрд руб., +20,3% YoY в 2024 г.) с крупнейшей сетью физических магазинов (>30 000 точек) и максимальным географическим покрытием.",
+      "ownership_notes": "Публичное акционерное общество (MOEX: MGNT). Крупнейшие институциональные и стратегические акционеры включают Marathon Group, менеджмент и пул миноритарных инвесторов после выкупа акций у нерезидентов."
+    },
+    {
+      "retailer_id": "R03",
+      "rank": 3,
+      "legal_group": "Mercury Retail Group (ООО \"Меркурий Ритейл Холдинг\")",
+      "consumer_brands": [
+        "Красное & Белое",
+        "Бристоль"
+      ],
+      "ranking_value_raw": "1404.0 млрд руб.",
+      "business_scope": "Специализированный FMCG-ритейл ультрамалого формата (convenience / ultra-convenience store / specialty retail): алкогольная продукция, табачные изделия, бакалея, напитки, снеки, молочные и сопутствующие продовольственные товары повседневного спроса.",
+      "include_primary_universe": true,
+      "rationale": "Третий по величине FMCG-ритейлер РФ (выручка 1 404 млрд руб., +24,8% YoY в 2024 г.), оперирующий крупнейшей сетью алкомаркетов/магазинов у дома (>25 000 точек) с высокой плотностью продаж и стандартизированным ассортиментом.",
+      "ownership_notes": "Частная непубличная компания. Бенефициарные владельцы — Сергей Студенников (основатель 'Красное & Белое'), Игорь Кесаев и Сергей Кациев (основатели 'Дикси' и 'Бристоль')."
+    },
+    {
+      "retailer_id": "R04",
+      "rank": 4,
+      "legal_group": "МКПАО \"Лента\" (Lenta IPJSC / ООО \"Лента\")",
+      "consumer_brands": [
+        "Гипер Лента",
+        "Супер Лента",
+        "Мини Лента",
+        "Монетка",
+        "Улыбка радуги"
+      ],
+      "ranking_value_raw": "888.0 млрд руб.",
+      "business_scope": "Федеральный мультиформатный продуктовый ритейлер: классические гипермаркеты ('Гипер Лента'), супермаркеты ('Супер Лента'), магазины у дома ('Мини Лента' и интегрированная сеть 'Монетка'), дрогери ('Улыбка радуги'), онлайн-бизнес ('Лента Онлайн').",
+      "include_primary_universe": true,
+      "rationale": "Четвертый игрок FMCG-рынка с динамикой выручки +44,2% YoY (до 888 млрд руб. в 2024 г.), обусловленной успешной интеграцией сети дискаунтеров 'Монетка' (свыше 2100 магазинов) и расширением дрогери-направления.",
+      "ownership_notes": "Публичная международная компания (МКПАО 'Лента', MOEX: LNTA). Контролирующий акционер — инвестиционная компания 'Севергрупп' Алексея Мордашова."
+    },
+    {
+      "retailer_id": "R05",
+      "rank": 5,
+      "legal_group": "ГК \"Торгсервис\" (Группа компаний \"Светофор\")",
+      "consumer_brands": [
+        "Светофор",
+        "Маяк"
+      ],
+      "ranking_value_raw": "407.0 млрд руб.",
+      "business_scope": "Сеть жёстких дискаунтеров складского типа (hard discounter / warehouse club): продажа продуктов питания длительного хранения, свежих и замороженных продуктов, бытовой химии и товаров non-food по минимальным ценам с паллетной выкладкой.",
+      "include_primary_universe": true,
+      "rationale": "Пятый по величине игрок на рынке FMCG (выручка 407 млрд руб. в 2024 г., +2,9% YoY), крупнейший оператор в сегменте классического жесткого дискаунтера в РФ.",
+      "ownership_notes": "Непубличная децентрализованная группа частных компаний, зарегистрированных на членов семьи Шнайдер (Валентина, Сергей и Андрей Шнайдер) и региональных партнеров-управляющих."
+    },
+    {
+      "retailer_id": "R06",
+      "rank": 6,
+      "legal_group": "АО \"Вкусвилл\" (JSC Vkusvill)",
+      "consumer_brands": [
+        "ВкусВилл",
+        "ВкусВилл Мини",
+        "ВкусВилл Айс",
+        "ВкусВилл Доставка"
+      ],
+      "ranking_value_raw": "329.0 млрд руб.",
+      "business_scope": "Специализированный розничный омниканальный ритейл натуральных продуктов питания и здорового образа жизни: магазины у дома, мини-маркеты ('ВкусВилл Мини'), собственная сеть дарксторов и сверхбыстрая бесплатная доставка (>50% выручки через онлайн-канал), микромаркеты и вендинг.",
+      "include_primary_universe": true,
+      "rationale": "Шестая позиция в рейтинге FMCG (выручка 329 млрд руб., +27,0% YoY в 2024 г.), опередил сеть 'Ашан' за счет взрывного роста собственной доставки, уникальной модели 95%+ СТМ и экспансии ультрамалых форматов.",
+      "ownership_notes": "Непубличное акционерное общество (АО 'Вкусвилл'). Основатель и ключевой бенефициар — Андрей Кривенко и топ-менеджмент; миноритарный пакет у фонда Baring Vostok (Восток Инвестиции)."
+    },
+    {
+      "retailer_id": "R07",
+      "rank": 7,
+      "legal_group": "ООО \"Ашан\" (Auchan Retail Russia / Elo Group)",
+      "consumer_brands": [
+        "Ашан",
+        "Ашан Сити",
+        "Атак",
+        "Мой Ашан"
+      ],
+      "ranking_value_raw": "278.0 млрд руб.",
+      "business_scope": "Крупноформатный розничный ритейл и супермаркеты: классические гипермаркеты 'Ашан', городские компактные гипермаркеты 'Ашан Сити', супермаркеты 'Атак' и магазины формата у дома 'Мой Ашан', цифровые каналы доставки (партнерские и собственные).",
+      "include_primary_universe": true,
+      "rationale": "Седьмое место на российском рынке FMCG (278 млрд руб., +0,8% YoY в 2024 г.); крупноформатный игрок с масштабной сетью гипермаркетов и значимым объемом продаж продуктов питания.",
+      "ownership_notes": "Российская дочерняя структура французской ассоциации семьи Мюлье (Association Familiale Mulliez / холдинг Elo)."
+    },
+    {
+      "retailer_id": "R08",
+      "rank": 8,
+      "legal_group": "ООО \"Метро Кэш энд Керри\" (Metro Cash & Carry Russia / METRO AG)",
+      "consumer_brands": [
+        "Metro",
+        "Фасоль"
+      ],
+      "ranking_value_raw": "248.0 млрд руб.",
+      "business_scope": "Мелкооптовая и розничная B2B/B2C торговля: торговые центры формата Cash & Carry для профессиональных клиентов (HoReCa, независимая розница) и физических лиц, франчайзинговая сеть магазинов у дома 'Фасоль', собственная b2b/b2c e-commerce доставка.",
+      "include_primary_universe": true,
+      "rationale": "Восьмой ритейлер в национальном рейтинге FMCG (выручка 248 млрд руб., +10,9% YoY в 2024 г.), ключевой B2B/B2C интегратор оптово-розничной дистрибуции продуктов питания и оператор франшизы 'Фасоль'.",
+      "ownership_notes": "100% дочерняя компания международного немецкого ритейлера METRO AG."
+    },
+    {
+      "retailer_id": "R09",
+      "rank": 9,
+      "legal_group": "ООО \"Умный ритейл\" (Smart Retail LLC / Самокат / экосистема Сбербанк)",
+      "consumer_brands": [
+        "Самокат"
+      ],
+      "ranking_value_raw": "219.0 млрд руб.",
+      "business_scope": "Чистый игрок e-grocery и экспресс-доставки продуктов (q-commerce / darkstore operator): доставка продовольственных товаров, готовой еды и СТМ за 15-30 минут из распределенной сети дарксторов (>2300 дарксторов в 127 городах).",
+      "include_primary_universe": true,
+      "rationale": "Девятое место по итогам 2024 года (219 млрд руб., абсолютный рекорд роста среди топ-10: +50,5% YoY); первый в истории специализированный q-commerce/даркстор-оператор, вошедший в официальный Топ-10 FMCG-ритейлеров России.",
+      "ownership_notes": "Операционная компания ООО 'Умный ритейл' входит в периметр совместного предприятия O2O (контролируется ПАО 'Сбербанк'). Основатели — Вячеслав Бочаров и Родион Шишков."
+    },
+    {
+      "retailer_id": "R10",
+      "rank": 10,
+      "legal_group": "ГК \"О'КЕЙ\" (O'Key Group S.A. / ООО \"О'КЕЙ\")",
+      "consumer_brands": [
+        "О'Кей",
+        "Да!"
+      ],
+      "ranking_value_raw": "217.0 млрд руб.",
+      "business_scope": "Федеральный продуктовый ритейлер двух ключевых направлений: сеть классических гипермаркетов 'О'Кей' и быстрорастущая сеть мягких дискаунтеров 'Да!', омниканальные онлайн-продажи.",
+      "include_primary_universe": true,
+      "rationale": "Замыкает официальный Топ-10 FMCG-сетей РФ с выручкой 217 млрд руб. (+5,5% YoY в 2024 г.); основной прирост группы обеспечивается сетью дискаунтеров 'Да!' при стабилизации выручки гипермаркетов.",
+      "ownership_notes": "Публичный холдинг O'Key Group S.A. (листинг GDR на Мосбирже и AIX). Основные бенефициары — Дмитрий Коржев, Дмитрий Троицкий и Борис Волчек."
+    }
+  ],
+  "adjacent_group": [
+    {
+      "segment": "Multi-category Marketplaces (E-commerce / 3P Platforms)",
+      "rationale": "Ведущие универсальные маркетплейсы с колоссальным общим GMV и растущей долей FMCG (сухие продукты, напитки, бытовая химия, корма для животных, личная гигиена), но функционирующие преимущественно по модели 3P-платформы (комиссионная маркетплейс-модель без прямого управления классической ритейл-полкой).",
+      "entities": [
+        {
+          "name": "Wildberries (ООО \"РВБ\" / ООО \"Вайлдберриз\")",
+          "fmcg_relevance": "Крупнейший маркетплейс РФ (общий GMV >3,5 трлн руб. в 2024 г.). Активно наращивает сегменты 'Продукты питания', 'Бытовая химия' и 'Красота/Гигиена' с доставкой через сеть из >40 000 ПВЗ.",
+          "perimeter_boundary": "Excluded from primary FMCG universe: 3P marketplace model, non-perishable assortment focus, non-centralized category management over supplier inventory."
+        },
+        {
+          "name": "Ozon (ООО \"Интернет Решения\" / Ozon Holdings PLC)",
+          "fmcg_relevance": "Второй маркетплейс страны (общий GMV >2,8 трлн руб. в 2024 г.). Развивает быструю доставку продуктов 'Ozon fresh' (1P/дарксторы) и широкий 3P-маркетплейс FMCG товаров.",
+          "perimeter_boundary": "Excluded from primary FMCG universe as standalone entity: core GMV is multi-category 3P marketplace, while Ozon Fresh is evaluated as an adjacent q-commerce subsegment."
+        }
+      ]
+    },
+    {
+      "segment": "Variety Value Retail / Specialised Discounters",
+      "rationale": "Розничные сети с фиксированными/низкими ценами и гибридным ассортиментом FMCG (non-food дрогери, бытовая химия, снеки, кондитерские изделия, напитки), конкурирующие с продуктовым ритейлом за покупательский трафик.",
+      "entities": [
+        {
+          "name": "Fix Price (ООО \"Бэст Прайс\" / Fix Price Group PLC)",
+          "fmcg_relevance": "Выручка свыше 300 млрд руб. Доля продовольственных товаров (food) составляет ~25-30%, бытовой химии и косметики ~25-30%.",
+          "perimeter_boundary": "Excluded from primary grocery Top-10 due to majority non-food assortment profile (variety value store / non-food discounter), serving as the primary benchmark in sensitivity analysis."
+        }
+      ]
+    },
+    {
+      "segment": "Regional FMCG Retailers (Next Tier Challengers)",
+      "rationale": "Крупные региональные торговые сети за пределами Топ-10 (ранги 11-20), сохраняющие сильные позиции в локальных макрорегионах.",
+      "entities": [
+        {
+          "name": "Мария-Ра (ООО \"Розница К-1\", Сибирь)",
+          "fmcg_relevance": "Выручка ~140-150 млрд руб. Сильнейшая независимая сеть Западной Сибири (>1300 магазинов)."
+        },
+        {
+          "name": "Ярче! (ООО \"Камелот-А\" / Холдинг KDV)",
+          "fmcg_relevance": "Сеть магазинов у дома 'Ярче!' (холдинг KDV) — выручка ~130-150 млрд руб., активная экспансия в Сибири и Центральной России."
+        }
+      ]
+    }
+  ],
+  "sensitivity_notes": [
+    "Sensitivity Case 1 (Pure Brick-and-Mortar Grocery Perimeter): If pure e-grocery / darkstore operators (Samokat, R09) are excluded on the grounds of not operating physical customer-facing stores, O'Key Group moves to R09, and Fix Price (Fix Price Group, выручка ~310 млрд руб., с долей food+drogerie >50%) or Maria-Ra (ООО 'Розница К-1', ~150 млрд руб.) enters at R10 depending on whether variety value retail is classified as FMCG.",
+    "Sensitivity Case 2 (Marketplace Platform Consolidation): If 3P e-commerce FMCG gross merchandise value (Wildberries, Ozon) is aggregated into retailer market shares, the total FMCG landscape expands significantly, but pure 3P turnover cannot be subjected to classical Retail Category Management (joint planogramming, shelf space allocation, and centralized retail inventory ownership).",
+    "Sensitivity Case 3 (M&A Perimeter Adjustments): In 2023-2024, Lenta's net sales surged by 44.2% primarily due to the consolidation of 'Monetka' (adding ~2100 stores and >180 млрд руб. annualized revenue) and 'Ulybka Radugi'. Similarly, Magnit consolidated the Far Eastern chain 'Samberi' (adding ~0.4 p.p. market share). Without M&A consolidation, organic ranking positions would remain R01 (X5), R02 (Magnit), R03 (Mercury), R04 (Lenta), R05 (Svetofor).",
+    "Sensitivity Case 4 (Specialty & Discounters Classification): Mercury Retail Group (R03: Krasnoe & Beloe / Bristol) and Torgservis (R05: Svetofor) operate ultra-specialized formats. Their inclusion in the primary universe reflects the standard INFOLine methodology where drinks, tobacco, and high-turnover pantry goods represent direct competition to conventional supermarkets and convenience stores."
+  ]
+}
