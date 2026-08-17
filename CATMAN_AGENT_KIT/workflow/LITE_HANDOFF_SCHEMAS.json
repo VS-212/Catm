@@ -1,0 +1,30 @@
+{
+  "schema_bundle_version": "1.0",
+  "common_rules": {
+    "no_full_raw_arrays": true,
+    "ids_and_resource_pointers_required": true,
+    "material_claims_need_evidence_ids": true,
+    "unresolved_issues_preserved": true
+  },
+  "schemas": {
+    "A_HANDOFF": {
+      "max_bytes": 92160,
+      "required": ["run_manifest", "audit_counts", "accepted_pattern_candidates", "rejected_or_qualified_ids", "material_issues", "resource_pointers", "gate_verdict"],
+      "purpose": "Forensic V2 summary for Task B; no full evidence records."
+    },
+    "B_HANDOFF": {
+      "max_bytes": 133120,
+      "required": ["run_manifest", "four_finalists", "global_case_ids", "negative_case_ids", "vendor_product_ids", "github_repo_ids", "l4_pre_gate_results", "resource_pointers", "gate_verdict"],
+      "purpose": "Landscape shortlist for Task C; full registries remain separate."
+    },
+    "C_HANDOFF": {
+      "max_bytes": 163840,
+      "required": ["run_manifest", "reference_architecture_summaries", "economics_classification", "russia_transferability", "build_buy_partner_options", "pilot_summary", "failed_gates", "resource_pointers", "gate_verdict"],
+      "purpose": "Architecture decision input for Task D; detailed architecture files remain separate."
+    },
+    "TASK_STATUS": {
+      "required": ["task_id", "actual_subagent_run_ids", "completed", "failed", "retried", "output_paths", "handoff_bytes", "next_task"],
+      "purpose": "Short chat/file status after each top-level Task."
+    }
+  }
+}

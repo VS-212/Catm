@@ -1,0 +1,2238 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "metadata": {
+    "project_id": "CATMAN-RU-DR-2024-2026",
+    "document_id": "02_ontology.json",
+    "title": "CatMan Search Ontology, Normalization Framework, and Epistemic Calibration for Russian Grocery Retail (2024-2026)",
+    "agent_id": "O01",
+    "agent_name": "Ontology Curator",
+    "agent_role": "Independent CatMan Ontologist",
+    "ontology_version": "1.0.0-FROZEN",
+    "freeze_status": "FROZEN",
+    "research_cutoff_date": "2026-08-14",
+    "freeze_timestamp": "2026-08-14T23:59:59Z",
+    "governance": {
+      "inputs": [
+        "Master Brief",
+        "Common Policy"
+      ],
+      "forbidden_inputs": [
+        "Collector outputs",
+        "Preliminary conclusions",
+        "Project preferences"
+      ],
+      "epistemic_stance": "Strictly empirical, evidence-based, falsifiable, vendor-neutral, objective"
+    }
+  },
+  "l1_topics": {
+    "strategy_and_shopper": {
+      "topic_id": "strategy_and_shopper",
+      "name_en": "Category Strategy & Shopper Understanding",
+      "name_ru": "Категорийная стратегия и понимание покупателя",
+      "description": "Foundational CatMan strategic frameworks, category role definitions, shopper missions, customer decision trees (CDT), customer value management (CVM), and omnichannel shopping dynamics.",
+      "l2_subtopics": {
+        "category_roles_and_strategies": {
+          "subtopic_id": "category_roles_and_strategies",
+          "name_en": "Category Roles & Strategic Allocations",
+          "name_ru": "Роли категорий и стратегические приоритеты",
+          "definition": "Assignment of formal category roles (Traffic/Destination, Routine, Seasonal/Occasional, Convenience/Image) and corresponding commercial strategies (Cash generator, Profit generator, Basket builder, Image builder).",
+          "key_metrics": [
+            "Category GMV Share",
+            "Gross Margin Contribution",
+            "Traffic Penetration %",
+            "Basket Incidence"
+          ],
+          "keywords_ru": [
+            "роль категории",
+            "генератор трафика",
+            "генератор маржи",
+            "стратегия категории",
+            "корзинообразующая категория",
+            "дестинационная категория",
+            "целевая категория",
+            "балансировка категорийного портфеля"
+          ],
+          "keywords_en": [
+            "category role",
+            "traffic builder",
+            "profit generator",
+            "destination category",
+            "routine category",
+            "convenience category",
+            "category scorecard"
+          ]
+        },
+        "customer_decision_tree_cdt": {
+          "subtopic_id": "customer_decision_tree_cdt",
+          "name_en": "Customer Decision Tree (CDT) & Need States",
+          "name_ru": "Дерево принятия решений покупателем (ДПР / CDT)",
+          "definition": "Hierarchical modeling of shopper purchasing criteria and decision logic (e.g., brand vs. pack size vs. price tier vs. dietary attribute) used to structure categories and shelf layouts.",
+          "key_metrics": [
+            "Attribute Importance Index",
+            "Switching Propensity",
+            "Brand Loyalty Score"
+          ],
+          "keywords_ru": [
+            "дерево принятия решений",
+            "ДПР",
+            "потребительские миссии",
+            "покупательское поведение",
+            "need states",
+            "иерархия выбора",
+            "факторы выбора товара"
+          ],
+          "keywords_en": [
+            "customer decision tree",
+            "CDT",
+            "shopper need states",
+            "purchase decision hierarchy",
+            "attribute ranking"
+          ]
+        },
+        "shopper_missions_and_trips": {
+          "subtopic_id": "shopper_missions_and_trips",
+          "name_en": "Shopper Missions & Trip Types",
+          "name_ru": "Покупательские миссии и типы покупок",
+          "definition": "Segmentation of store visits based on immediate shopper intent (e.g., Stock-up / Pantry loading, Fast replenishment / Fill-in, Immediate consumption / On-the-go, Meal prep / Tonight's dinner).",
+          "key_metrics": [
+            "Mission Share %",
+            "Items per Basket by Mission",
+            "Average Basket Value by Trip"
+          ],
+          "keywords_ru": [
+            "миссия покупателя",
+            "типы чеков",
+            "покупка впрок",
+            "перекус на ходу",
+            "быстрое пополнение",
+            "готовая еда на вечер",
+            "миссия закупки"
+          ],
+          "keywords_en": [
+            "shopper mission",
+            "trip type",
+            "stock-up trip",
+            "fill-in trip",
+            "quick trip",
+            "immediate consumption"
+          ]
+        },
+        "customer_segmentation_and_cvm": {
+          "subtopic_id": "customer_segmentation_and_cvm",
+          "name_en": "Customer Segmentation, Loyalty & CVM",
+          "name_ru": "Клиентская сегментация, лояльность и CVM",
+          "definition": "Application of loyalty data, RFM analysis, life-stage segmentation, and Customer Value Management (CVM) to tailor category offerings and personalized engagement.",
+          "key_metrics": [
+            "Active Loyalty Share %",
+            "Customer Lifetime Value (LTV)",
+            "Churn Rate",
+            "RFM Segment Shift"
+          ],
+          "keywords_ru": [
+            "сегментация покупателей",
+            "CVM",
+            "программа лояльности",
+            "персонализация",
+            "RFM-анализ",
+            "жизненный цикл клиента",
+            "клиентский профиль"
+          ],
+          "keywords_en": [
+            "customer segmentation",
+            "CVM",
+            "customer value management",
+            "loyalty data",
+            "RFM analysis",
+            "shopper profile"
+          ]
+        },
+        "omnichannel_behavior": {
+          "subtopic_id": "omnichannel_behavior",
+          "name_en": "Omnichannel Behavior & E-Grocery Integration",
+          "name_ru": "Омниканальное поведение и интеграция с E-Grocery",
+          "definition": "Interaction between offline physical store shopping and online / darkstore ordering, cross-channel cannibalization, and hybrid category management.",
+          "key_metrics": [
+            "Omnichannel Penetration",
+            "Cross-channel Frequency",
+            "Channel Cannibalization Rate"
+          ],
+          "keywords_ru": [
+            "омниканальность",
+            "e-grocery",
+            "даркстор",
+            "самовывоз",
+            "доставка продуктов",
+            "онлайн-ассортимент",
+            "кросс-канальные покупки"
+          ],
+          "keywords_en": [
+            "omnichannel retail",
+            "e-grocery",
+            "darkstore assortment",
+            "cross-channel shopping",
+            "click and collect"
+          ]
+        }
+      }
+    },
+    "assortment": {
+      "topic_id": "assortment",
+      "name_en": "Assortment Management & Optimization",
+      "name_ru": "Управление ассортиментом и оптимизация матрицы",
+      "definition": "Structuring, rationalizing, localizing, and rotating the product range; private label strategy; cannibalization and substitution analytics.",
+      "l2_subtopics": {
+        "assortment_breadth_depth_rationalization": {
+          "subtopic_id": "assortment_breadth_depth_rationalization",
+          "name_en": "Assortment Breadth, Depth & SKU Rationalization",
+          "name_ru": "Широта, глубина ассортимента и рационализация SKU",
+          "definition": "Balancing the number of subcategories (breadth) and items per subcategory (depth); systemic pruning of low-performing, redundant, or tail SKUs.",
+          "key_metrics": [
+            "SKU Count per Category",
+            "Pareto 80/20 Distribution",
+            "Tail SKU Elimination %",
+            "Assortment Productivity"
+          ],
+          "keywords_ru": [
+            "рационализация ассортимента",
+            "глубина ассортимента",
+            "широта ассортимента",
+            "вывод SKU",
+            "ротация матрицы",
+            "хвост ассортимента",
+            "неликвиды",
+            "чистка матрицы"
+          ],
+          "keywords_en": [
+            "assortment rationalization",
+            "assortment breadth",
+            "assortment depth",
+            "SKU pruning",
+            "assortment productivity",
+            "tail SKU"
+          ]
+        },
+        "core_vs_flexible_matrix": {
+          "subtopic_id": "core_vs_flexible_matrix",
+          "name_en": "Core (Mandatory) vs. Flexible / Optional Assortment",
+          "name_ru": "Обязательная (Core) матрица vs. вариативная часть",
+          "definition": "Governance of mandatory non-negotiable SKUs present across all stores of a format versus optional, experimental, or store-specific listings.",
+          "key_metrics": [
+            "Core Matrix Compliance %",
+            "Flexible Tier Share",
+            "Listing Error Rate"
+          ],
+          "keywords_ru": [
+            "обязательный ассортимент",
+            "базовая матрица",
+            "ядро матрицы",
+            "core matrix",
+            "вариативная матрица",
+            "ввод-вывод товаров",
+            "ассортиментный комитет"
+          ],
+          "keywords_en": [
+            "core assortment",
+            "mandatory matrix",
+            "must-stock list",
+            "flexible assortment",
+            "assortment governance"
+          ]
+        },
+        "private_label_strategy": {
+          "subtopic_id": "private_label_strategy",
+          "name_en": "Private Label (PL / СТМ) Architecture & Tiering",
+          "name_ru": "Стратегия СТМ (Private Label) и ценовое позиционирование",
+          "definition": "Development, pricing, positioning, and shelf space allocation for retailer-owned brands across economy, mid-tier, and premium/niche segments.",
+          "key_metrics": [
+            "PL GMV Share %",
+            "PL Margin Premium vs. National Brands",
+            "PL Cannibalization Rate"
+          ],
+          "keywords_ru": [
+            "СТМ",
+            "собственная торговая марка",
+            "private label",
+            "первая цена",
+            "средний сегмент СТМ",
+            "премиальная СТМ",
+            "доля СТМ",
+            "бренды сети"
+          ],
+          "keywords_en": [
+            "private label",
+            "store brand",
+            "own brand",
+            "PL tiering",
+            "PL market share",
+            "private label penetration"
+          ]
+        },
+        "substitution_and_cannibalization": {
+          "subtopic_id": "substitution_and_cannibalization",
+          "name_en": "Substitution, Transference & Cannibalization Analytics",
+          "name_ru": "Анализ замещения, каннибализации и перетекания спроса",
+          "definition": "Algorithmic and behavioral modeling of demand transfer when an item is delisted or out-of-stock; measuring true incremental category value of new listings.",
+          "key_metrics": [
+            "Demand Transference Index (DTI)",
+            "Cannibalization Rate %",
+            "Incrementality Score"
+          ],
+          "keywords_ru": [
+            "каннибализация продаж",
+            "перетекание спроса",
+            "замещение товара",
+            "инкрементальность",
+            "анализ эластичности замещения",
+            "упущенный спрос при выводе"
+          ],
+          "keywords_en": [
+            "demand transference",
+            "product cannibalization",
+            "substitution elasticity",
+            "incrementality",
+            "delisting impact"
+          ]
+        },
+        "npd_and_innovation_cycle": {
+          "subtopic_id": "npd_and_innovation_cycle",
+          "name_en": "New Product Introduction (NPD) & Fast-Track Listing",
+          "name_ru": "Ввод новинок (NPD), ротация и фаст-трек",
+          "definition": "Processes and analytics governing the testing, listing, shelf-life monitoring, and threshold-based gating for newly launched manufacturer or PL products.",
+          "key_metrics": [
+            "NPD Success Rate % (6M/12M)",
+            "Time-to-Shelf (Days)",
+            "New SKU Share in GMV"
+          ],
+          "keywords_ru": [
+            "ввод новинок",
+            "NPD",
+            "ротация новинок",
+            "фаст-трек",
+            "тестирование новинок",
+            "испытательный срок SKU",
+            "вывод не взлетевших товаров"
+          ],
+          "keywords_en": [
+            "new product development",
+            "NPD listing",
+            "fast track listing",
+            "product trial period",
+            "innovation rotation"
+          ]
+        }
+      }
+    },
+    "stores_and_space": {
+      "topic_id": "stores_and_space",
+      "name_en": "Stores, Space Planning & Merchandising",
+      "name_ru": "Магазины, планирование пространства и мерчандайзинг",
+      "definition": "Store classification, data-driven clustering, macro/micro space planning, planogramming, shelf capacity modeling, and in-store execution compliance.",
+      "l2_subtopics": {
+        "store_clustering_and_segmentation": {
+          "subtopic_id": "store_clustering_and_segmentation",
+          "name_en": "Store Clustering, Segmentation & Typization",
+          "name_ru": "Кластеризация, сегментация и типизация магазинов",
+          "definition": "Grouping store networks by structural format, equipment types, customer demographics, and AI/ML sales patterns to optimize localized matrices.",
+          "key_metrics": [
+            "Cluster Cohesion Score",
+            "Number of Active Clusters",
+            "Intra-cluster Variance"
+          ],
+          "keywords_ru": [
+            "кластеризация магазинов",
+            "типизация магазинов",
+            "сегментация сети",
+            "кластеры торговых точек",
+            "микрокластеры",
+            "профиль магазина"
+          ],
+          "keywords_en": [
+            "store clustering",
+            "store segmentation",
+            "store typization",
+            "data-driven clustering",
+            "store profiling"
+          ]
+        },
+        "macro_space_allocation": {
+          "subtopic_id": "macro_space_allocation",
+          "name_en": "Macro-Space Planning & Category Floor Allocation",
+          "name_ru": "Макрозонирование и распределение площади торгового зала",
+          "definition": "Determining square meter allocation and layout location for whole categories/departments based on profit density, shopper flow, and strategic roles.",
+          "key_metrics": [
+            "Sales per Sq Meter",
+            "Profit per Sq Meter",
+            "Category Space Share vs. Sales Share Ratio"
+          ],
+          "keywords_ru": [
+            "макрозонирование",
+            "распределение торговой площади",
+            "планировка зала",
+            "зонирование магазина",
+            "доля площади категории",
+            "отдача с квадратного метра"
+          ],
+          "keywords_en": [
+            "macro space planning",
+            "floor space allocation",
+            "store layout design",
+            "space-to-sales ratio",
+            "sales per square meter"
+          ]
+        },
+        "micro_space_and_planogramming": {
+          "subtopic_id": "micro_space_and_planogramming",
+          "name_en": "Micro-Space Planning, Planograms & Shelf Capacity",
+          "name_ru": "Микрозонирование, планограммирование и полочное пространство",
+          "definition": "Generating specific shelf layouts, SKU facings, shelf height/depth capacity, and eye-level positioning rules across varying fixture dimensions.",
+          "key_metrics": [
+            "Facing Count",
+            "Shelf Days of Supply (DOS)",
+            "Golden Zone Share",
+            "Planogram Compliance %"
+          ],
+          "keywords_ru": [
+            "микрозонирование",
+            "планограмма",
+            "автопланограммирование",
+            "фейсинг",
+            "золотая полка",
+            "вместимость полки",
+            "полочное пространство",
+            "выкладка товара"
+          ],
+          "keywords_en": [
+            "micro space planning",
+            "planogram",
+            "automated planogramming",
+            "facings",
+            "shelf capacity",
+            "eye-level shelf"
+          ]
+        },
+        "space_elasticity_and_assortment_fit": {
+          "subtopic_id": "space_elasticity_and_assortment_fit",
+          "name_en": "Space Elasticity & Space-to-Assortment Integration",
+          "name_ru": "Эластичность пространства и увязка ассортимента с полкой",
+          "definition": "Evaluating how incremental shelf facings impact unit sales (diminishing marginal returns) and ensuring matrix size matches physical shelf capacity.",
+          "key_metrics": [
+            "Space Elasticity Coefficient",
+            "Shelf Congestion Index",
+            "Phantom SKU Rate"
+          ],
+          "keywords_ru": [
+            "эластичность пространства",
+            "вместимость полки под матрицу",
+            "соответствие матрицы полке",
+            "перегрузка полки",
+            "оптимизация фейсингов"
+          ],
+          "keywords_en": [
+            "space elasticity",
+            "shelf capacity fit",
+            "facing elasticity",
+            "assortment-to-space alignment"
+          ]
+        },
+        "in_store_execution_and_computer_vision": {
+          "subtopic_id": "in_store_execution_and_computer_vision",
+          "name_en": "In-Store Execution, Auditing & Computer Vision Compliance",
+          "name_ru": "Контроль исполнения выкладки, аудит и Computer Vision",
+          "definition": "Tools and processes for validating physical compliance to planograms, detecting misplaced items, and automated shelf auditing via mobile apps or fixed cameras.",
+          "key_metrics": [
+            "Planogram Compliance Rate %",
+            "OSA Accuracy",
+            "Audit Frequency",
+            "Misplacement Rate"
+          ],
+          "keywords_ru": [
+            "контроль выкладки",
+            "аудит планограмм",
+            "распознавание полок",
+            "компьютерное зрение в ритейле",
+            "мобильный аудит",
+            "compliance выкладки"
+          ],
+          "keywords_en": [
+            "shelf compliance",
+            "planogram compliance",
+            "shelf recognition",
+            "computer vision retail",
+            "on-shelf audit"
+          ]
+        }
+      }
+    },
+    "pricing_and_promo_rgm": {
+      "topic_id": "pricing_and_promo_rgm",
+      "name_en": "Pricing, Promotions & Revenue Growth Management (RGM)",
+      "name_ru": "Ценообразование, промо и управление доходностью (RGM)",
+      "definition": "Regular pricing, Key Value Item (KVI) architecture, dynamic/algorithmic pricing, promo planning, trade marketing, post-promo analytics, and markdown optimization.",
+      "l2_subtopics": {
+        "regular_pricing_and_kvi": {
+          "subtopic_id": "regular_pricing_and_kvi",
+          "name_en": "Regular Pricing Architecture, Price Index & KVI Strategy",
+          "name_ru": "Регулярное ценообразование, ценовой индекс и KVI",
+          "definition": "Structuring price tiers, defining Key Value Items (KVI: price perceivers), competitor scraping/matching, and target price index enforcement.",
+          "key_metrics": [
+            "Price Index (PI) vs. Competitors",
+            "KVI Price Perception Score",
+            "Regular Gross Margin %"
+          ],
+          "keywords_ru": [
+            "регулярное ценообразование",
+            "ценовой индекс",
+            "KVI",
+            "ключевые товары восприятия",
+            "мониторинг цен",
+            "ценовое позиционирование",
+            "первая цена"
+          ],
+          "keywords_en": [
+            "regular pricing",
+            "price index",
+            "KVI",
+            "key value items",
+            "price perception",
+            "competitor price indexing"
+          ]
+        },
+        "dynamic_and_algorithmic_pricing": {
+          "subtopic_id": "dynamic_and_algorithmic_pricing",
+          "name_en": "Dynamic, Algorithmic & Elasticity-Based Pricing",
+          "name_ru": "Динамическое и алгоритмическое ценообразование, эластичность",
+          "definition": "Automated ML pricing systems calculating price elasticity of demand, cross-elasticities, margin optimization curves, and multi-store rule automation.",
+          "key_metrics": [
+            "Price Elasticity of Demand (PED)",
+            "Cross-Price Elasticity",
+            "Gross Profit Lift %"
+          ],
+          "keywords_ru": [
+            "динамическое ценообразование",
+            "алгоритмический прайсинг",
+            "эластичность спроса по цене",
+            "ML-ценообразование",
+            "автоматический расчет цен",
+            "модели оптимизации цен"
+          ],
+          "keywords_en": [
+            "dynamic pricing",
+            "algorithmic pricing",
+            "price elasticity",
+            "ML pricing engine",
+            "price optimization"
+          ]
+        },
+        "promo_planning_and_effectiveness": {
+          "subtopic_id": "promo_planning_and_effectiveness",
+          "name_en": "Promotional Planning, Mechanics & Post-Promo Evaluation (RGM)",
+          "name_ru": "Планирование промо, промо-механики и оценка эффективности (RGM)",
+          "definition": "Design and execution of price cuts, multi-buys, bundles, and seasonal campaigns; isolating baseline vs. incremental promo lift, cannibalization, and ROI.",
+          "key_metrics": [
+            "Promo Depth %",
+            "Incremental Promo Lift %",
+            "Promo Share in GMV",
+            "Promo ROI",
+            "Subsidized Volume %"
+          ],
+          "keywords_ru": [
+            "планирование промо",
+            "промо-механики",
+            "эффективность промо",
+            "RGM",
+            "промо-давление",
+            "скидки",
+            "глубина промо",
+            "пост-промо анализ",
+            "желтые ценники"
+          ],
+          "keywords_en": [
+            "promotional planning",
+            "promo effectiveness",
+            "RGM",
+            "revenue growth management",
+            "promo depth",
+            "post-promo analytics",
+            "trade promotion"
+          ]
+        },
+        "markdown_and_clearance": {
+          "subtopic_id": "markdown_and_clearance",
+          "name_en": "Markdown Optimization & Expiry Clearance",
+          "name_ru": "Оптимизация уценок, распродажи и сроки годности",
+          "definition": "Automated algorithms determining optimal timing and depth of discounts for expiring, seasonal, or delisted merchandise to minimize terminal write-offs.",
+          "key_metrics": [
+            "Markdown Loss Rate %",
+            "Salvage Value Recovery",
+            "Residual Inventory Liquidation %"
+          ],
+          "keywords_ru": [
+            "уценка товаров",
+            "распродажа стоков",
+            "зеленые ценники",
+            "уценка по срокам годности",
+            "ликвидация остатков",
+            "markdown оптимизация"
+          ],
+          "keywords_en": [
+            "markdown optimization",
+            "clearance pricing",
+            "expiry markdown",
+            "inventory liquidation",
+            "salvage margin"
+          ]
+        },
+        "personalized_pricing_and_loyalty_promo": {
+          "subtopic_id": "personalized_pricing_and_loyalty_promo",
+          "name_en": "Personalized Pricing, Targeted Offers & Loyalty Mechanics",
+          "name_ru": "Персонализированные скидки, целевое промо и механики лояльности",
+          "definition": "Direct 1-to-1 or segment-specific promotional mechanics delivered via loyalty apps (cashback, favorite category discounts, couponing) without diluting shelf price.",
+          "key_metrics": [
+            "Offer Redemption Rate %",
+            "Incremental Margin from Targeted Offers",
+            "Dilution Rate %"
+          ],
+          "keywords_ru": [
+            "персонализированные скидки",
+            "любимая категория",
+            "целевые предложения",
+            "купоны в приложении",
+            "кешбэк лояльности",
+            "персональное промо"
+          ],
+          "keywords_en": [
+            "personalized pricing",
+            "targeted promotions",
+            "loyalty discounts",
+            "app coupons",
+            "personalized cashback"
+          ]
+        }
+      }
+    },
+    "fresh_and_inventory": {
+      "topic_id": "fresh_and_inventory",
+      "name_en": "Fresh Category Management & Inventory Optimization",
+      "name_ru": "Управление категориями Fresh, Ultra-Fresh и товарными запасами",
+      "definition": "Perishable goods management, shelf-life constraints, waste/shrink control, automated replenishment, on-shelf availability (OSA), and localized cold chain sourcing.",
+      "l2_subtopics": {
+        "fresh_and_ultrafresh_specifics": {
+          "subtopic_id": "fresh_and_ultrafresh_specifics",
+          "name_en": "Fresh / Ultra-Fresh Category Management & Quality",
+          "name_ru": "Специфика управления категориями Фреш и Ультра-фреш",
+          "definition": "Specialized CatMan practices for short-shelf-life goods (F&V, fresh meat, dairy, bakery, ready-to-eat/RTE), intra-day demand swings, and grading standards.",
+          "key_metrics": [
+            "Fresh Share in Basket %",
+            "Fresh Turnover (Days)",
+            "Fresh Waste %",
+            "Quality Incident Rate"
+          ],
+          "keywords_ru": [
+            "категория фреш",
+            "ультрафреш",
+            "скоропорт",
+            "овощи и фрукты",
+            "готовая еда",
+            "мясная гастрономия",
+            "управление скоропортом",
+            "короткие сроки годности"
+          ],
+          "keywords_en": [
+            "fresh category management",
+            "ultra-fresh",
+            "perishables",
+            "fruit and vegetables",
+            "ready-to-eat",
+            "short shelf life"
+          ]
+        },
+        "waste_shrink_and_spoilage": {
+          "subtopic_id": "waste_shrink_and_spoilage",
+          "name_en": "Waste, Shrink, Spoilage & Write-Off Control",
+          "name_ru": "Управление потерями, списаниями и утилизацией (Waste / Shrink)",
+          "definition": "Tracking, root-cause diagnostics, and systemic reduction of biological spoilage, shrinkage, damage, and process losses across store shelves and distribution centers.",
+          "key_metrics": [
+            "Shrink Rate % of Sales",
+            "Write-Off Cost",
+            "Waste-to-Revenue Ratio"
+          ],
+          "keywords_ru": [
+            "списания товаров",
+            "потери скоропорта",
+            "утилизация",
+            "бой и порча",
+            "усушка",
+            "недостачи",
+            "снижение списаний",
+            "shrinkage"
+          ],
+          "keywords_en": [
+            "shrink management",
+            "waste reduction",
+            "spoilage control",
+            "write-offs",
+            "shrinkage",
+            "perishable losses"
+          ]
+        },
+        "demand_forecasting_and_replenishment": {
+          "subtopic_id": "demand_forecasting_and_replenishment",
+          "name_en": "Demand Forecasting & Automated Store Replenishment",
+          "name_ru": "Прогнозирование спроса и автоматическое пополнение полок (Автозаказ)",
+          "definition": "AI/ML forecasting engines generating granular SKU x Store x Day replenishment orders accounting for weather, calendar events, price changes, and delivery lead times.",
+          "key_metrics": [
+            "Forecast Accuracy (WMAPE)",
+            "Forecast Bias",
+            "Safety Stock Levels (Days)",
+            "Replenishment Order Automation %"
+          ],
+          "keywords_ru": [
+            "прогнозирование спроса",
+            "автозаказ",
+            "автопополнение",
+            "расчет страхового запаса",
+            "планирование цепочки поставок",
+            "точность прогноза спроса"
+          ],
+          "keywords_en": [
+            "demand forecasting",
+            "automated replenishment",
+            "auto-order",
+            "safety stock",
+            "forecast accuracy",
+            "WMAPE"
+          ]
+        },
+        "osa_and_out_of_stock": {
+          "subtopic_id": "osa_and_out_of_stock",
+          "name_en": "On-Shelf Availability (OSA) & Out-of-Stock (OOS) Management",
+          "name_ru": "Доступность на полке (OSA) и борьба с дефицитом (OOS)",
+          "definition": "Measurement, real-time alert generation, and resolution of shelf stockouts, phantom inventory, and backroom-to-shelf replenishment latency.",
+          "key_metrics": [
+            "On-Shelf Availability (OSA) %",
+            "Out-of-Stock (OOS) Rate %",
+            "Phantom Inventory Rate",
+            "Lost Sales Estimate"
+          ],
+          "keywords_ru": [
+            "доступность на полке",
+            "OSA",
+            "out of stock",
+            "OOS",
+            "дефицит товара",
+            "фантомные остатки",
+            "упущенные продажи из-за отсутствия товара"
+          ],
+          "keywords_en": [
+            "on-shelf availability",
+            "OSA",
+            "out-of-stock",
+            "OOS",
+            "shelf stockout",
+            "phantom inventory",
+            "lost sales"
+          ]
+        },
+        "local_sourcing_and_dsd": {
+          "subtopic_id": "local_sourcing_and_dsd",
+          "name_en": "Local Sourcing, Short Supply Chains & Direct Store Delivery (DSD)",
+          "name_ru": "Локальные закупки, короткое плечо и прямые поставки (DSD)",
+          "definition": "Logistical models enabling regional farm produce and local bakeries/dairies to bypass centralized RCs via Direct Store Delivery while maintaining CatMan control.",
+          "key_metrics": [
+            "Local Sourcing Share %",
+            "DSD Compliance Rate",
+            "Transit Lead Time (Hours)"
+          ],
+          "keywords_ru": [
+            "локальные поставщики",
+            "прямые поставки в магазин",
+            "DSD",
+            "фермерские продукты",
+            "короткое логистическое плечо",
+            "региональные закупки"
+          ],
+          "keywords_en": [
+            "local sourcing",
+            "direct store delivery",
+            "DSD",
+            "regional suppliers",
+            "short supply chain",
+            "farm to shelf"
+          ]
+        }
+      }
+    },
+    "data_and_automation": {
+      "topic_id": "data_and_automation",
+      "name_en": "Data Infrastructure, Analytics & CatMan Automation",
+      "name_ru": "Инфраструктура данных, аналитика и автоматизация CatMan",
+      "definition": "Enterprise CatMan software systems, AI/ML tools, supplier collaboration portals (JBP/SRM), master data management (MDM), and edge shelf automation.",
+      "l2_subtopics": {
+        "catman_software_and_platforms": {
+          "subtopic_id": "catman_software_and_platforms",
+          "name_en": "Category Management Software & Space/Assortment Platforms",
+          "name_ru": "Программное обеспечение CatMan и платформы автоматизации",
+          "definition": "Core enterprise platforms supporting CatMan workflows (e.g., Blue Yonder / JDA, SymphonyAI, SAS, 1C Enterprise, custom in-house Python/ML stacks).",
+          "key_metrics": [
+            "System Adoption Rate",
+            "Planogram Automation %",
+            "Cycle Time for Matrix Revision"
+          ],
+          "keywords_ru": [
+            "ПО для категорийного менеджмента",
+            "Blue Yonder",
+            "JDA",
+            "SymphonyAI",
+            "Симфония",
+            "1С Ритейл",
+            "1С CatMan",
+            "автоматизация категорийного менеджмента"
+          ],
+          "keywords_en": [
+            "CatMan software",
+            "Blue Yonder",
+            "JDA Space Planning",
+            "SymphonyAI Retail",
+            "CatMan platform",
+            "retail merchandising software"
+          ]
+        },
+        "aiml_and_generative_ai_in_catman": {
+          "subtopic_id": "aiml_and_generative_ai_in_catman",
+          "name_en": "Machine Learning & Generative AI Applications in CatMan",
+          "name_ru": "Машинное обучение и Generative AI в категорийном менеджменте",
+          "definition": "Application of deep learning, reinforcement learning, LLM copilots, and combinatorial optimization algorithms to category assortment, pricing, and space tasks.",
+          "key_metrics": [
+            "Model Accuracy Lift",
+            "Automated Decision Share %",
+            "Analyst Time Saved"
+          ],
+          "keywords_ru": [
+            "машинное обучение в ритейле",
+            "AI в категорийном менеджменте",
+            "нейросети для ассортимента",
+            "генеративный ИИ",
+            "алгоритмическая оптимизация полки"
+          ],
+          "keywords_en": [
+            "machine learning retail",
+            "AI category management",
+            "GenAI retail",
+            "assortment optimization ML",
+            "predictive retail analytics"
+          ]
+        },
+        "supplier_data_collaboration_and_jbp": {
+          "subtopic_id": "supplier_data_collaboration_and_jbp",
+          "name_en": "Supplier Data Sharing, Collaboration Portals & Joint Business Planning (JBP)",
+          "name_ru": "Обмен данными с поставщиками, порталы поставщиков и JBP",
+          "definition": "Monetized or collaborative data sharing of POS, inventory, and shopper basket data with FMCG suppliers for joint growth plans and category captaincy.",
+          "key_metrics": [
+            "Supplier Portal Penetration %",
+            "Joint Plan Execution Rate %",
+            "Data Monetization Revenue"
+          ],
+          "keywords_ru": [
+            "обмен данными с поставщиками",
+            "портал поставщика",
+            "JBP",
+            "совместное бизнес-планирование",
+            "категорийный капитан",
+            "data sharing ритейл"
+          ],
+          "keywords_en": [
+            "supplier collaboration",
+            "supplier portal",
+            "joint business planning",
+            "JBP",
+            "category captaincy",
+            "retail data sharing"
+          ]
+        },
+        "master_data_and_product_taxonomy": {
+          "subtopic_id": "master_data_and_product_taxonomy",
+          "name_en": "Master Data Management (MDM), Product Attributes & Taxonomy",
+          "name_ru": "Мастер-данные (MDM), атрибутирование товаров и классификаторы",
+          "definition": "Standardization of product catalogs, granular attribute extraction (dietary, functional, packaging, occasion), and product taxonomy harmonization.",
+          "key_metrics": [
+            "Attribute Completeness %",
+            "Taxonomy Error Rate",
+            "Catalog Ingestion Speed"
+          ],
+          "keywords_ru": [
+            "мастер-данные",
+            "MDM",
+            "каталог товаров",
+            "атрибуты товара",
+            "классификатор товаров",
+            "нормализация данных",
+            "товарная таксономия"
+          ],
+          "keywords_en": [
+            "master data management",
+            "MDM",
+            "product taxonomy",
+            "item attributes",
+            "catalog normalization",
+            "product hierarchy"
+          ]
+        },
+        "edge_technologies_and_iot": {
+          "subtopic_id": "edge_technologies_and_iot",
+          "name_en": "Edge Automation, Electronic Shelf Labels (ESL) & Smart Shelves",
+          "name_ru": "Автоматизация в зале, электронные ценники (ESL) и Smart-полки",
+          "definition": "Hardware and edge systems deployed in stores to support dynamic pricing, real-time pick-to-light, weight sensors, and RFID/ESL infrastructure.",
+          "key_metrics": [
+            "ESL Coverage %",
+            "Price Sync Latency (Seconds)",
+            "Hardware ROI"
+          ],
+          "keywords_ru": [
+            "электронные ценники",
+            "ESL",
+            "умные полки",
+            "smart shelf",
+            "RFID в ритейле",
+            "электронные ценники в магазинах"
+          ],
+          "keywords_en": [
+            "electronic shelf labels",
+            "ESL",
+            "smart shelves",
+            "in-store IoT",
+            "digital price tags",
+            "shelf sensors"
+          ]
+        }
+      }
+    }
+  },
+  "store_terminology_matrix": {
+    "store_classification": {
+      "term_id": "store_classification",
+      "term_ru": "Классификация магазинов",
+      "term_en": "Store classification",
+      "operational_definition": "Верхнеуровневое разделение сети по жестким, формальным, нормативно-декларативным критериям торгового формата, бизнес-модели, базового CVP (Customer Value Proposition) и операционной модели.",
+      "scope_level": "Стратегический / Архитектурный уровень ритейлера",
+      "input_criteria": [
+        "Торговая площадь (кв.м)",
+        "Общая площадь объекта",
+        "Бизнес-модель (традиционный ритейл, дискаунтер, e-grocery)",
+        "Широта базового CVP",
+        "Юридический статус / форма собственности"
+      ],
+      "analytical_methodology": "Нормативное директивное распределение по утвержденным форматам ритейлера",
+      "output_artifacts": "Классы форматов: 'Гипермаркет', 'Супермаркет', 'Магазин у дома (МК/Convenience)', 'Хард-дискаунтер', 'Мягкий дискаунтер', 'Даркстор'",
+      "update_cadence": "Низкая (раз в несколько лет: запуск нового формата, ребрендинг, сделки M&A)",
+      "primary_owner": [
+        "C-level",
+        "Директор по стратегии",
+        "Операционный комитет"
+      ],
+      "boundary_distinctions": {
+        "vs_typization": "Классификация определяет бизнес-формат сети, а типизация описывает инженерно-архитектурные параметры зала внутри одного формата.",
+        "vs_categorization": "Классификация относится ко всему объекту целиком, а категоризация оценивает конкретную категорию внутри объекта.",
+        "vs_clustering": "Классификация является нормативно-статической, а кластеризация — математико-алгоритмической по структуре чеков и продаж.",
+        "vs_segmentation": "Классификация базируется на размере и модели магазина, а сегментация — на типе покупателя и локационном контексте."
+      },
+      "common_confusions_and_anti_patterns": "Называть гипермаркет или дискаунтер 'кластером'. Классификация задает рамку, но не учитывает чековое поведение.",
+      "search_keywords_ru": [
+        "классификация магазинов",
+        "форматы магазинов",
+        "гипермаркет",
+        "супермаркет",
+        "магазин у дома",
+        "дискаунтер",
+        "даркстор"
+      ],
+      "search_keywords_en": [
+        "store classification",
+        "retail formats",
+        "hypermarket",
+        "supermarket",
+        "convenience store",
+        "discounter",
+        "darkstore"
+      ]
+    },
+    "store_typization": {
+      "term_id": "store_typization",
+      "term_ru": "Типизация магазинов",
+      "term_en": "Store typization",
+      "operational_definition": "Инженерно-архитектурная группировка торговых точек внутри одного формата по физической геометрии зала, погонажу торгового оборудования, наличию производственных зон и техническим ограничениям.",
+      "scope_level": "Инженерно-строительный, операционный и макро-мерчандайзинговый уровень",
+      "input_criteria": [
+        "Длина линии полок (погонные метры / стеллажи)",
+        "Геометрия торгового зала (прямоугольный, вытянутый, Г-образный, многоуровневый)",
+        "Количество и типы холодильных горок / бонет",
+        "Наличие пекарни / кофе-зоны / зоны собственного производства (СП)",
+        "Зона разгрузки и складская емкость"
+      ],
+      "analytical_methodology": "Архитектурно-модульная стандартизация планировочных решений",
+      "output_artifacts": "Инженерно-планировочные типы: 'Тип А: 350 кв.м с пекарней и 45м стеллажей', 'Тип Б: 200 кв.м без пекарни и 28м стеллажей', 'Тип В: Угловой зал с островом свежего хлеба'",
+      "update_cadence": "Средняя (при открытии новых точек, редизайне/реконцепции, капитальном ремонте)",
+      "primary_owner": [
+        "Отдел развития и открытий",
+        "Архитектурно-строительный отдел",
+        "Служба макро-мерчандайзинга"
+      ],
+      "boundary_distinctions": {
+        "vs_classification": "Типизация стандартизирует 'железо' и планировку внутри уже выбранного формата.",
+        "vs_planogramming": "Типизация задает общие рамки макро-оборудования, тогда как планограмма расставляет конкретные SKU по полкам.",
+        "vs_clustering": "Типизация абсолютно не зависит от профиля продаж или предпочтений покупателей — она смотрит только на физику помещения."
+      },
+      "common_confusions_and_anti_patterns": "Смешивать архитектурный тип зала с коммерческим кластером ассортимента. Одинаковые по геометрии залы могут требовать совершенно разного ассортимента.",
+      "search_keywords_ru": [
+        "типизация магазинов",
+        "типовой магазин",
+        "типовые планировки",
+        "погонаж оборудования",
+        "архитектурный тип магазина",
+        "модули торгового оборудования"
+      ],
+      "search_keywords_en": [
+        "store typization",
+        "store architectural types",
+        "fixture standardization",
+        "floor plan typologies",
+        "equipment modularity"
+      ]
+    },
+    "store_categorization": {
+      "term_id": "store_categorization",
+      "term_ru": "Категоризация магазинов (Грейдирование категорий в магазинах)",
+      "term_en": "Store categorization / Category grading",
+      "operational_definition": "Определение коммерческого потенциала, веса, роли и полочного приоритета каждой отдельной товарной категории в конкретной торговой точке (грейдирование категорий).",
+      "scope_level": "Категорийный и коммерческий уровень управления матрицей",
+      "input_criteria": [
+        "Выручка и валовая прибыль категории в конкретном магазине",
+        "Доля категории в чеках магазина (% проникновения)",
+        "Индекс плотности продаж категории (выручка на метр полки)",
+        "Потенциал развития категории в локации"
+      ],
+      "analytical_methodology": "ABC/XYZ-анализ категорий на уровне отдельных магазинов, грейдирование (Tier 1/2/3)",
+      "output_artifacts": "Категорийный грейд-паспорт магазина: 'Магазин №402: Алкоголь = Грейд А (Флагман), Бакалея = Грейд В (Базовый), Детское питание = Грейд С (Минимум)'",
+      "update_cadence": "Регулярная (ежеквартально или раз в полгода в рамках категорийного ревью)",
+      "primary_owner": [
+        "Категорийный директор",
+        "Категорийные менеджеры направлений",
+        "CatMan аналитики"
+      ],
+      "boundary_distinctions": {
+        "vs_classification": "Классификация дает один ярлык на весь магазин, а категоризация дает независимый грейд для каждой из 50+ категорий в этом магазине.",
+        "vs_segmentation": "Категоризация оценивает фактический экономический результат категории в магазине, а сегментация — социально-демографический контекст покупателя.",
+        "vs_clustering": "Категоризация определяет размер и важность категории (сколько места и SKU дать), а кластеризация — содержательный состав и вкусовые профили SKU."
+      },
+      "common_confusions_and_anti_patterns": "Считать, что если магазин 'премиальный' целиком, то все категории в нем имеют грейд А. (В премиальном спальнике категория 'строительные инструменты' может иметь грейд С/отсутствовать).",
+      "search_keywords_ru": [
+        "категоризация магазинов",
+        "грейдирование категорий",
+        "категорийный профиль магазина",
+        "грейды магазинов по категориям",
+        "роль категории в магазине"
+      ],
+      "search_keywords_en": [
+        "store categorization",
+        "category store grading",
+        "store category tiering",
+        "category performance rating"
+      ]
+    },
+    "store_segmentation": {
+      "term_id": "store_segmentation",
+      "term_ru": "Сегментация магазинов",
+      "term_en": "Store segmentation",
+      "operational_definition": "Маркетингово-клиентская группировка магазинов на основе социально-демографического состава локации, профиля целевой аудитории и доминирующих покупательских миссий.",
+      "scope_level": "Маркетинговый, клиентский (CVM) и стратегический уровень",
+      "input_criteria": [
+        "Уровень доходов населения в зоне охвата (изохрона 5-10-15 минут)",
+        "Доля семей с детьми / студентов / пенсионеров / офисных работников",
+        "Локационный контекст: 'Спальный спад', 'Деловой центр', 'Транзитный узел / вокзал', 'Дачное направление / сезонный трафик', 'Элитный ЖК'",
+        "Интенсивность и структура пешеходного/автомобильного трафика"
+      ],
+      "analytical_methodology": "Геомаркетинговый анализ, сопоставление с данными сотовых операторов, банковских транзакций и опросов",
+      "output_artifacts": "Клиентские сегменты магазинов: 'Семейный спальный', 'Офисный / Fast Lunch', 'Транзитный / Impulse', 'Дачный сезонный', 'Премиальный ЖК'",
+      "update_cadence": "Ежегодно или при существенном изменении инфраструктуры района (открытие метро, застройка ЖК)",
+      "primary_owner": [
+        "Директор по маркетингу",
+        "Руководитель геомаркетинга / CVM",
+        "CatMan стратег"
+      ],
+      "boundary_distinctions": {
+        "vs_classification": "Магазины одного формата 'У дома 300 кв.м' могут попадать в совершенно разные сегменты ('Офисный у метро' vs 'Семейный в спальнике').",
+        "vs_clustering": "Сегментация описывает внешнюю среду (КТО живет вокруг и ЗАЧЕМ идет), а кластеризация — внутренние чековые паттерны (ЧТО конкретно покупают).",
+        "vs_localization": "Сегментация определяет покупательский контекст, который затем служит триггером для локализации ассортимента."
+      },
+      "common_confusions_and_anti_patterns": "Использовать сегментацию без привязки к геоданным или заменять чековую кластеризацию чисто умозрительной сегментацией.",
+      "search_keywords_ru": [
+        "сегментация магазинов",
+        "геомаркетинг",
+        "профиль локации",
+        "спальный сегмент",
+        "транзитный трафик",
+        "покупательский контекст магазина"
+      ],
+      "search_keywords_en": [
+        "store segmentation",
+        "geomarketing retail",
+        "catchment area segmentation",
+        "location-based store profiling",
+        "shopper demographic segmentation"
+      ]
+    },
+    "store_clustering": {
+      "term_id": "store_clustering",
+      "term_ru": "Кластеризация магазинов (Data-driven clustering)",
+      "term_en": "Store clustering / Data-driven clustering",
+      "operational_definition": "Многомерная математическая группировка торговых точек с использованием алгоритмов Data Science (k-means, иерархическая кластеризация, PCA, UMAP) на основе структуры продаж, чековых корзин, ценовых предпочтений и эластичности внутри конкретной категории.",
+      "scope_level": "Аналитический, алгоритмический и матричный CatMan уровень",
+      "input_criteria": [
+        "Структура чеков и кросс-продаж (market basket analysis)",
+        "Доли ценовых сегментов (First price / Economy / Mid / Premium) в категории",
+        "Вкусовые, брендовые и фасовочные предпочтения (sales mix)",
+        "Эластичность спроса и чувствительность к промо",
+        "Матрицы схожести продаж по категории"
+      ],
+      "analytical_methodology": "Неконтролируемое машинное обучение (Unsupervised ML), кластерный анализ матриц смежности продаж",
+      "output_artifacts": "Категорийно-специфичные кластеры магазинов: 'Кластер 1: Премиум-гурман', 'Кластер 2: Традиционный эконом', 'Кластер 3: ЗОЖ / Веган / Эко', 'Кластер 4: Массовый семейный'",
+      "update_cadence": "Высокая (динамически / раз в 1-3 месяца перед плановым пересмотром категорийных матриц)",
+      "primary_owner": [
+        "Data Science CatMan",
+        "Руководитель аналитики ассортимента",
+        "CatMan Lead"
+      ],
+      "boundary_distinctions": {
+        "vs_classification": "Классификация едина для всей сети, а кластеры формируются индивидуально под каждую категорию (магазин может быть в кластере 'Премиум' по сырам, но в кластере 'Эконом' по порошкам).",
+        "vs_segmentation": "Сегментация смотрит на демографию снаружи, а кластеризация — на реальные транзакции на кассе.",
+        "vs_microclustering": "Кластеризация охватывает группы из десятков/сотен магазинов со статистически устойчивой базой продаж."
+      },
+      "common_confusions_and_anti_patterns": "Попытка создать 'единый кластер магазина для всех товаров сразу' (универсальный кластер сети), что уничтожает гранулярность CatMan.",
+      "search_keywords_ru": [
+        "кластеризация магазинов",
+        "алгоритмическая кластеризация",
+        "data-driven кластеры",
+        "кластерный анализ чеков",
+        "категорийные кластеры",
+        "k-means ритейл"
+      ],
+      "search_keywords_en": [
+        "store clustering",
+        "data-driven store clustering",
+        "category-specific clustering",
+        "unsupervised retail clustering",
+        "basket-based store clustering"
+      ]
+    },
+    "micro_clustering": {
+      "term_id": "micro_clustering",
+      "term_ru": "Микрокластеризация",
+      "term_en": "Micro-clustering",
+      "operational_definition": "Высокодетализированное выделение ультра-малых групп магазинов (от 2-3 до 10-15 точек) или точечных товарных модулей на основе специфических локальных аномалий спроса, которые размываются в крупных общесетевых кластерах.",
+      "scope_level": "Ультра-гранулярный уровень точечной настройки ассортимента",
+      "input_criteria": [
+        "Специфические локальные драйверы спроса (близость мечети/синагоги, студенческого кампуса, элитной гимназии, стройплощадки, больницы, круглосуточного парка)",
+        "Аномальные всплески продаж узких нишевых подкатегорий (Халяль, Кошер, Безглютен, Премиальный табак, Крафтовое пиво, Строительные расходники)",
+        "Конкурентное окружение в радиусе 100 метров"
+      ],
+      "analytical_methodology": "Поиск аномалий спроса (Anomaly / Outlier Detection), Rule-based микромодули, локальные классификаторы",
+      "output_artifacts": "Микрокластерные ассортиментные модули/вставки: 'Модуль Халяль: 14 магазинов ВАО/ЮВАО', 'Модуль Студенческий энерджи/снек: 8 магазинов у общежитий', 'Модуль Кофе-на-ходу Топ: 20 магазинов у метро'",
+      "update_cadence": "Гибкая / По требованию (при открытии локаций, сезонных всплесках или обнаружении локального спроса)",
+      "primary_owner": [
+        "Локальный / региональный категорийный менеджер",
+        "AI-система генерации локальных планограмм"
+      ],
+      "boundary_distinctions": {
+        "vs_clustering": "Кластеризация оптимизирует 80% регулярного объема на больших массивах данных, а микрокластеризация настраивает оставшиеся 10-20% уникального локального спроса.",
+        "vs_localization": "Локализация часто связана с местными региональными поставщиками (область/край), а микрокластеризация — с ультра-локальной структурой покупателя на уровне квартала/улицы."
+      },
+      "common_confusions_and_anti_patterns": "Попытка микрокластеризовать 100% SKU в магазине, что приводит к операционному хаосу в логистике и невозможности поддержания автозаказа.",
+      "search_keywords_ru": [
+        "микрокластеризация",
+        "микрокластеры",
+        "локальные ассортиментные модули",
+        "ультралокальный спрос",
+        "нишевые кластеры магазинов"
+      ],
+      "search_keywords_en": [
+        "micro-clustering",
+        "micro-clusters",
+        "hyper-local assortment modules",
+        "store micro-segmentation",
+        "niche retail clustering"
+      ]
+    },
+    "assortment_localization": {
+      "term_id": "assortment_localization",
+      "term_ru": "Локализация ассортимента",
+      "term_en": "Assortment localization",
+      "operational_definition": "Процесс, коммерческая политика и логистическая цепочка адаптации товарного предложения под региональные, национально-культурные и географические особенности территорий, включая интеграцию местных производителей (Local Sourcing).",
+      "scope_level": "Региональный, торгово-закупочный и логистический уровень",
+      "input_criteria": [
+        "Региональные гастрономические традиции и вкусовые привычки (например, национальная молочная продукция в Башкирии/Татарстане, свежая рыба на Дальнем Востоке, локальные хлебозаводы)",
+        "Наличие сильных локальных брендов с высокой лояльностью населения",
+        "Логистическое плечо от местных распределительных центров или прямые поставки (DSD)",
+        "Региональные регуляторные требования и соглашения с администрацией"
+      ],
+      "analytical_methodology": "Региональный анализ рынка (Nielsen/NTech), сопоставление локальных квот, аудит локальных поставщиков",
+      "output_artifacts": "Региональные матрицы и матрицы локальных поставщиков: 'Квота местных молочников: 35% полки в Свердловской обл.', 'Региональная линейка пива Сибири', 'Локальные СТМ-контракты'",
+      "update_cadence": "Постоянный процесс закупочных сессий, пересмотр контрактов 1-2 раза в год",
+      "primary_owner": [
+        "Директор дивизиона / региона",
+        "Региональные категорийные менеджеры",
+        "Отдел локальных закупок"
+      ],
+      "boundary_distinctions": {
+        "vs_segmentation": "Сегментация отвечает на вопрос 'какой тип покупателя в этом районе', а локализация обеспечивает 'наличие локального молока/хлеба от местного завода'.",
+        "vs_clustering": "Кластеризация группирует магазины по математическому сходству продаж, а локализация вводит в матрицу физических местных поставщиков по географическому признаку."
+      },
+      "common_confusions_and_anti_patterns": "Путать локализацию с хаотичным закупочным сепаратизмом, когда каждый региональный филиал заводит несогласованные дублирующие SKU без контроля доходности.",
+      "search_keywords_ru": [
+        "локализация ассортимента",
+        "локальные поставщики",
+        "местные производители",
+        "региональная матрица",
+        "фермерские полки",
+        "регионализация закупок"
+      ],
+      "search_keywords_en": [
+        "assortment localization",
+        "local sourcing",
+        "regional assortment matrix",
+        "local supplier integration",
+        "geographic assortment tailoring"
+      ]
+    },
+    "format_matrix": {
+      "term_id": "format_matrix",
+      "term_ru": "Форматная матрица",
+      "term_en": "Format matrix",
+      "operational_definition": "Базовый нормативно-справочный документ и архитектурная сетка ритейлера, определяющая лимиты емкости (SKU Count Caps), глубину и структуру обязательного ассортимента для каждого класса торгового формата.",
+      "scope_level": "Нормативно-структурный уровень коммерческой дирекции",
+      "input_criteria": [
+        "Класс формата магазина (из Store Classification)",
+        "Полочная емкость типового оборудования (из Store Typization)",
+        "Категорийный классификатор (Tree Hierarchy)",
+        "Финансовые нормативы оборачиваемости и маржинальности формата"
+      ],
+      "analytical_methodology": "Нормативное матричное моделирование (Таблица: 'Формат x Категория x SKU Limit')",
+      "output_artifacts": "Нормативный справочник емкости: 'Формат У дома Эконом: 2500 SKU (Молоко: 120 SKU, Мясо: 85 SKU, Алкоголь: 310 SKU); Формат Супермаркет: 9000 SKU'",
+      "update_cadence": "1-2 раза в год при утверждении коммерческой политики или годового бюджета сети",
+      "primary_owner": [
+        "Коммерческий директор",
+        "Директор по категорийному менеджменту",
+        "Ассортиментный комитет сети"
+      ],
+      "boundary_distinctions": {
+        "vs_clustering": "Форматная матрица задает жесткий 'бюджет полочных мест' и лимиты SKU для формата, а кластеризация наполняет этот бюджет конкретными наименованиями под спрос.",
+        "vs_planogram": "Форматная матрица определяет перечень и лимиты SKU в базе данных, а планограмма размещает их на физических полках в сантиметрах.",
+        "vs_classification": "Классификация определяет сам формат как объект бизнеса, а форматная матрица — его товарное наполнение."
+      },
+      "common_confusions_and_anti_patterns": "Раздувать форматную матрицу виртуальными SKU, которые физически не помещаются на полки типовых магазинов формата.",
+      "search_keywords_ru": [
+        "форматная матрица",
+        "ассортиментная матрица формата",
+        "лимиты SKU по форматам",
+        "базовая матрица сети",
+        "квоты категорий в формате"
+      ],
+      "search_keywords_en": [
+        "format matrix",
+        "format assortment master",
+        "SKU caps by format",
+        "base format matrix",
+        "format category quotas"
+      ]
+    }
+  },
+  "signal_types": {
+    "problem_statement": {
+      "enum_key": "problem_statement",
+      "name_ru": "Заявление о проблеме / Болевая точка",
+      "name_en": "Problem Statement / Pain Point",
+      "definition": "Публичное или внутреннее признание ритейлером неэффективности, потерь, списаний, кадрового дефицита, падения маржи или технологического тупика в CatMan процессах.",
+      "required_evidence_attributes": [
+        "speaker_or_author",
+        "organization",
+        "specific_problem_description",
+        "operational_domain"
+      ],
+      "typical_sources": [
+        "Интервью топ-менеджеров",
+        "Выступления на отраслевых конференциях (Retail.ru, New Retail)",
+        "Экспертные колонки",
+        "Публикации в деловых СМИ"
+      ],
+      "reliability_weight": 0.85,
+      "maturity_stage_mapping": [
+        2,
+        3
+      ]
+    },
+    "strategic_priority": {
+      "enum_key": "strategic_priority",
+      "name_ru": "Стратегический приоритет / Декларация",
+      "name_en": "Strategic Priority / Executive Declaration",
+      "definition": "Официальное заявление руководства (CEO, CCO, Совет директоров) о включении CatMan-трансформации, RGM, AI-планограммирования или пересмотра матриц в ключевые цели компании.",
+      "required_evidence_attributes": [
+        "executive_name_and_role",
+        "strategy_period",
+        "target_strategic_pillar",
+        "public_disclosure_medium"
+      ],
+      "typical_sources": [
+        "Годовые отчеты ритейлера",
+        "Презентации Strategy Day / Capital Markets Day",
+        "Программные интервью CEO/CCO"
+      ],
+      "reliability_weight": 0.95,
+      "maturity_stage_mapping": [
+        3
+      ]
+    },
+    "interest": {
+      "enum_key": "interest",
+      "name_ru": "Интерес / Исследование темы",
+      "name_en": "Exploratory Interest / Market Study",
+      "definition": "Свидетельства изучения ритейлером новых подходов, посещения вендорских демо, участия в бенчмаркинговых сессиях или запроса информации без выделения бюджета.",
+      "required_evidence_attributes": [
+        "retailer_unit",
+        "topic_explored",
+        "interaction_context"
+      ],
+      "typical_sources": [
+        "Круглые столы",
+        "Упоминания в профильных сообществах",
+        "Отраслевые опросы"
+      ],
+      "reliability_weight": 0.7,
+      "maturity_stage_mapping": [
+        2
+      ]
+    },
+    "pilot": {
+      "enum_key": "pilot",
+      "name_ru": "Пилотный проект / Эксперимент",
+      "name_en": "Pilot Project / Controlled Experiment",
+      "definition": "Запуск тестирования CatMan-решения, софта, алгоритма ценообразования или формата выкладки на ограниченной выборке (выделенные магазины или 1-2 пилотные категории).",
+      "required_evidence_attributes": [
+        "pilot_scope (store count / category names)",
+        "technology_or_methodology",
+        "start_date_or_duration",
+        "responsible_lead"
+      ],
+      "typical_sources": [
+        "Пресс-релизы вендоров и ритейлеров",
+        "Кейс-стади на конференциях",
+        "Профильные статьи"
+      ],
+      "reliability_weight": 0.9,
+      "maturity_stage_mapping": [
+        4
+      ]
+    },
+    "implementation": {
+      "enum_key": "implementation",
+      "name_ru": "Внедрение / Развертывание",
+      "name_en": "Full Implementation / Production Deployment",
+      "definition": "Переход от пилота к регулярной эксплуатации CatMan-системы, методологии или организационного регламента в масштабе дивизиона, формата или всей сети.",
+      "required_evidence_attributes": [
+        "system_or_process_name",
+        "deployment_scope",
+        "integration_milestones",
+        "completion_date"
+      ],
+      "typical_sources": [
+        "Официальные пресс-релизы",
+        "ИТ-кейсы (CNews, TAdviser, Retail.ru)",
+        "Годовые отчеты"
+      ],
+      "reliability_weight": 0.95,
+      "maturity_stage_mapping": [
+        4,
+        5
+      ]
+    },
+    "scale": {
+      "enum_key": "scale",
+      "name_ru": "Масштабирование / Тиражирование",
+      "name_en": "Scale / Network-Wide Rollout",
+      "definition": "Тиражирование успешно внедренной CatMan-практики на новые географические регионы, смежные форматы сети или все товарные категории.",
+      "required_evidence_attributes": [
+        "initial_vs_expanded_scope",
+        "store_reach_numbers",
+        "scaling_timeframe"
+      ],
+      "typical_sources": [
+        "Квартальные операционные отчеты",
+        "Интервью директоров по ИТ / CatMan",
+        "Отраслевые конференции"
+      ],
+      "reliability_weight": 0.95,
+      "maturity_stage_mapping": [
+        5
+      ]
+    },
+    "result": {
+      "enum_key": "result",
+      "name_ru": "Результат / Оцифрованный KPI",
+      "name_en": "Quantified Business Result / KPI Impact",
+      "definition": "Публичное раскрытие конкретных бизнес-метрик по итогам CatMan-проекта (прирост маржи %, снижение списаний %, рост LFL-выручки, повышение OSA %, экономия часов).",
+      "required_evidence_attributes": [
+        "baseline_metric",
+        "achieved_metric",
+        "measurement_methodology",
+        "verification_source"
+      ],
+      "typical_sources": [
+        "Аудированные финансовые презентации",
+        "Совместные кейсы с вендорами",
+        "Конкурсные заявки (Retail Grand Prix и др.)"
+      ],
+      "reliability_weight": 0.9,
+      "maturity_stage_mapping": [
+        5
+      ]
+    },
+    "rfp": {
+      "enum_key": "rfp",
+      "name_ru": "Тендер / Закупка (RFP / RFI)",
+      "name_en": "RFP / Tender / Procurement Request",
+      "definition": "Официальная публикация закупки, запроса предложений (RFP) или информации (RFI) на приобретение CatMan ПО, систем автопланограммирования, аудита полок или консалтинга.",
+      "required_evidence_attributes": [
+        "tender_id_or_link",
+        "procurement_subject",
+        "budget_or_scope_spec",
+        "submission_deadline"
+      ],
+      "typical_sources": [
+        "Электронные торговые площадки (B2B-Center, Сбербанк-АСТ, Fabrikant, ЕИС Закупки)",
+        "Официальный сайт ритейлера (раздел Закупки)"
+      ],
+      "reliability_weight": 1.0,
+      "maturity_stage_mapping": [
+        4
+      ]
+    },
+    "vacancy": {
+      "enum_key": "vacancy",
+      "name_ru": "Вакансия / Наем экспертизы",
+      "name_en": "Job Vacancy / Talent Acquisition",
+      "definition": "Публикация вакансий, свидетельствующая о создании нового подразделения, закупке конкретного софта (требование знания JDA/Symphony/Python) или смене методологии.",
+      "required_evidence_attributes": [
+        "job_title",
+        "hiring_company",
+        "required_skills_and_tools",
+        "posting_date",
+        "job_description_snippet"
+      ],
+      "typical_sources": [
+        "HeadHunter (hh.ru)",
+        "SuperJob",
+        "LinkedIn",
+        "Хабр Карьера",
+        "Карьерные страницы ритейлеров"
+      ],
+      "reliability_weight": 0.95,
+      "maturity_stage_mapping": [
+        4
+      ]
+    },
+    "reorganization": {
+      "enum_key": "reorganization",
+      "name_ru": "Организационная трансформация",
+      "name_en": "Organizational Restructuring / Department Setup",
+      "definition": "Создание нового департамента CatMan/RGM, слияние коммерческой дирекции с маркетингом, разделение закупщиков и категорийщиков, смена C-level лидеров.",
+      "required_evidence_attributes": [
+        "new_structure_description",
+        "appointed_leaders",
+        "effective_date",
+        "structural_rationale"
+      ],
+      "typical_sources": [
+        "Пресс-релизы о назначениях",
+        "Деловые СМИ (Коммерсантъ, Ведомости, РБК)",
+        "Отраслевые порталы"
+      ],
+      "reliability_weight": 0.95,
+      "maturity_stage_mapping": [
+        4
+      ]
+    },
+    "partnership": {
+      "enum_key": "partnership",
+      "name_ru": "Партнерство / Альянс / JBP-соглашение",
+      "name_en": "Strategic Partnership / Alliance / JBP Contract",
+      "definition": "Заключение соглашения о стратегическом партнерстве с ИТ-вендором, аналитическим агентством (Nielsen, Infoline) или ключевым FMCG-производителем (JBP, Категорийный капитан).",
+      "required_evidence_attributes": [
+        "partner_names",
+        "scope_of_collaboration",
+        "signing_date",
+        "expected_deliverables"
+      ],
+      "typical_sources": [
+        "Совместные пресс-релизы",
+        "Публичные меморандумы",
+        "Стенограммы отраслевых форумов"
+      ],
+      "reliability_weight": 0.9,
+      "maturity_stage_mapping": [
+        4,
+        5
+      ]
+    },
+    "conference_topic": {
+      "enum_key": "conference_topic",
+      "name_ru": "Доклад на отраслевой конференции",
+      "name_en": "Conference Presentation / Industry Talk",
+      "definition": "Публичное выступление спикера от ритейлера на профессиональном отраслевом мероприятии с презентацией опыта, подходов или планов в области CatMan/Pricing/Supply Chain.",
+      "required_evidence_attributes": [
+        "conference_name",
+        "presentation_title",
+        "speaker_name_and_title",
+        "event_date",
+        "key_takeaways"
+      ],
+      "typical_sources": [
+        "Программы и видеозаписи Retail Tech, Недели Российского Ритейла, WorldFood, ECR Russia, Retail.ru"
+      ],
+      "reliability_weight": 0.85,
+      "maturity_stage_mapping": [
+        2,
+        3,
+        5
+      ]
+    },
+    "negative_signal": {
+      "enum_key": "negative_signal",
+      "name_ru": "Отрицательный сигнал / Откат / Отказ от технологии",
+      "name_en": "Negative Signal / Rollback / Project Failure",
+      "definition": "Свидетельства закрытия проекта, отказа от закупленного ПО, возврата к ручному управлению матрицами, конфликта с поставщиками или публичной критики концепции.",
+      "required_evidence_attributes": [
+        "cancelled_initiative",
+        "stated_reasons",
+        "abandoned_vendor_or_method",
+        "reporting_date"
+      ],
+      "typical_sources": [
+        "Судебные иски (Картотека арбитражных дел)",
+        "Инсайды и интервью",
+        "Аналитические обзоры неудач"
+      ],
+      "reliability_weight": 0.85,
+      "maturity_stage_mapping": [
+        1,
+        2,
+        4
+      ]
+    },
+    "market_context_only": {
+      "enum_key": "market_context_only",
+      "name_ru": "Общерыночный контекст / Макро-тренд",
+      "name_en": "Market Context / Macro Trend",
+      "definition": "Аналитический отчет, макроэкономический тренд или общеиндустриальный обзор без указания конкретных действий или обязательств конкретного ритейлера.",
+      "required_evidence_attributes": [
+        "author_or_agency",
+        "trend_description",
+        "covered_period",
+        "industry_segment"
+      ],
+      "typical_sources": [
+        "Отчеты Infoline, NielsenIQ, NTech, Ромир, АКORT",
+        "Макроэкономические обзоры"
+      ],
+      "reliability_weight": 0.7,
+      "maturity_stage_mapping": [
+        1
+      ]
+    }
+  },
+  "maturity_stages": {
+    "0": {
+      "stage_int": 0,
+      "label_en": "No Signal",
+      "label_ru": "Отсутствие сигнала / Не обнаружено",
+      "definition": "Полное отсутствие проверяемых публичных, профессиональных или корпоративных свидетельств активности ритейлера по данному CatMan-направлению за исследуемый период.",
+      "evidence_criteria": "Поисковые запросы по нормализованной онтологии не дают валидных результатов, либо найдены только нерелевантные упоминания.",
+      "corroboration_requirements": "Нулевая база фактов.",
+      "negative_filters": "Нельзя присваивать Stage 0, если найден хотя бы один валидный сигнал Stage 1-5."
+    },
+    "1": {
+      "stage_int": 1,
+      "label_en": "Industry Noise / Vendor Claim",
+      "label_ru": "Индустриальный шум / Заявления вендоров",
+      "definition": "Тема активно обсуждается в медиа, вендоры заявляют о тренде или консалтинговые агентства публикуют обзоры, но нет подтвержденных действий со стороны ритейлера.",
+      "evidence_criteria": "Статьи в профильных медиа, аналитические отчеты или маркетинговые материалы ИТ-поставщиков общего характера без указания выделенного спонсорства ритейлера.",
+      "corroboration_requirements": "1+ публикация в отраслевом источнике.",
+      "negative_filters": "Исключает прямые цитаты топ-менеджмента ритейлера или объявленные пилоты."
+    },
+    "2": {
+      "stage_int": 2,
+      "label_en": "Retailer Interest / Informal Discussion",
+      "label_ru": "Интерес ритейлера / Неформальная дискуссия",
+      "definition": "Представители ритейлера публично признают актуальность проблемы, участвуют в дискуссиях или запрашивают информацию, но формальные обязательства и бюджеты не зафиксированы.",
+      "evidence_criteria": "Цитаты категорийных менеджеров или руководителей направлений на круглых столах, обсуждение болей в интервью без анонса конкретных проектов.",
+      "corroboration_requirements": "Прямая речь или подтвержденное участие представителя ритейлера.",
+      "negative_filters": "Исключает официальные заявления C-level о включении в стратегию и запущенные тендеры."
+    },
+    "3": {
+      "stage_int": 3,
+      "label_en": "Executive Priority / Strategic Disclosure",
+      "label_ru": "Стратегический приоритет / Публичная декларация руководства",
+      "definition": "Официальное признание направления ключевым приоритетом развития на уровне Совета директоров, CEO или CCO, фиксация в годовых отчетах или стратегических программах.",
+      "evidence_criteria": "Включение в публичную стратегию компании, презентации на Днях инвестора, программные интервью первых лиц сети.",
+      "corroboration_requirements": "Официальный первоисточник (годовой отчет, стенограмма Capital Markets Day, официальный релиз компании).",
+      "negative_filters": "Декларация без выделения ресурсов еще не является Stage 4, но уже превышает Stage 2."
+    },
+    "4": {
+      "stage_int": 4,
+      "label_en": "Commitment (Pilot / RFP / Vacancy / Org Allocation)",
+      "label_ru": "Ресурсное обязательство (Пилот / Тендер / Вакансии / Бюджет)",
+      "definition": "Фактическое выделение материальных, кадровых или организационных ресурсов: проведение тендера (RFP), запуск пилотного проекта, наем профильной команды или структурная реорганизация.",
+      "evidence_criteria": "Номер опубликованного тендера на ЭТП, активные/архивные вакансии с указанием стека (JDA, Symphony, CatMan Lead), запущенный пилот на пуле магазинов.",
+      "corroboration_requirements": "Документальное подтверждение (ссылка на тендер, снимок вакансии hh.ru, подтвержденный релиз о пилоте).",
+      "negative_filters": "Исключает абстрактные намерения без подтвержденного выделения ресурсов."
+    },
+    "5": {
+      "stage_int": 5,
+      "label_en": "Scale / Quantified Outcome Disclosed",
+      "label_ru": "Масштабирование / Достигнутый оцифрованный результат",
+      "definition": "Полномасштабное промышленное использование CatMan-инструмента или методологии во всей сети (или ключевом формате) с раскрытием достигнутых бизнес-результатов и KPI.",
+      "evidence_criteria": "Публикация кейса с оцифрованными метриками (+X% маржи, -Y% списаний, +Z% OSA), тираж на 500+ магазинов, победа в отраслевых премиях с подтвержденными данными.",
+      "corroboration_requirements": "Подтверждение масштаба внедрения и оцифрованных KPI из независимых или официальных корпоративных источников.",
+      "negative_filters": "Пилоты с промежуточными результатами относятся к Stage 4."
+    }
+  },
+  "stakeholder_levels": {
+    "board": {
+      "code": "board",
+      "title_ru": "Совет директоров / Наблюдательный совет",
+      "title_en": "Board of Directors / Supervisory Board",
+      "typical_job_titles_ru": [
+        "Член Совета директоров",
+        "Председатель Наблюдательного совета",
+        "Акционер"
+      ],
+      "typical_job_titles_en": [
+        "Board Member",
+        "Chairman of the Board",
+        "Non-Executive Director"
+      ],
+      "decision_scope": "Утверждение долгосрочной стратегии, утверждение бюджетов M&A и капитальных затрат (CAPEX)",
+      "credibility_weight": 5
+    },
+    "c_level": {
+      "code": "c_level",
+      "title_ru": "Высшее руководство сети (C-Level)",
+      "title_en": "Executive Leadership (C-Level)",
+      "typical_job_titles_ru": [
+        "Генеральный директор (CEO)",
+        "Коммерческий директор (CCO)",
+        "Операционный директор (COO)",
+        "Директор по цифровой трансформации / ИТ (CDO/CIO)",
+        "Финансовый директор (CFO)"
+      ],
+      "typical_job_titles_en": [
+        "Chief Executive Officer",
+        "Chief Commercial Officer",
+        "Chief Operating Officer",
+        "Chief Digital/Information Officer",
+        "Chief Financial Officer"
+      ],
+      "decision_scope": "Стратегические программы сети, трансформация бизнес-модели, утверждение коммерческой политики, утверждение крупных ИТ-контрактов",
+      "credibility_weight": 5
+    },
+    "c_minus_1": {
+      "code": "c_minus_1",
+      "title_ru": "Руководители департаментов (C-1)",
+      "title_en": "Vice Presidents / Department Heads (C-1)",
+      "typical_job_titles_ru": [
+        "Директор по маркетингу (CMO)",
+        "Директор по цепочкам поставок (CSCO)",
+        "Директор формата",
+        "Директор по развитию розничной сети",
+        "Директор по управлению данными"
+      ],
+      "typical_job_titles_en": [
+        "VP of Marketing",
+        "VP of Supply Chain",
+        "Format General Manager",
+        "Head of Business Units",
+        "Head of Data & AI"
+      ],
+      "decision_scope": "Формирование политик дивизионов, распределение OPEX, запуск межфункциональных проектов",
+      "credibility_weight": 4
+    },
+    "catman_director": {
+      "code": "catman_director",
+      "title_ru": "Директор по категорийному менеджменту / Ассортименту",
+      "title_en": "Head of Category Management / Assortment Director",
+      "typical_job_titles_ru": [
+        "Директор по категорийному менеджменту",
+        "Руководитель департамента управления ассортиментом и ценообразованием",
+        "Начальник управления планограммирования и мерчандайзинга",
+        "CatMan Lead"
+      ],
+      "typical_job_titles_en": [
+        "Director of Category Management",
+        "Head of Assortment & Space Planning",
+        "Category Management Lead",
+        "RGM Director"
+      ],
+      "decision_scope": "Методология CatMan, утверждение правил кластеризации, утверждение графиков пересмотра матриц, выбор профильного CatMan ПО",
+      "credibility_weight": 5
+    },
+    "category_manager": {
+      "code": "category_manager",
+      "title_ru": "Категорийный менеджер / Ведущий байер",
+      "title_en": "Category Manager / Lead Buyer",
+      "typical_job_titles_ru": [
+        "Категорийный менеджер",
+        "Старший закупщик",
+        "Менеджер товарной категории",
+        "Байер направления"
+      ],
+      "typical_job_titles_en": [
+        "Category Manager",
+        "Senior Buyer",
+        "Merchandise Manager",
+        "Portfolio Lead"
+      ],
+      "decision_scope": "Управление категорией (P&L категории), ротация SKU, проведение переговоров с поставщиками, настройка промо и цен",
+      "credibility_weight": 4
+    },
+    "pm": {
+      "code": "pm",
+      "title_ru": "Продуктовый / Проектный менеджер (CatMan / Digital)",
+      "title_en": "Product / Project Manager (CatMan / Digital)",
+      "typical_job_titles_ru": [
+        "Руководитель проекта CatMan",
+        "Product Owner (Автозаказ / Планограммы / Прайсинг)",
+        "Менеджер по цифровой трансформации коммерции"
+      ],
+      "typical_job_titles_en": [
+        "CatMan Project Manager",
+        "Product Owner Space & Assortment",
+        "Commercial Transformation PM"
+      ],
+      "decision_scope": "Операционное ведение ИТ-внедрений, формулирование ТЗ, контроль сроков пилотов и интеграций",
+      "credibility_weight": 4
+    },
+    "it_data": {
+      "code": "it_data",
+      "title_ru": "ИТ и Data Science специалисты",
+      "title_en": "IT Specialists, Data Scientists & Architects",
+      "typical_job_titles_ru": [
+        "Lead Data Scientist",
+        "Архитектор решений",
+        "Руководитель группы аналитики данных",
+        "Инженер данных",
+        "ИТ-бизнес-партнер коммерции"
+      ],
+      "typical_job_titles_en": [
+        "Lead Data Scientist",
+        "Solution Architect",
+        "Head of Advanced Analytics",
+        "Data Engineer",
+        "Commercial IT Partner"
+      ],
+      "decision_scope": "Разработка и поддержка ML-моделей ценообразования/спроса, интеграция данных, ИТ-инфраструктура",
+      "credibility_weight": 4
+    },
+    "supply_chain": {
+      "code": "supply_chain",
+      "title_ru": "Служба логистики и цепей поставок",
+      "title_en": "Supply Chain & Logistics Management",
+      "typical_job_titles_ru": [
+        "Директор по логистике",
+        "Руководитель службы пополнения запасов",
+        "Менеджер по управлению товарными запасами на РЦ/магазинах"
+      ],
+      "typical_job_titles_en": [
+        "Supply Chain Director",
+        "Inventory Replenishment Manager",
+        "Logistics Operations Lead"
+      ],
+      "decision_scope": "Параметры автозаказа, графики поставок на РЦ/магазины, нормативы страховых запасов",
+      "credibility_weight": 4
+    },
+    "operations": {
+      "code": "operations",
+      "title_ru": "Операционная розничная дирекция",
+      "title_en": "Retail Store Operations",
+      "typical_job_titles_ru": [
+        "Директор розничной сети",
+        "Региональный управляющий",
+        "Директор магазина / Супервайзер куста"
+      ],
+      "typical_job_titles_en": [
+        "Retail Operations Director",
+        "Regional Area Manager",
+        "Store Manager",
+        "Store Supervisor"
+      ],
+      "decision_scope": "Физическое исполнение выкладки на полках, аудит планограмм в залах, списания на местах",
+      "credibility_weight": 3
+    },
+    "vendor": {
+      "code": "vendor",
+      "title_ru": "Производитель FMCG / ИТ-поставщик / Консультант",
+      "title_en": "FMCG Manufacturer / Technology Vendor / Consultant",
+      "typical_job_titles_ru": [
+        "Национальный менеджер по работе с ключевыми клиентами (KAM)",
+        "CatMan менеджер производителя",
+        "Директор по продажам ИТ-вендора",
+        "Консультант по ритейлу"
+      ],
+      "typical_job_titles_en": [
+        "National Key Account Manager",
+        "Vendor CatMan Manager",
+        "Software Sales Director",
+        "Retail Practice Consultant"
+      ],
+      "decision_scope": "Предложение совместных планов (JBP), поставка софта/услуг, экспертная аналитика рынка",
+      "credibility_weight": 2
+    },
+    "media": {
+      "code": "media",
+      "title_ru": "Отраслевые СМИ и независимые аналитики",
+      "title_en": "Industry Media, Journalists & Market Analysts",
+      "typical_job_titles_ru": [
+        "Обозреватель ритейла",
+        "Главный редактор портала",
+        "Аналитик исследовательского агентства (Infoline, RBC, Shopper's)"
+      ],
+      "typical_job_titles_en": [
+        "Retail Journalist",
+        "Industry Editor",
+        "Research Analyst"
+      ],
+      "decision_scope": "Публикация новостей, проведение рыночных исследований, организация конференций",
+      "credibility_weight": 2
+    },
+    "unknown": {
+      "code": "unknown",
+      "title_ru": "Неопределенный / Анонимный источник",
+      "title_en": "Unknown / Unspecified Stakeholder",
+      "typical_job_titles_ru": [
+        "Анонимный источник",
+        "Представитель рынка",
+        "Автор поста в Telegram-канале"
+      ],
+      "typical_job_titles_en": [
+        "Anonymous Source",
+        "Market Insider",
+        "Unverified Author"
+      ],
+      "decision_scope": "Нет формальных полномочий",
+      "credibility_weight": 1
+    }
+  },
+  "epistemic_claim_classes": {
+    "F": {
+      "code": "F",
+      "name": "Fact",
+      "name_ru": "Факт",
+      "definition": "Непосредственно наблюдаемое, верифицированное первичное событие, подтвержденное официальными документами, юридическими реестрами, аудированными отчетами или открытыми тендерами.",
+      "operational_rule": "Должно содержать однозначный идентификатор (номер закупки, строка в годовом отчете, запись ЕГРЮЛ). Не зависит от чьего-либо мнения.",
+      "verification_standard": "100% документальная проверяемость по первоисточнику.",
+      "citation_requirement": "Прямая ссылка на официальный документ / реестр / отчет.",
+      "downstream_handling": "Принимается как безусловная истина в аналитических выводах."
+    },
+    "R": {
+      "code": "R",
+      "name": "Reported Claim",
+      "name_ru": "Заявление / Сообщение источника",
+      "definition": "Утверждение, озвученное поименованным спикером или опубликованное СМИ. Достоверно то, что утверждение БЫЛО СДЕЛАНО, но само содержание требует проверки.",
+      "operational_rule": "Атрибутируется конкретному автору/СМИ с точной датой и цитатой. Содержит маркеры 'заявил', 'сообщил', 'по словам'.",
+      "verification_standard": "Подтверждение факта публикации/выступления спикера.",
+      "citation_requirement": "Указание спикера, его должности, названия СМИ и даты публикации.",
+      "downstream_handling": "Используется для оценки зрелости и намерений, но не приравнивается к завершенному факту без триангуляции."
+    },
+    "I": {
+      "code": "I",
+      "name": "Inference",
+      "name_ru": "Логический вывод / Дедукция",
+      "definition": "Аналитическое заключение, полученное путем сопоставления двух или более проверенных фактов (F) или верифицированных заявлений (R).",
+      "operational_rule": "Обязательно содержит прозрачную логическую цепочку (Премиса 1 + Премиса 2 -> Вывод).",
+      "verification_standard": "Логическая строгость вывода и валидность исходных премис.",
+      "citation_requirement": "Ссылки на ID всех фактов/заявлений, на которых базируется вывод.",
+      "downstream_handling": "Подлежит валидации Red Team и перепроверке на предмет когнитивных искажений."
+    },
+    "H": {
+      "code": "H",
+      "name": "Hypothesis",
+      "name_ru": "Гипотеза",
+      "definition": "Правдоподобное предположение, объясняющее наблюдаемые разрозненные сигналы, требующее дополнительного сбора свидетельств для подтверждения или опровержения.",
+      "operational_rule": "Формулируется как фальсифицируемое утверждение с указанием критериев проверки.",
+      "verification_standard": "Проверяемость через дополнительные поисковые запросы или альтернативные источники.",
+      "citation_requirement": "Указание триггерных сигналов, породивших гипотезу.",
+      "downstream_handling": "Направляется в бэклог для направленного поиска evidence агентами-коллекторами."
+    },
+    "A": {
+      "code": "A",
+      "name": "Assumption",
+      "name_ru": "Допущение",
+      "definition": "Явное рабочее соглашение или модельная предпосылка, принимаемая без доказательств для преодоления неполноты данных в рамках проекта.",
+      "operational_rule": "Должно быть эксплицитно задекларировано в документации проекта с указанием границ применимости.",
+      "verification_standard": "Согласованность с общей политикой исследования.",
+      "citation_requirement": "Ссылка на пункт методологии или допущение Мастер-Брифа.",
+      "downstream_handling": "В случае поступления опровергающих фактов допущение немедленно аннулируется."
+    }
+  },
+  "synonym_maps": {
+    "acronyms": {
+      "CDT": {
+        "ru": "Дерево принятия решений (ДПР)",
+        "en": "Customer Decision Tree",
+        "domain": "strategy_and_shopper"
+      },
+      "CVM": {
+        "ru": "Управление ценностью клиента",
+        "en": "Customer Value Management",
+        "domain": "strategy_and_shopper"
+      },
+      "KVI": {
+        "ru": "Ключевые индикаторы цен / товары восприятия",
+        "en": "Key Value Items",
+        "domain": "pricing_and_promo_rgm"
+      },
+      "RGM": {
+        "ru": "Управление ростом выручки / доходностью",
+        "en": "Revenue Growth Management",
+        "domain": "pricing_and_promo_rgm"
+      },
+      "OSA": {
+        "ru": "Доступность товара на полке",
+        "en": "On-Shelf Availability",
+        "domain": "fresh_and_inventory"
+      },
+      "OOS": {
+        "ru": "Отсутствие товара на полке / дефицит",
+        "en": "Out of Stock",
+        "domain": "fresh_and_inventory"
+      },
+      "DSD": {
+        "ru": "Прямая доставка в магазин",
+        "en": "Direct Store Delivery",
+        "domain": "fresh_and_inventory"
+      },
+      "PL": {
+        "ru": "Собственная торговая марка (СТМ)",
+        "en": "Private Label",
+        "domain": "assortment"
+      },
+      "СТМ": {
+        "ru": "Собственная торговая марка",
+        "en": "Private Label",
+        "domain": "assortment"
+      },
+      "NPD": {
+        "ru": "Разработка / ввод новинок",
+        "en": "New Product Development",
+        "domain": "assortment"
+      },
+      "JBP": {
+        "ru": "Совместное бизнес-планирование",
+        "en": "Joint Business Planning",
+        "domain": "data_and_automation"
+      },
+      "MDM": {
+        "ru": "Управление мастер-данными",
+        "en": "Master Data Management",
+        "domain": "data_and_automation"
+      },
+      "ESL": {
+        "ru": "Электронные ценники",
+        "en": "Electronic Shelf Labels",
+        "domain": "data_and_automation"
+      },
+      "LFL": {
+        "ru": "Сопоставимые продажи (L4L / LFL)",
+        "en": "Like-for-Like Sales",
+        "domain": "pricing_and_promo_rgm"
+      },
+      "GMV": {
+        "ru": "Совокупный объем оборота товаров",
+        "en": "Gross Merchandise Value",
+        "domain": "strategy_and_shopper"
+      },
+      "PED": {
+        "ru": "Ценовая эластичность спроса",
+        "en": "Price Elasticity of Demand",
+        "domain": "pricing_and_promo_rgm"
+      },
+      "DTI": {
+        "ru": "Индекс перетекания спроса",
+        "en": "Demand Transference Index",
+        "domain": "assortment"
+      }
+    },
+    "retailer_entities": {
+      "X5_Group": {
+        "canonical_id": "x5_group",
+        "primary_name": "X5 Group",
+        "legal_entities": [
+          "ПАО «Корпоративный центр Икс 5»",
+          "ООО «Агроторг»",
+          "АО «Торговый дом «ПЕРЕКРЕСТОК»",
+          "ООО «Корпоративный центр ИКС 5»"
+        ],
+        "operating_formats": [
+          "Пятерочка",
+          "Перекресток",
+          "Чижик",
+          "Vprok.ru",
+          "Красный Яр",
+          "Слата"
+        ],
+        "aliases_ru": [
+          "Икс 5",
+          "Х5",
+          "Пятерочка",
+          "Перекресток",
+          "Чижик",
+          "Впрок"
+        ],
+        "aliases_en": [
+          "X5 Group",
+          "Pyaterochka",
+          "Perekrestok",
+          "Chizhik",
+          "Vprok"
+        ]
+      },
+      "Magnit": {
+        "canonical_id": "magnit",
+        "primary_name": "ПАО «Магнит»",
+        "legal_entities": [
+          "ПАО «Магнит»",
+          "АО «Тандер»",
+          "ООО «Дикси Юг»",
+          "ООО «Тамерлан»"
+        ],
+        "operating_formats": [
+          "Магнит у дома",
+          "Магнит Семейный",
+          "Магнит Экстра",
+          "Магнит Косметик",
+          "Дикси",
+          "Первый выбор (B1)",
+          "Магнит Аптека"
+        ],
+        "aliases_ru": [
+          "Магнит",
+          "Тандер",
+          "Дикси",
+          "Б1",
+          "Первый выбор",
+          "Магнит Косметик"
+        ],
+        "aliases_en": [
+          "Magnit",
+          "Tander",
+          "Dixy",
+          "B1",
+          "First Choice"
+        ]
+      },
+      "Lenta": {
+        "canonical_id": "lenta",
+        "primary_name": "МКПАО «Лента»",
+        "legal_entities": [
+          "МКПАО «Лента»",
+          "ООО «Лента»",
+          "ООО «Элемент-Трейд» (Монетка)",
+          "ООО «Билла»"
+        ],
+        "operating_formats": [
+          "Гипер Лента",
+          "Супер Лента",
+          "Мини Лента",
+          "Монетка",
+          "Утконос Онлайн"
+        ],
+        "aliases_ru": [
+          "Лента",
+          "Монетка",
+          "Гипер Лента",
+          "Супер Лента",
+          "Мини Лента"
+        ],
+        "aliases_en": [
+          "Lenta",
+          "Monetka",
+          "Hyper Lenta",
+          "Super Lenta"
+        ]
+      },
+      "Auchan": {
+        "canonical_id": "auchan",
+        "primary_name": "Ашан Ритейл Россия",
+        "legal_entities": [
+          "ООО «Ашан»",
+          "ООО «Атак»"
+        ],
+        "operating_formats": [
+          "Ашан",
+          "Ашан Сити",
+          "Атак",
+          "Мой Ашан"
+        ],
+        "aliases_ru": [
+          "Ашан",
+          "Атак",
+          "Мой Ашан"
+        ],
+        "aliases_en": [
+          "Auchan",
+          "Atak",
+          "Auchan Retail"
+        ]
+      },
+      "Mercury_Retail_Group": {
+        "canonical_id": "mercury_retail_group",
+        "primary_name": "Mercury Retail Group",
+        "legal_entities": [
+          "ООО «Альфа-М»",
+          "ООО «Ритейл Альянс»",
+          "ООО «Альбион-2002»"
+        ],
+        "operating_formats": [
+          "Красное & Белое",
+          "Бристоль"
+        ],
+        "aliases_ru": [
+          "Красное и Белое",
+          "КБ",
+          "К&Б",
+          "Бристоль",
+          "Меркурий Ритейл"
+        ],
+        "aliases_en": [
+          "Krasnoe & Beloe",
+          "KB",
+          "Bristol",
+          "Mercury Retail"
+        ]
+      },
+      "Metro_CC": {
+        "canonical_id": "metro_cc",
+        "primary_name": "МЕТРО Кэш энд Керри",
+        "legal_entities": [
+          "ООО «МЕТРО Кэш энд Керри»"
+        ],
+        "operating_formats": [
+          "Metro Cash & Carry",
+          "Фасоль"
+        ],
+        "aliases_ru": [
+          "Метро",
+          "МЕТРО Кэш энд Керри",
+          "Фасоль"
+        ],
+        "aliases_en": [
+          "Metro Cash and Carry",
+          "Metro CC",
+          "Fasol"
+        ]
+      },
+      "Okey_Group": {
+        "canonical_id": "okey_group",
+        "primary_name": "ГК «О'КЕЙ»",
+        "legal_entities": [
+          "ООО «О'КЕЙ»",
+          "ООО «Фреш Маркет»"
+        ],
+        "operating_formats": [
+          "Гипермаркет О'КЕЙ",
+          "Дискаунтер ДА!"
+        ],
+        "aliases_ru": [
+          "ОКЕЙ",
+          "О'КЕЙ",
+          "Да!",
+          "Фреш Маркет"
+        ],
+        "aliases_en": [
+          "O'Key Group",
+          "O'KEY",
+          "DA!"
+        ]
+      },
+      "VkusVill": {
+        "canonical_id": "vkusvill",
+        "primary_name": "АО «Вкусвилл»",
+        "legal_entities": [
+          "АО «Вкусвилл»",
+          "ООО «Вкусвилл Праздник»"
+        ],
+        "operating_formats": [
+          "ВкусВилл",
+          "ВкусВилл Айс",
+          "Даркстор ВкусВилл",
+          "ВкусВилл Бизнес"
+        ],
+        "aliases_ru": [
+          "ВкусВилл",
+          "Избёнка"
+        ],
+        "aliases_en": [
+          "VkusVill",
+          "Izbenka"
+        ]
+      },
+      "Samokat": {
+        "canonical_id": "samokat",
+        "primary_name": "Самокат (ООО «Умный ритейл»)",
+        "legal_entities": [
+          "ООО «Умный ритейл»",
+          "ООО «Умное пространство»"
+        ],
+        "operating_formats": [
+          "Даркстор Самокат"
+        ],
+        "aliases_ru": [
+          "Самокат",
+          "Умный ритейл"
+        ],
+        "aliases_en": [
+          "Samokat",
+          "Smart Retail"
+        ]
+      },
+      "Svetofor": {
+        "canonical_id": "svetofor",
+        "primary_name": "ГК «Светофор» / Торгсервис",
+        "legal_entities": [
+          "ООО «Торгсервис»",
+          "ООО «Торгсервис 50»",
+          "ООО «Торгсервис 77»"
+        ],
+        "operating_formats": [
+          "Светофор",
+          "Маяк"
+        ],
+        "aliases_ru": [
+          "Светофор",
+          "Маяк",
+          "Торгсервис"
+        ],
+        "aliases_en": [
+          "Svetofor",
+          "Mayak",
+          "Torgservis"
+        ]
+      }
+    },
+    "search_query_templates": {
+      "store_clustering_ru": "(\"кластеризация магазинов\" OR \"кластеризация торговых точек\" OR \"категорийные кластеры\" OR \"data-driven кластеризация\") AND (ритейл OR ассортимент OR планограмма OR матрица)",
+      "store_clustering_en": "(\"store clustering\" OR \"data-driven clustering\" OR \"store segmentation\") AND (\"retail\" OR \"category management\" OR \"assortment\")",
+      "micro_clustering_ru": "(\"микрокластеризация\" OR \"микрокластеры\" OR \"локальные ассортиментные модули\" OR \"ультралокальный спрос\")",
+      "planogram_automation_ru": "(\"автопланограммирование\" OR \"автоматизация выкладки\" OR \"распознавание полок\" OR \"компьютерное зрение\") AND (\"планограмма\" OR \"мерчандайзинг\")",
+      "pricing_rgm_ru": "(\"динамическое ценообразование\" OR \"RGM\" OR \"эластичность спроса\" OR \"оптимизация промо\" OR \"KVI\") AND (\"ритейл\" OR \"X5\" OR \"Магнит\" OR \"Лента\")",
+      "fresh_waste_ru": "(\"списания скоропорта\" OR \"управление потерями\" OR \"автозаказ фреш\" OR \"OSA на полке\") AND (\"ритейл\" OR \"супермаркет\")",
+      "catman_rfp_ru": "(\"категорийный менеджмент\" OR \"планограммирование\" OR \"управление ассортиментом\" OR \"JDA\" OR \"Symphony\") AND (\"тендер\" OR \"закупка\" OR \"RFP\" OR \"запрос предложений\")",
+      "catman_vacancies_ru": "(\"категорийный менеджер\" OR \"руководитель CatMan\" OR \"аналитик ассортимента\" OR \"планограммист\") AND (\"hh.ru\" OR \"вакансия\")"
+    }
+  }
+}

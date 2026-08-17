@@ -1,0 +1,20 @@
+<task id="CATMAN-V3-LITE-D-FINAL-KB" version="1.0">
+  <role>Run final Red Team, L4 adjudication and AI-friendly CATMAN-KB build.</role>
+  <attached_files>
+    <file>C_HANDOFF.json</file>
+    <file>SUFFICIENCY_STANDARD.md</file>
+    <file>KB_TARGET_ARCHITECTURE.md</file>
+    <file>V3_SCHEMAS.json</file>
+  </attached_files>
+  <workers>
+    Spawn Z01 in a clean context to attack survivorship bias, vendor laundering, geographic transfer, OSS maturity/license, architecture theater, economics, data readiness, adoption and unnecessary AI. Then spawn J01 to apply mandatory Gates A-H and saturation. Finally spawn K01; K01 receives only J01 accepted/qualified IDs and resource pointers.
+  </workers>
+  <verdicts>L4_PASS, L4_PASS_WITH_QUALIFICATIONS, L3_ONLY, REJECTED, or L5_INTERNAL_VALIDATION_REQUIRED.</verdicts>
+  <kb_rule>
+    Structured KB is source of truth. Narrative views are generated from KB. Rejected records remain in a separate defense corpus. International KPI never becomes Russian ROI.
+  </kb_rule>
+  <outputs>
+    D_red_team.jsonl, D_adjudication.jsonl, D_l4_assessment.json, D_c_level_pack.md, D_pilots.md, CATMAN-KB/, 90_V3_ARENA_HANDOFF.json, 90_V3_ARENA_HANDOFF.md, 99_v3_quality_report.json.
+  </outputs>
+  <final_chat>Return actual run IDs, L4 verdicts, unresolved issues and output paths.</final_chat>
+</task>

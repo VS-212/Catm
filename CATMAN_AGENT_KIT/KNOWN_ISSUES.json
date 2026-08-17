@@ -1,0 +1,281 @@
+{
+  "status": "OPEN_FORENSIC_QUEUE",
+  "evidence_count": 196,
+  "atlas_claimed_evidence_count": 227,
+  "corpus_url_mismatch_count": 49,
+  "corpus_url_mismatches": [
+    {
+      "corpus_id": "V2-CORP-0201",
+      "registry_url": "https://www.retail.ru/news/lenta-povysila-effektivnost-vykladki-v-gipermarketakh-blagodarya-perekhodu-na-skh-7-maya-2024-240507/",
+      "index_url": "https://www.retail.ru/cases/kak-lenta-uprostila-protsess-vykladki-tovarov-i-povysila-effektivnost-gipermarketov/"
+    },
+    {
+      "corpus_id": "V2-CORP-0202",
+      "registry_url": "https://www.retail.ru/news/lenta-uskorila-sborku-zakazov-s-pomoshchyu-navigatsii-v-gipermarketakh-13-maya-2024-240609/",
+      "index_url": "https://www.retail.ru/cases/kak-giper-lenta-uvelichivaet-prodazhi-s-pomoshchyu-tsifrovogo-upravleniya-merchandayzingom/"
+    },
+    {
+      "corpus_id": "V2-CORP-0203",
+      "registry_url": "https://www.retail.ru/news/torgovaya-set-pyatyerochka-nachala-testirovat-sistemu-kompyuternogo-zreniya-v-10-28-maya-2026-278282/",
+      "index_url": "https://www.cnews.ru/news/line/2026-05-28_pyaterochka_zapustila_ii-kontrol"
+    },
+    {
+      "corpus_id": "V2-CORP-0204",
+      "registry_url": "https://www.retail.ru/news/set-pyatyerochka-i-kompaniya-novabev-group-vnedrili-srp-koroba-dlya-postavok-alk-28-oktyabrya-2025-270721/",
+      "index_url": "https://www.retail.ru/cases/kak-perekrestok-vnedryaet-individualnye-planogrammy/"
+    },
+    {
+      "corpus_id": "V2-CORP-0205",
+      "registry_url": "https://www.retail.ru/articles/klyuchevye-vyzovy-merchandayzinga-2026-chem-otvetit-na-sokrashchenie-polki-i-polevogo-personala/",
+      "index_url": "https://www.retail.ru/news/magnit-predstavil-novyy-kontsept-magazina-u-doma-24-dekabrya-2025-260870/"
+    },
+    {
+      "corpus_id": "V2-CORP-0206",
+      "registry_url": "https://www.retail.ru/articles/merchandayzing-po-trebovaniyu-kak-prodavat-bolshe-v-2025-godu/",
+      "index_url": "https://www.retail.ru/cases/kak-magnit-kontroliruet-vykladku-s-pomoshchyu-image-recognition/"
+    },
+    {
+      "corpus_id": "V2-CORP-0207",
+      "registry_url": "https://www.retail.ru/interviews/aleksandr-sulzhits-4rm-systems-iskusstvennyy-intellekt-prodolzhit-transformirovat-riteyl-delaya-ego-/",
+      "index_url": "https://www.retail.ru/cases/kak-ashan-menyaet-gipermarkety-i-povyshaet-effektivnost-prostranstva/"
+    },
+    {
+      "corpus_id": "V2-CORP-0208",
+      "registry_url": "https://www.retail.ru/interviews/evgeniy-dutov-diksi-v-formate-u-doma-servis-dolzhen-sootvetstvovat-zaprosam-pokupateley/",
+      "index_url": "https://www.retail.ru/interviews/asya-balabay-ashan-riteyl-rossiya-my-ne-sobiraemsya-ukhodit-s-rossiyskogo-rynka/"
+    },
+    {
+      "corpus_id": "V2-CORP-0209",
+      "registry_url": "https://www.retail.ru/photoreports/ugodit-pokupatelyu-i-ostatsya-diskaunterom-nestandartnye-resheniya-seti-skidkino-iz-penzy/",
+      "index_url": "https://www.retail.ru/news/lenta-vnedrila-ii-dlya-raspoznavaniya-tovarov-na-vesakh-samoobsluzhivaniya-4-maya-2026-277560/"
+    },
+    {
+      "corpus_id": "V2-CORP-0210",
+      "registry_url": "https://www.retail.ru/news/vladeltsy-svetofora-otkryli-v-peterburge-set-zolotoy-klyuchik-7-avgusta-2026-280786/",
+      "index_url": "https://www.retail.ru/news/lenta-prodolzhit-sokrashchat-assortiment-i-ploshchadi-magazinov-26-marta-2026-276120/"
+    },
+    {
+      "corpus_id": "V2-CORP-0211",
+      "registry_url": "https://www.retail.ru/news/lenta-trudoustroit-robotov-uborshchikov-v-novye-supermarkety-8-maya-2024-240565/",
+      "index_url": "https://www.retail.ru/news/perekrestok-otkryl-500-kafe-select-28-maya-2026-278290/"
+    },
+    {
+      "corpus_id": "V2-CORP-0212",
+      "registry_url": "https://www.retail.ru/tovar_na_polku/sokrashchenie-portfeley-kross-formatnost-bystrye-zapuski-kak-riteylery-rabotayut-s-stm-v-2026-godu/",
+      "index_url": "https://www.retail.ru/articles/kak-x5-razvivaet-franshizu-okolo-i-zachem-riteyleru-malye-formaty/"
+    },
+    {
+      "corpus_id": "V2-CORP-0213",
+      "registry_url": "https://www.retail.ru/articles/kassy-samoobsluzhivaniya-opyt-vnedreniya-tekhnologii-effektivnost/",
+      "index_url": "https://www.retail.ru/news/krasnoe-i-beloe-otkrylo-955-magazinov-v-2025-godu-11-fevralya-2026-274790/"
+    },
+    {
+      "corpus_id": "V2-CORP-0214",
+      "registry_url": "https://www.retail.ru/cases/sobiraem-do-500-000-zakazov-v-den-cherez-smartfon-kak-vkusvill-ispolzuet-mobilnoe-prilozhenie-i-robo/",
+      "index_url": "https://market-da.ru/suppliers/packaging-standards/"
+    },
+    {
+      "corpus_id": "V2-CORP-0215",
+      "registry_url": "https://www.retail.ru/news/monetka-zapustila-pilotnyy-proekt-po-aromatizatsii-magazinov-v-ekaterinburge-7-avgusta-2026-280778/",
+      "index_url": "https://www.vedomosti.ru/business/articles/2026/07/03/1121890-x5-group-uvelichit-kolichestvo-magazinov-na-tret"
+    },
+    {
+      "corpus_id": "V2-CORP-0401",
+      "registry_url": "https://www.tadviser.ru/index.php/%D0%A1%D1%82%D0%B0%D1%82%D1%8C%D1%8F:%D0%A1%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D1%8B_%D1%83%D0%BF%D1%80%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F_%D1%86%D0%B5%D0%BF%D0%BE%D1%87%D0%BA%D0%B0%D0%BC%D0%B8_%D0%BF%D0%BE%D1%81%D1%82%D0%B0%D0%B2%D0%BE%D0%BA_(SCM)_%D0%B2_%D0%A0%D0%BE%D1%81%D1%81%D0%B8%D0%B8",
+      "index_url": "https://www.tadviser.ru/index.php/%D0%A1%D1%82%D0%B0%D1%82%D1%8C%D1%8F:%D0%A1%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D1%8B_%D1%83%D0%BF%D1%80%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F_%D1%86%D0%B5%D0%BF%D0%BE%D1%87%D0%BA%D0%B0%D0%BC%D0%B8_%D0%BF%D0%BE%D1%81%D1%82%D0%B0%D0%B2%D0%BE%D0%BA_(SCM"
+    },
+    {
+      "corpus_id": "V2-CORP-0404",
+      "registry_url": "https://www.tadviser.ru/index.php/%D0%9F%D1%80%D0%BE%D0%B5%D0%BA%D1%82:%D0%9B%D0%B5%D0%BD%D1%82%D0%B0_%D0%A1%D0%B5%D1%82%D1%8C_%D1%82%D0%BE%D1%80%D0%B3%D0%BE%D0%B2%D0%BB%D0%B8_(BPMSoft_SRM_Norbit)",
+      "index_url": "https://www.tadviser.ru/index.php/%D0%9F%D1%80%D0%BE%D0%B5%D0%BA%D1%82:%D0%9B%D0%B5%D0%BD%D1%82%D0%B0_%D0%A1%D0%B5%D1%82%D1%8C_%D1%82%D0%BE%D1%80%D0%B3%D0%BE%D0%B2%D0%BB%D0%B8_(BPMSoft_SRM_Norbit"
+    },
+    {
+      "corpus_id": "V2-CORP-0405",
+      "registry_url": "https://www.tadviser.ru/index.php/%D0%9F%D1%80%D0%BE%D0%B5%D0%BA%D1%82:%D0%9C%D0%B0%D0%B3%D0%BD%D0%B8%D1%82_(F%26R_%D0%A1%D0%BE%D0%B1%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D0%B0%D1%8F_%D1%80%D0%B0%D0%B7%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BA%D0%B0)",
+      "index_url": "https://www.tadviser.ru/index.php/%D0%9F%D1%80%D0%BE%D0%B5%D0%BA%D1%82:%D0%9C%D0%B0%D0%B3%D0%BD%D0%B8%D1%82_(F%26R_%D0%A1%D0%BE%D0%B1%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D0%B0%D1%8F_%D1%80%D0%B0%D0%B7%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BA%D0%B0"
+    },
+    {
+      "corpus_id": "V2-CORP-0406",
+      "registry_url": "https://www.tadviser.ru/index.php/%D0%9F%D1%80%D0%BE%D0%B5%D0%BA%D1%82:%D0%92%D0%BA%D1%83%D1%81%D0%92%D0%B8%D0%BB%D0%BB_(%D0%93%D0%B5%D0%BD%D0%B5%D1%80%D0%B0%D1%82%D0%B8%D0%B2%D0%BD%D1%8B%D0%B9_%D0%98%D0%98_%D0%B2_%D0%B4%D0%B8%D0%B7%D0%B0%D0%B9%D0%BD%D0%B5_%D1%83%D0%BF%D0%B0%D0%BA%D0%BE%D0%B2%D0%BA%D0%B8)",
+      "index_url": "https://www.tadviser.ru/index.php/%D0%9F%D1%80%D0%BE%D0%B5%D0%BA%D1%82:%D0%92%D0%BA%D1%83%D1%81%D0%92%D0%B8%D0%BB%D0%BB_(%D0%93%D0%B5%D0%BD%D0%B5%D1%80%D0%B0%D1%82%D0%B8%D0%B2%D0%BD%D1%8B%D0%B9_%D0%98%D0%98_%D0%B2_%D0%B4%D0%B8%D0%B7%D0%B0%D0%B9%D0%BD%D0%B5_%D1%83%D0%BF%D0%B0%D0%BA%D0%BE%D0%B2%D0%BA%D0%B8"
+    },
+    {
+      "corpus_id": "V2-CORP-0408",
+      "registry_url": "https://www.tadviser.ru/index.php/%D0%9F%D1%80%D0%BE%D0%B5%D0%BA%D1%82:%D0%9E%27%D0%9A%D0%B5%D0%B9_(GoodsForecast.OSA)",
+      "index_url": "https://www.tadviser.ru/index.php/%D0%9F%D1%80%D0%BE%D0%B5%D0%BA%D1%82:%D0%9E%27%D0%9A%D0%B5%D0%B9_(GoodsForecast.OSA"
+    },
+    {
+      "corpus_id": "V2-CORP-0409",
+      "registry_url": "https://www.tadviser.ru/index.php/%D0%9F%D1%80%D0%BE%D0%B5%D0%BA%D1%82:%D0%9E%27%D0%9A%D0%B5%D0%B9_(Manzana_Predictive_Analytics)",
+      "index_url": "https://www.tadviser.ru/index.php/%D0%9F%D1%80%D0%BE%D0%B5%D0%BA%D1%82:%D0%9E%27%D0%9A%D0%B5%D0%B9_(Manzana_Predictive_Analytics"
+    },
+    {
+      "corpus_id": "V2-CORP-0410",
+      "registry_url": "https://www.tadviser.ru/index.php/%D0%9F%D1%80%D0%BE%D0%B5%D0%BA%D1%82:%D0%A1%D0%B5%D1%82%D1%8C_%D0%BC%D0%B0%D0%B3%D0%B0%D0%B7%D0%B8%D0%BD%D0%BE%D0%B2_%C2%AB%D0%94%D0%90!%C2%BB_(Novo_Forecast_Enterprise)",
+      "index_url": "https://www.tadviser.ru/index.php/%D0%9F%D1%80%D0%BE%D0%B5%D0%BA%D1%82:%D0%A1%D0%B5%D1%82%D1%8C_%D0%BC%D0%B0%D0%B3%D0%B0%D0%B7%D0%B8%D0%BD%D0%BE%D0%B2_%C2%AB%D0%94%D0%90!%C2%BB_(Novo_Forecast_Enterprise"
+    },
+    {
+      "corpus_id": "V2-CORP-0411",
+      "registry_url": "https://www.tadviser.ru/index.php/%D0%9F%D1%80%D0%BE%D0%B5%D0%BA%D1%82:%D0%A1%D0%B5%D1%82%D1%8C_%D0%BC%D0%B0%D0%B3%D0%B0%D0%B7%D0%B8%D0%BD%D0%BE%D0%B2_%C2%AB%D0%94%D0%90!%C2%BB_(MD_Audit)",
+      "index_url": "https://www.tadviser.ru/index.php/%D0%9F%D1%80%D0%BE%D0%B5%D0%BA%D1%82:%D0%A1%D0%B5%D1%82%D1%8C_%D0%BC%D0%B0%D0%B3%D0%B0%D0%B7%D0%B8%D0%BD%D0%BE%D0%B2_%C2%AB%D0%94%D0%90!%C2%BB_(MD_Audit"
+    },
+    {
+      "corpus_id": "V2-CORP-0501",
+      "registry_url": "https://www.tadviser.ru/index.php/%D0%9F%D1%80%D0%BE%D0%B5%D0%BA%D1%82:X5_Retail_Group_(JDA_Demand)",
+      "index_url": "https://www.tadviser.ru/index.php/%D0%9F%D1%80%D0%BE%D0%B5%D0%BA%D1%82:X5_Retail_Group_(JDA_Demand"
+    },
+    {
+      "corpus_id": "V2-CORP-0503",
+      "registry_url": "https://www.tadviser.ru/index.php/%D0%9F%D1%80%D0%BE%D0%B5%D0%BA%D1%82:%D0%9C%D0%B0%D0%B3%D0%BD%D0%B8%D1%82_(1%D0%A1:%D0%9F%D1%80%D0%B5%D0%B4%D0%BF%D1%80%D0%B8%D1%8F%D1%82%D0%B8%D0%B5_8.3)",
+      "index_url": "https://www.tadviser.ru/index.php/%D0%9F%D1%80%D0%BE%D0%B5%D0%BA%D1%82:%D0%9C%D0%B0%D0%B3%D0%BD%D0%B8%D1%82_(1%D0%A1:%D0%9F%D1%80%D0%B5%D0%B4%D0%BF%D1%80%D0%B8%D1%8F%D1%82%D0%B8%D0%B5_8.3"
+    },
+    {
+      "corpus_id": "V2-CORP-0504",
+      "registry_url": "https://www.tadviser.ru/index.php/%D0%9F%D1%80%D0%BE%D0%B5%D0%BA%D1%82:X5_Retail_Group_(JDA_Space_Planning)",
+      "index_url": "https://www.tadviser.ru/index.php/%D0%9F%D1%80%D0%BE%D0%B5%D0%BA%D1%82:X5_Retail_Group_(JDA_Space_Planning"
+    },
+    {
+      "corpus_id": "V2-CORP-0601",
+      "registry_url": "http://www.youtube.com/watch?v=b0YG5xiU4FE",
+      "index_url": "http://www.youtube.com/watch?v=v0hgOrhkGIg"
+    },
+    {
+      "corpus_id": "V2-CORP-0602",
+      "registry_url": "http://www.youtube.com/watch?v=v0hgOrhkGIg",
+      "index_url": "http://www.youtube.com/watch?v=b0YG5xiU4FE"
+    },
+    {
+      "corpus_id": "V2-CORP-0603",
+      "registry_url": "http://www.youtube.com/watch?v=Er7LboiWMxo",
+      "index_url": "http://www.youtube.com/watch?v=PtQ7JAZuz3A"
+    },
+    {
+      "corpus_id": "V2-CORP-0604",
+      "registry_url": "http://www.youtube.com/watch?v=2hPdK5acvjA",
+      "index_url": "http://www.youtube.com/watch?v=Er7LboiWMxo"
+    },
+    {
+      "corpus_id": "V2-CORP-0605",
+      "registry_url": "http://www.youtube.com/watch?v=IAkiGu8W8PY",
+      "index_url": "http://www.youtube.com/watch?v=retail_conf_2026_part1"
+    },
+    {
+      "corpus_id": "V2-CORP-0606",
+      "registry_url": "https://www.forbes.ru/biznes/552153-glava-metro-v-rossii-johannes-tolaj-zelania-u-nemcev-izbavit-sa-ot-nas-nol",
+      "index_url": "https://www.forbes.ru/biznes/561734-prezident-x5-ekaterina-lobaceva-forbes-my-prosnulis-sovsem-v-drugom-retejle"
+    },
+    {
+      "corpus_id": "V2-CORP-0608",
+      "registry_url": "http://www.youtube.com/watch?v=4BXJa2FG3kE",
+      "index_url": "https://www.retail.ru/articles/kak-zayti-v-federalnyy-riteyl-i-ne-vyletet-s-polki-insaydy-ashana-samokata-i-m-kosmetik/"
+    },
+    {
+      "corpus_id": "V2-CORP-0609",
+      "registry_url": "http://www.youtube.com/watch?v=Ye4YZ_EenPY",
+      "index_url": "http://www.youtube.com/watch?v=retail_conf_2024_part1"
+    },
+    {
+      "corpus_id": "V2-CORP-0610",
+      "registry_url": "http://www.youtube.com/watch?v=shOg7Xkfmw8",
+      "index_url": "http://www.youtube.com/watch?v=retail_conf_2024_part2"
+    },
+    {
+      "corpus_id": "V2-CORP-0611",
+      "registry_url": "http://www.youtube.com/watch?v=SV-bW3w06NQ",
+      "index_url": "http://www.youtube.com/watch?v=retail_conf_2024_part3"
+    },
+    {
+      "corpus_id": "V2-CORP-0612",
+      "registry_url": "http://www.youtube.com/watch?v=tlEBqcJ_xJ0",
+      "index_url": "http://www.youtube.com/watch?v=retail_conf_2025_part1"
+    },
+    {
+      "corpus_id": "V2-CORP-0613",
+      "registry_url": "http://www.youtube.com/watch?v=LZCHt7TaHDE",
+      "index_url": "http://www.youtube.com/watch?v=retail_conf_2025_part2"
+    },
+    {
+      "corpus_id": "V2-CORP-0614",
+      "registry_url": "http://www.youtube.com/watch?v=8U-hZ4NRlFU",
+      "index_url": "http://www.youtube.com/watch?v=retail_conf_2025_part3"
+    },
+    {
+      "corpus_id": "V2-CORP-0615",
+      "registry_url": "http://www.youtube.com/watch?v=PtQ7JAZuz3A",
+      "index_url": "http://www.youtube.com/watch?v=retail_conf_2025_part4"
+    },
+    {
+      "corpus_id": "V2-CORP-0616",
+      "registry_url": "http://www.youtube.com/watch?v=MKQcRWhjs4c",
+      "index_url": "http://www.youtube.com/watch?v=retail_conf_2026_part2"
+    },
+    {
+      "corpus_id": "V2-CORP-0617",
+      "registry_url": "http://www.youtube.com/watch?v=TkF6gj5wVwc",
+      "index_url": "http://www.youtube.com/watch?v=retail_conf_2026_part3"
+    },
+    {
+      "corpus_id": "V2-CORP-0618",
+      "registry_url": "https://www.retail.ru/articles/kak-zayti-v-federalnyy-riteyl-i-ne-vyletet-s-polki-insaydy-ashana-samokata-i-m-kosmetik/",
+      "index_url": "http://www.youtube.com/watch?v=retail_conf_2026_part4"
+    },
+    {
+      "corpus_id": "V2-CORP-0619",
+      "registry_url": "http://www.youtube.com/watch?v=dBPZyW5Py_c",
+      "index_url": "http://www.youtube.com/watch?v=retail_ru_valkov_2024"
+    },
+    {
+      "corpus_id": "V2-CORP-0620",
+      "registry_url": "http://www.youtube.com/watch?v=zwgE2bfftlU",
+      "index_url": "http://www.youtube.com/watch?v=retail_ru_misnik_2025"
+    },
+    {
+      "corpus_id": "V2-CORP-0621",
+      "registry_url": "http://www.youtube.com/watch?v=lfcuyG3IQC8",
+      "index_url": "http://www.youtube.com/watch?v=retail_ru_balabay_2025"
+    },
+    {
+      "corpus_id": "V2-CORP-0622",
+      "registry_url": "https://ecomhub.ru/a-real-discussion-a-big-interview-with-the-founder-of-the-red-white-chain-sergei-studennikov/",
+      "index_url": "http://www.youtube.com/watch?v=retail_ru_pletnev_2026"
+    },
+    {
+      "corpus_id": "V2-CORP-0623",
+      "registry_url": "https://www.retail.ru/interviews/elena-zakharenko-svetofor-v-nashikh-diskaunterakh-prodayutsya-bazovye-tovary-za-kotorye-net-smysla-p/",
+      "index_url": "http://www.youtube.com/watch?v=retail_ru_rimskiy_2026"
+    },
+    {
+      "corpus_id": "V2-CORP-0624",
+      "registry_url": "http://www.youtube.com/watch?v=hVusNj7JU3M",
+      "index_url": "http://www.youtube.com/watch?v=retail_ru_da_director_2026"
+    }
+  ],
+  "placeholder_looking_urls": [
+    "http://www.youtube.com/watch?v=retail_conf_2024_part1",
+    "http://www.youtube.com/watch?v=retail_conf_2024_part2",
+    "http://www.youtube.com/watch?v=retail_conf_2024_part3",
+    "http://www.youtube.com/watch?v=retail_conf_2025_part1",
+    "http://www.youtube.com/watch?v=retail_conf_2025_part2",
+    "http://www.youtube.com/watch?v=retail_conf_2025_part3",
+    "http://www.youtube.com/watch?v=retail_conf_2025_part4",
+    "http://www.youtube.com/watch?v=retail_conf_2026_part1",
+    "http://www.youtube.com/watch?v=retail_conf_2026_part2",
+    "http://www.youtube.com/watch?v=retail_conf_2026_part3",
+    "http://www.youtube.com/watch?v=retail_conf_2026_part4",
+    "http://www.youtube.com/watch?v=retail_ru_balabay_2025",
+    "http://www.youtube.com/watch?v=retail_ru_da_director_2026",
+    "http://www.youtube.com/watch?v=retail_ru_misnik_2025",
+    "http://www.youtube.com/watch?v=retail_ru_pletnev_2026",
+    "http://www.youtube.com/watch?v=retail_ru_rimskiy_2026",
+    "http://www.youtube.com/watch?v=retail_ru_valkov_2024"
+  ],
+  "patterns_without_explicit_evidence_ids": [
+    "V2-PAT-01",
+    "V2-PAT-02",
+    "V2-PAT-03",
+    "V2-PAT-04",
+    "V2-PAT-05",
+    "V2-PAT-06"
+  ],
+  "warning": "These are deterministic consistency observations, not final fact-check verdicts."
+}

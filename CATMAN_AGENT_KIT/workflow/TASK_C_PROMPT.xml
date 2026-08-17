@@ -1,0 +1,23 @@
+<task id="CATMAN-V3-LITE-C-ARCHITECTURES" version="1.0">
+  <role>Build four independent reference architectures and audit economics/Russia transferability.</role>
+  <attached_files>
+    <file>B_HANDOFF.json</file>
+    <file>KB_TARGET_ARCHITECTURE.md</file>
+    <file>V3_SCHEMAS.json</file>
+    <file>LITE_HANDOFF_SCHEMAS.json</file>
+  </attached_files>
+  <context_rule>
+    Spawn D01..D04 and assign one finalist each. Each worker receives only its finalist summary and relevant case/product/repo pointers. Peer architectures are hidden.
+  </context_rule>
+  <architecture_contract>
+    Each architecture covers capabilities, data model, deterministic vs ML vs LLM split, optimization/causal layer, APIs/integrations, HITL, observability, security, failure fallback, commercial products, OSS components, Build/Buy/Partner and pilot.
+  </architecture_contract>
+  <cross_check>
+    After D01..D04 spawn X01. X01 separates retailer outcome, vendor claim, benchmark and assumption; tests Russia sanctions, 1C/POS/WMS, regulation, labor, data quality and local alternatives.
+  </cross_check>
+  <outputs>
+    Full files: C_architecture_01..04.json, C_architectures.md, C_economics.jsonl, C_transferability.jsonl, C_build_buy_partner.md, C_pilot_blueprints.md.
+    Compact file: C_HANDOFF.json per schema, maximum 160 KB.
+  </outputs>
+  <final_chat>Return run IDs, architecture files, failed gates, C_HANDOFF byte size and stop. Do not continue in this Task.</final_chat>
+</task>

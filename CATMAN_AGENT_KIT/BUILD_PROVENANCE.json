@@ -1,0 +1,210 @@
+{
+  "built_from_commit": "fb44bc2de910288def6c461285b480b597693467",
+  "files": [
+    {
+      "path": "KNOWN_ISSUES.json",
+      "bytes": 16199,
+      "sha256": "07e31762887d5a71fa40292065c6630c3722775ba8d8e1c196ebfad55844f42b"
+    },
+    {
+      "path": "README.md",
+      "bytes": 1160,
+      "sha256": "1ed1271a7b07a0fed12c697633d53ceb1ffa923e1d144d42ee711d6138944915"
+    },
+    {
+      "path": "RESOURCE_INDEX.json",
+      "bytes": 7994,
+      "sha256": "624e326c938bff79805695c5d158b11ab5e2dcd53c102511e6c1a0970ab4037d"
+    },
+    {
+      "path": "START_HERE.md",
+      "bytes": 1199,
+      "sha256": "80b054d31d621b7bc3d265dbbf1813047a6ed8d46904e45f88e38a297b675efc"
+    },
+    {
+      "path": "context/catman_ontology.json",
+      "bytes": 120786,
+      "sha256": "0170ad0e2c984e11c68950515f806f850322ebf1fcde3e6fafa29f9835d47bee"
+    },
+    {
+      "path": "context/retailer_universe.json",
+      "bytes": 22557,
+      "sha256": "a5194852169b1c404631db9488601fc642ba1e11b28ea2e8f1a3224abd0091b7"
+    },
+    {
+      "path": "knowledge/analysis.json",
+      "bytes": 322918,
+      "sha256": "6b9af96d2aad3d3f03e46ffe9637bbb92244d981d9c1f6f72744cba48812b704"
+    },
+    {
+      "path": "knowledge/corpus.json",
+      "bytes": 100125,
+      "sha256": "f08e0269d48e59b05dfab94cf51300fd9b15dfc8ea01d10c48a284cf523c3e92"
+    },
+    {
+      "path": "knowledge/manifests.json",
+      "bytes": 28855,
+      "sha256": "cf58be177912938a35b9b095557582653de2970fae35738188beae93d83d68f0"
+    },
+    {
+      "path": "knowledge/market_context.json",
+      "bytes": 73000,
+      "sha256": "ea9f166aa0c6302276a4abab1c7eb54f1f00b80490a3f1b84b28e9300054c285"
+    },
+    {
+      "path": "knowledge/retailers/R01.json",
+      "bytes": 157422,
+      "sha256": "1866c873164b78513e59f49788654801e992061f282833eb6eea4dc9d3f6e60a"
+    },
+    {
+      "path": "knowledge/retailers/R02.json",
+      "bytes": 149899,
+      "sha256": "9e1d0f9803fddbdaa3995275063d1d55e45d1ca55f5c847f538ed54221c6a5da"
+    },
+    {
+      "path": "knowledge/retailers/R03.json",
+      "bytes": 81952,
+      "sha256": "f9555a313a6eaf9a14d323770ae2a10247940a01c139f78946da5b240313443c"
+    },
+    {
+      "path": "knowledge/retailers/R04.json",
+      "bytes": 134063,
+      "sha256": "2e6dea586d8759bfe96bd40e9f77fae0102470d700bc7cb26d3a6ecdda7d6da8"
+    },
+    {
+      "path": "knowledge/retailers/R05.json",
+      "bytes": 77389,
+      "sha256": "ffd42c7f4a8ee8a7e1c4d52aa2ac17c380d7db4a059bb7aef8c35956b2246136"
+    },
+    {
+      "path": "knowledge/retailers/R06.json",
+      "bytes": 129047,
+      "sha256": "f38ec041dda1315520f3c0f377c2938a02c0325d06fabbd33b26e6df3cda969d"
+    },
+    {
+      "path": "knowledge/retailers/R07.json",
+      "bytes": 107898,
+      "sha256": "40f36e742d1c6294eff4b013497eef731018f69479b4e9dd642764394ca62977"
+    },
+    {
+      "path": "knowledge/retailers/R08.json",
+      "bytes": 24476,
+      "sha256": "a025034daa6bfdd5dea21476cbc1914acbbb793afdef94998d14eed7e56d204f"
+    },
+    {
+      "path": "knowledge/retailers/R09.json",
+      "bytes": 51910,
+      "sha256": "feb016d10b3824a165113cbc8b8d9920bd15b2a0d52fd7e1a2d01751cb7d7484"
+    },
+    {
+      "path": "knowledge/retailers/R10.json",
+      "bytes": 99935,
+      "sha256": "370a34770685ff099034ec3e489a3f1c74eb7af568f016db306b321303914798"
+    },
+    {
+      "path": "reports/adjudication.md",
+      "bytes": 19931,
+      "sha256": "0630f629251639d6ac1d148414bd0b08edf3fcb8e4d3352ad49d24306e8a07de"
+    },
+    {
+      "path": "reports/adversarial_review.md",
+      "bytes": 27409,
+      "sha256": "9bfb83dca12c1f88dc5aaf096791032d32489a894096a0d5f9e4795ebd640c6c"
+    },
+    {
+      "path": "reports/bibliography.md",
+      "bytes": 135287,
+      "sha256": "d793026fbfe9d50bb2b789d1b37d6742e9ecaa3982ab10a78e7ddf225f0e7c4d"
+    },
+    {
+      "path": "reports/corpus_index.md",
+      "bytes": 72215,
+      "sha256": "8b72b1593d95ee7b5e5e8c63610f5553d587aa0e39c21d58e1cc6e0f765fe862"
+    },
+    {
+      "path": "reports/current_report.md",
+      "bytes": 55005,
+      "sha256": "be287c81d8aadab46747dacc8437fbd33fd5a289c5c6a1197627108a28d5fb45"
+    },
+    {
+      "path": "reports/research_gaps.md",
+      "bytes": 10670,
+      "sha256": "c3399abf72ad9338b75c3a13d989ac56b288adcbe977c36ced2b835e310eb97a"
+    },
+    {
+      "path": "reports/solution_pattern_atlas.md",
+      "bytes": 29325,
+      "sha256": "1f8a7074ff7b3038b65d5ec55355e5363686e65041e16daff21f8c673097a1ea"
+    },
+    {
+      "path": "research/GLOBAL_SOLUTIONS_BRIEF.md",
+      "bytes": 8510,
+      "sha256": "83b3cc658e583dfb51e3539fa4893d2577ddfec417c30315d60b3613dfffa3b8"
+    },
+    {
+      "path": "research/KB_TARGET_ARCHITECTURE.md",
+      "bytes": 4693,
+      "sha256": "a7a5bd2c1c501f74d08eb7b77838d2488405408719edc9bbdedf317cb948c66e"
+    },
+    {
+      "path": "research/MASTER_BRIEF.md",
+      "bytes": 82617,
+      "sha256": "2d1c5ff8cf09facc0814e35a9dd389339713e85b89eb552f0b7a0853b24f972f"
+    },
+    {
+      "path": "research/SOURCE_AND_QUERY_MAP.md",
+      "bytes": 6106,
+      "sha256": "583de08e1eebc81e842954578ab930575100afe6ca3e5ed64d577d0930d831fa"
+    },
+    {
+      "path": "research/SUFFICIENCY_STANDARD.md",
+      "bytes": 6994,
+      "sha256": "675d467eac3e7eab6b932d0782b904db8b1747dbef64a95ac9e3e9aeecb5b302"
+    },
+    {
+      "path": "research/V3_SCHEMAS.json",
+      "bytes": 9949,
+      "sha256": "aa5e2a3c647d27d9f60b1b23e8b78dd139f3100fee6ec6785d5b66084e6d9567"
+    },
+    {
+      "path": "research/v3_manifest.yaml",
+      "bytes": 6176,
+      "sha256": "2ff445373a6c084792cd351a3eadd8e3ecc47a40bb454ecc34b0b9c16ade5f0b"
+    },
+    {
+      "path": "workflow/LITE_HANDOFF_SCHEMAS.json",
+      "bytes": 1494,
+      "sha256": "863dc0dbca93dea18242fb6ab1191644f7aa10a65d894fbbe4c0693a204ee11a"
+    },
+    {
+      "path": "workflow/LITE_MULTI_TASK_WORKFLOW.md",
+      "bytes": 5796,
+      "sha256": "830de65786235a479e6d894b97ea2b4be28833063e37110d41d2197607169372"
+    },
+    {
+      "path": "workflow/SKILL_V3_LITE.md",
+      "bytes": 1643,
+      "sha256": "e032df4fbeba925daf6a3b80e692f4ada61ac0f5d27839eba7e605bc866579e6"
+    },
+    {
+      "path": "workflow/TASK_A_PROMPT.xml",
+      "bytes": 2055,
+      "sha256": "64250bf682e796394cf6e2353d6ab46271d08f5a3ac365c0693083646bfd251b"
+    },
+    {
+      "path": "workflow/TASK_B_PROMPT.xml",
+      "bytes": 1455,
+      "sha256": "7b03fa5e91f9e5d087d00d634121cc69a5c10c9fe8d8658a5a773ba0535fc316"
+    },
+    {
+      "path": "workflow/TASK_C_PROMPT.xml",
+      "bytes": 1472,
+      "sha256": "5fe98f00f168430eaee78abd6407c1076a396c3327e8d093774f13a308c18259"
+    },
+    {
+      "path": "workflow/TASK_D_PROMPT.xml",
+      "bytes": 1334,
+      "sha256": "a3b0424528353722cef2ff453470bbbb7b96847a653edb9dd42bf180fabde589"
+    }
+  ]
+}
