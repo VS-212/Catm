@@ -1,0 +1,169 @@
+manifest_version: "3.0"
+project_id: "CATMAN-RU-V3-GLOBAL-SOLUTIONS-KB"
+run_cutoff: "RUN_DATE"
+target_sufficiency: "L4_EXTERNAL_DECISION_READY"
+language: "ru"
+
+runtime:
+  same_spark_account_allowed: true
+  require_new_top_level_task: true
+  reuse_v2_task_context: false
+  require_new_v3_skill: true
+  require_real_subagents: true
+  require_separate_contexts: true
+  preferred_concurrency: 8
+  maximum_concurrency: 10
+  retries_per_agent: 1
+  maximum_repair_runs: 5
+  personal_memory: disabled_if_available
+  schedule: none_one_time_run
+  outputs: files_first
+
+waves:
+  - id: C0_CAPABILITY
+    agents: [T01, T02]
+    parallel: true
+    gate: real_swarm_re_attested
+
+  - id: Q_V2_FORENSIC
+    agents: [Q01, Q02, Q03, Q04]
+    parallel_groups: [[Q01, Q02, Q03], [Q04]]
+    depends_on: [C0_CAPABILITY]
+    gate: v2_base_accepted_for_v3
+
+  - id: L_GLOBAL_LANDSCAPE
+    agents: [G01, G02, G03, G04, G05, G06, G07, G08, V01, V02, V03, V04, O01, O02, O03, O04, O05]
+    parallel: true
+    depends_on: [Q_V2_FORENSIC]
+    gate: global_vendor_oss_landscape_frozen
+
+  - id: M_SHORTLIST
+    agents: [M01]
+    parallel: false
+    depends_on: [L_GLOBAL_LANDSCAPE]
+    gate: four_finalists_frozen
+
+  - id: D_REFERENCE_ARCHITECTURES
+    agents: [D01, D02, D03, D04]
+    parallel: true
+    dynamic_assignment: "one finalist per agent from M01"
+    depends_on: [M_SHORTLIST]
+    gate: finalist_architectures_frozen
+
+  - id: X_TRANSFERABILITY
+    agents: [X01]
+    parallel: false
+    depends_on: [D_REFERENCE_ARCHITECTURES]
+    gate: economics_and_russia_fit_frozen
+
+  - id: A_FINAL
+    agents: [Z01, J01, K01]
+    parallel: false
+    depends_on: [X_TRANSFERABILITY]
+    gate: l4_and_kb_complete
+
+agents:
+  T01: {role: capability_test_alpha, clean_context: true}
+  T02: {role: capability_test_beta, clean_context: true}
+
+  Q01:
+    role: v2_provenance_and_referential_auditor
+    focus: [urls, citations, evidence_ids, source_tiers, dates, duplicates]
+    hidden: [v2_project_winner]
+  Q02:
+    role: v2_economics_and_claim_auditor
+    focus: [sourced_economics, assumptions, KPI attribution, claim_strength]
+    hidden: [v2_final_recommendation]
+  Q03:
+    role: v2_corpus_and_multimedia_auditor
+    focus: [registry_vs_index, fetch_status, transcript_status, placeholder_urls, content_access]
+    hidden: [v2_final_recommendation]
+  Q04:
+    role: v2_forensic_adjudicator
+    inputs: [Q01, Q02, Q03]
+    outputs: [accepted_v2_base, rejected_v2_records, forensic_report]
+
+  G01: {role: global_cases_north_america_omnichannel, web_access: true}
+  G02: {role: global_cases_uk_europe_grocery, web_access: true}
+  G03: {role: global_cases_hard_discount, web_access: true}
+  G04: {role: global_cases_japan_korea_convenience, web_access: true}
+  G05: {role: global_cases_china_o2o_fresh, web_access: true, original_language_required: true}
+  G06: {role: global_cases_qcommerce_egrocery, web_access: true}
+  G07: {role: global_cases_b2b_horeca, web_access: true}
+  G08: {role: academic_standards_and_negative_cases, web_access: true}
+
+  V01: {role: vendor_assortment_space_merchandising, web_access: true}
+  V02: {role: vendor_forecasting_fresh_waste, web_access: true}
+  V03: {role: vendor_pricing_promo_rgm, web_access: true}
+  V04: {role: vendor_platform_data_and_russia_availability, web_access: true}
+
+  O01: {role: github_forecasting_frameworks, web_access: true, github_access: true}
+  O02: {role: github_optimization_frameworks, web_access: true, github_access: true}
+  O03: {role: github_causal_promo_frameworks, web_access: true, github_access: true}
+  O04: {role: github_cv_data_mlops_frameworks, web_access: true, github_access: true}
+  O05: {role: github_workflow_agents_graph_rag, web_access: true, github_access: true}
+
+  M01:
+    role: blind_landscape_adjudicator
+    inputs: [accepted_v2_base, G01_G08, V01_V04, O01_O05]
+    objective: "Select four finalists using mandatory L4 pre-gates"
+    outputs: [four_finalists, selection_rationale, rejected_patterns]
+
+  D01: &deep_dive
+    role: finalist_reference_architect
+    context: [assigned_finalist, accepted_v2_base, relevant_global_cases, relevant_products, relevant_repos]
+    hidden: [peer_architectures]
+  D02: {<<: *deep_dive}
+  D03: {<<: *deep_dive}
+  D04: {<<: *deep_dive}
+
+  X01:
+    role: economics_and_russia_transferability_auditor
+    inputs: [D01, D02, D03, D04, accepted_v2_base]
+    objective: "Separate sourced economics, benchmark, assumptions, TCO and Russia fit"
+
+  Z01:
+    role: independent_v3_red_team
+    inputs: [all_frozen_v3_outputs]
+    hidden: [J01_ruling]
+  J01:
+    role: l4_sufficiency_adjudicator
+    inputs: [all_frozen_v3_outputs, Z01, sufficiency_standard]
+    outputs: [l4_rulings, top3, build_buy_partner, pilot_decision_pack]
+  K01:
+    role: ai_friendly_kb_builder
+    inputs: [only_J01_accepted_or_qualified_records]
+    objective: "Build canonical CATMAN-KB; narrative views generated from KB"
+
+required_outputs:
+  - 00_v3_capability_attestation.json
+  - 01_v2_forensic_issues.jsonl
+  - 02_v2_accepted_base.jsonl
+  - 03_v2_forensic_report.md
+  - 10_global_cases.jsonl
+  - 11_china_original_language_evidence.jsonl
+  - 12_academic_and_negative_cases.jsonl
+  - 20_vendor_products.jsonl
+  - 21_vendor_customer_confirmations.jsonl
+  - 30_github_repositories.jsonl
+  - 31_framework_capability_map.jsonl
+  - 32_license_security_maintenance_report.md
+  - 40_four_finalists.json
+  - 41_shortlist_decision.md
+  - 50_reference_architecture_01.json
+  - 51_reference_architecture_02.json
+  - 52_reference_architecture_03.json
+  - 53_reference_architecture_04.json
+  - 54_reference_architectures.md
+  - 60_sourced_economics_ledger.jsonl
+  - 61_russia_transferability_matrix.jsonl
+  - 62_build_buy_partner_matrix.md
+  - 70_v3_red_team.jsonl
+  - 71_v3_adjudication.jsonl
+  - 72_l4_sufficiency_assessment.json
+  - 73_c_level_decision_pack.md
+  - 74_pilot_blueprints.md
+  - 80_CATMAN_KB/
+  - 90_V3_ARENA_HANDOFF.json
+  - 90_V3_ARENA_HANDOFF.md
+  - 99_v3_quality_report.json
