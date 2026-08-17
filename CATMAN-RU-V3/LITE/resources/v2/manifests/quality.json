@@ -1,0 +1,53 @@
+{
+  "run_id": "SWARM-RUN-V2-20260817-002",
+  "schema_validation": {
+    "source_records_valid": 202,
+    "evidence_repaired_valid": 196,
+    "repair_records_valid": 160,
+    "solution_patterns_valid": 6,
+    "corpus_records_valid": 101,
+    "red_team_v2_challenges_valid": 6,
+    "adjudication_v2_rulings_valid": 6,
+    "validation_errors": 0
+  },
+  "referential_integrity": {
+    "all_repaired_evidence_sources_exist": true,
+    "all_solution_pattern_evidence_exist": true,
+    "all_red_team_evidence_exist": true,
+    "all_ruling_challenges_exist": true,
+    "no_dangling_references": true
+  },
+  "coverage": {
+    "top10_retailers_covered": 10,
+    "time_buckets_covered": [
+      "2024",
+      "2025",
+      "2026_YTD",
+      "post_baseline_delta",
+      "cold_backfill_2019_2023"
+    ],
+    "l1_topics_covered": 6,
+    "solution_patterns_covered": 6
+  },
+  "evidence_counts": {
+    "raw": 196,
+    "accepted": 139,
+    "qualified": 57,
+    "rejected": 0,
+    "unresolved": 0
+  },
+  "video_counts": {
+    "total_shortlist": 30,
+    "verified_transcribed": 16,
+    "metadata_only": 14
+  },
+  "claim_counts": {
+    "total_claims": 57,
+    "accepted": 54,
+    "qualified": 3,
+    "rejected": 0
+  },
+  "critical_violations": [],
+  "unresolved_material_issues": [],
+  "overall_status": "PASS"
+}

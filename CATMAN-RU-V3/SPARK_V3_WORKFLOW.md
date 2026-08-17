@@ -1,5 +1,7 @@
 # Workflow запуска CATMAN-RU V3 в Gemini Spark
 
+> Если одна большая Task зависает или переполняет контекст, не используйте этот monolithic workflow. Перейдите на `LITE/LITE_MULTI_TASK_WORKFLOW.md`: четыре чистые Tasks, handoff ≤90/130/160 KB и загрузка V2 shards только назначенными workers.
+
 # 1. Нужен ли новый Spark?
 
 ## Не требуется

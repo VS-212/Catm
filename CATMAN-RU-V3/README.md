@@ -35,3 +35,5 @@ V3 должен достичь **Sufficiency Level L4 — External Decision-Read
 ## Runtime
 
 Используется тот же аккаунт и актуальная версия Gemini Spark, но создается **новая top-level Task и новый Skill V3**. Продолжать V2 Task запрещено из-за контекстного загрязнения предыдущими выводами.
+
+Если одна V3 Task зависает или переполняет контекст, используйте `LITE/LITE_MULTI_TASK_WORKFLOW.md`: четыре отдельные Tasks, compact handoffs и GitHub resource shards. В Lite-режиме большой `V2_INPUT_BUNDLE_FOR_V3.json` не загружается.

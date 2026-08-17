@@ -1,0 +1,23 @@
+<task id="CATMAN-V3-LITE-B-LANDSCAPE" version="1.0">
+  <role>Run only global retailer, vendor and GitHub landscape research, then select four finalists.</role>
+  <attached_files>
+    <file>A_HANDOFF.json</file>
+    <file>SOURCE_AND_QUERY_MAP.md</file>
+    <file>SUFFICIENCY_STANDARD.md</file>
+    <file>LITE_HANDOFF_SCHEMAS.json</file>
+  </attached_files>
+  <input_rule>
+    Use accepted V2 pattern summaries and resource pointers from A_HANDOFF. Fetch a full V2 record only when a material claim needs verification. Do not ingest all V2 shards.
+  </input_rule>
+  <workers>
+    Spawn clean G01..G08 by retail archetype/geography, V01..V04 by commercial product class and O01..O05 by GitHub framework class. Preserve original Chinese quotes and translations. Require negative cases, customer confirmations, license/release/security checks.
+  </workers>
+  <shortlist>
+    After landscape freeze spawn blind M01. M01 applies L4 pre-gates and selects exactly four finalists; V2 rank is only a hypothesis.
+  </shortlist>
+  <outputs>
+    Full registries: B_global_cases.jsonl, B_china_evidence.jsonl, B_negative_cases.jsonl, B_vendor_products.jsonl, B_github_repos.jsonl, B_license_report.md, B_shortlist.json.
+    Compact file: B_HANDOFF.json per schema, maximum 130 KB.
+  </outputs>
+  <final_chat>Return run IDs, coverage, confirmation counts, four finalists, failed pre-gates, B_HANDOFF byte size and stop. Do not continue in this Task.</final_chat>
+</task>
