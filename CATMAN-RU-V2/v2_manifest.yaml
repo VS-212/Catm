@@ -1,0 +1,188 @@
+manifest_version: "2.0"
+project_id: "CATMAN-RU-V2-EVIDENCE-AND-SOLUTIONS"
+baseline_cutoff: "2026-08-14"
+v2_cutoff: "RUN_DATE"
+language: "ru"
+
+runtime:
+  require_new_top_level_task: true
+  reuse_existing_spark_account: true
+  reuse_old_task_context: false
+  require_real_subagents: true
+  require_separate_contexts: true
+  require_web_for_research_agents: true
+  preferred_concurrency: 8
+  maximum_concurrency: 10
+  retries_per_agent: 1
+  maximum_repair_runs: 4
+  schedule: none_one_time_run
+  personal_memory: disabled_if_available
+  unrelated_connectors: disabled
+  output_mode: files_first
+
+waves:
+  - id: V2-C0-RE_ATTEST
+    agents: [T01, T02]
+    parallel: true
+    gate: capability_re_attested
+
+  - id: V2-R-EVIDENCE_REPAIR
+    agents: [Q01, Q02, Q03, Q04, Q05, Q06, Q07]
+    parallel_groups:
+      - [Q01, Q02, Q03, Q04, Q05, Q06]
+      - [Q07]
+    depends_on: [V2-C0-RE_ATTEST]
+    gate: repaired_dataset_frozen
+
+  - id: V2-S-SOLUTION_PATTERNS
+    agents: [S01, S02, S03, S04, S05, S06]
+    parallel_groups:
+      - [S01, S02, S03, S04, S05]
+      - [S06]
+    depends_on: [V2-R-EVIDENCE_REPAIR]
+    gate: solution_patterns_frozen
+
+  - id: V2-C-CORPUS
+    agents: [C01, C02, C03, C04, C05, C06, C07]
+    parallel_groups:
+      - [C01, C02, C03, C04]
+      - [C05, C06]
+      - [C07]
+    depends_on: [V2-R-EVIDENCE_REPAIR]
+    may_run_in_parallel_with: [V2-S-SOLUTION_PATTERNS]
+    gate: corpus_and_backfill_frozen
+
+  - id: V2-A-ADJUDICATION
+    agents: [Z02, J02]
+    parallel: false
+    depends_on: [V2-S-SOLUTION_PATTERNS, V2-C-CORPUS]
+    gate: v2_handoff_complete
+
+agents:
+  T01:
+    role: capability_test_worker_alpha
+    context: [nonce_alpha_only]
+  T02:
+    role: capability_test_worker_beta
+    context: [nonce_beta_only]
+
+  Q01:
+    role: canonicalization_and_referential_auditor
+    inputs: [old_handoff, old_run_manifest, old_quality_report]
+    hidden: [old_final_conclusions]
+  Q02:
+    role: blind_url_date_quote_checker
+    inputs: [old_sources, old_raw_evidence]
+    hidden: [old_claims, old_projects, old_final_report]
+  Q03:
+    role: blind_source_tier_independence_checker
+    inputs: [old_sources, old_raw_evidence]
+    hidden: [old_claims, old_projects]
+  Q04:
+    role: blind_numerical_provenance_checker
+    inputs: [old_evidence, old_claims, old_projects]
+    focus: [baselines, KPIs, effects, units, scope]
+  Q05:
+    role: coverage_recovery_researcher
+    inputs: [old_universe, old_ontology, R08_R09_gaps]
+    web_access: true
+  Q06:
+    role: ontology_and_cutoff_auditor
+    inputs: [old_ontology, old_sources, old_evidence]
+  Q07:
+    role: repair_adjudicator
+    inputs: [Q01, Q02, Q03, Q04, Q05, Q06]
+    outputs: [repaired_dataset_v2, repair_log, repair_quality_report]
+
+  S01:
+    role: observed_solution_extractor
+    inputs: [repaired_dataset_v2]
+  S02:
+    role: executive_acceptance_researcher
+    inputs: [repaired_dataset_v2]
+    web_access: true
+  S03:
+    role: implementation_friction_and_failure_researcher
+    inputs: [repaired_dataset_v2]
+    web_access: true
+  S04:
+    role: retail_format_segmenter
+    inputs: [repaired_dataset_v2, retailer_universe]
+  S05:
+    role: solution_outcome_verifier
+    inputs: [observed_solution_candidates]
+    web_access: true
+  S06:
+    role: solution_pattern_analyst
+    inputs: [S01, S02, S03, S04, S05]
+    outputs: [solution_pattern_atlas, acceptance_signals, anti_patterns]
+
+  C01:
+    role: retail_ru_text_corpus_inventory_and_extractor
+    window: [2024-01-01, RUN_DATE]
+    web_access: true
+  C02:
+    role: retail_ru_multimodal_extractor
+    window: [2024-01-01, RUN_DATE]
+    web_access: true
+  C03:
+    role: tadviser_retail_corpus_inventory_and_extractor
+    window: [2024-01-01, RUN_DATE]
+    web_access: true
+  C04:
+    role: tadviser_project_vendor_claim_checker
+    window: [2024-01-01, RUN_DATE]
+    web_access: true
+  C05:
+    role: targeted_prior_art_backfill_researcher
+    window: [2019-01-01, 2023-12-31]
+    trigger_only: true
+    input: finalist_solution_patterns
+  C06:
+    role: primary_source_cross_verifier
+    inputs: [C01, C02, C03, C04, C05]
+    web_access: true
+  C07:
+    role: corpus_merge_and_coverage_auditor
+    inputs: [C01, C02, C03, C04, C05, C06]
+    outputs: [corpus_registry, corpus_evidence, coverage_report]
+
+  Z02:
+    role: independent_red_team
+    inputs: [repaired_dataset_v2, solution_patterns, corpus_evidence]
+    hidden: [old_project_winner_until_own_review_complete]
+  J02:
+    role: independent_final_adjudicator
+    inputs: [all_frozen_v2_outputs, old_conclusions_as_hypotheses, Z02]
+    outputs: [v2_adjudication, current_value_report, c_level_decision_pack, v2_handoff]
+
+required_outputs:
+  - 00_v2_capability_attestation.json
+  - 01_canonicalization_manifest.json
+  - 02_repair_issues.jsonl
+  - 03_sources_v2.jsonl
+  - 04_evidence_v2.jsonl
+  - 05_fact_checks_v2.jsonl
+  - 06_claims_v2.jsonl
+  - 07_repair_log.md
+  - 08_repair_quality_report.json
+  - 10_observed_solutions.jsonl
+  - 11_executive_acceptance_signals.jsonl
+  - 12_solution_patterns.jsonl
+  - 13_solution_anti_patterns.jsonl
+  - 14_pain_solution_graph.json
+  - 15_solution_pattern_atlas.md
+  - 20_retail_ru_corpus_registry.jsonl
+  - 21_tadviser_corpus_registry.jsonl
+  - 22_multimedia_registry.jsonl
+  - 23_corpus_evidence.jsonl
+  - 24_corpus_coverage_report.md
+  - 25_targeted_backfill_log.md
+  - 30_v2_red_team.jsonl
+  - 31_v2_adjudication.jsonl
+  - 32_current_value_report.md
+  - 33_c_level_decision_pack.md
+  - 34_v2_research_gaps.md
+  - 90_V2_ARENA_HANDOFF.json
+  - 90_V2_ARENA_HANDOFF.md
+  - 99_v2_quality_report.json

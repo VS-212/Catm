@@ -1,0 +1,99 @@
+{
+  "schema_bundle_version": "2.0",
+  "schemas": {
+    "repair_issue": {
+      "type": "object",
+      "required": ["issue_id", "target_type", "target_id", "issue_type", "before", "after", "decision", "reason", "checker_agent_id", "evidence_urls"],
+      "properties": {
+        "issue_id": {"type": "string", "pattern": "^V2-Q-[0-9]{5,}$"},
+        "target_type": {"enum": ["source", "evidence", "claim", "project", "run", "dataset"]},
+        "target_id": {"type": "string"},
+        "issue_type": {"enum": ["unchecked", "broken_url", "date_cutoff", "quote_mismatch", "source_tier", "duplicate", "ontology_drift", "numerical_provenance", "citation_mismatch", "coverage_gap", "referential_integrity", "other"]},
+        "before": {},
+        "after": {},
+        "decision": {"enum": ["accepted_unchanged", "corrected", "qualified", "rejected", "unresolved"]},
+        "reason": {"type": "string"},
+        "checker_agent_id": {"type": "string"},
+        "evidence_urls": {"type": "array", "items": {"type": "string", "format": "uri"}}
+      },
+      "additionalProperties": false
+    },
+    "observed_solution": {
+      "type": "object",
+      "required": ["solution_id", "retailer_id", "solution_name", "pain_ids", "format_scope", "sponsor", "stage", "evidence_ids", "outcome_status", "confidence"],
+      "properties": {
+        "solution_id": {"type": "string", "pattern": "^V2-SOL-[0-9]{4,}$"},
+        "retailer_id": {"type": "string"},
+        "solution_name": {"type": "string"},
+        "pain_ids": {"type": "array", "items": {"type": "string"}},
+        "format_scope": {"type": "array", "items": {"type": "string"}},
+        "sponsor": {"type": ["string", "null"]},
+        "sponsor_status": {"enum": ["stated", "inferred", "unknown"]},
+        "stage": {"enum": ["interest", "pilot", "implementation", "rollout", "scale", "stopped", "replaced", "unknown"]},
+        "scope_raw": {"type": ["string", "null"]},
+        "kpi_raw": {"type": ["string", "null"]},
+        "evidence_ids": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+        "outcome_status": {"enum": ["verified_positive", "retailer_reported_positive", "mixed", "negative", "not_disclosed"]},
+        "implementation_friction": {"type": "array", "items": {"type": "string"}},
+        "confidence": {"enum": ["high", "medium", "low"]}
+      },
+      "additionalProperties": false
+    },
+    "executive_acceptance_signal": {
+      "type": "object",
+      "required": ["signal_id", "solution_id", "signal_type", "strength", "event_date", "evidence_ids", "interpretation", "confidence"],
+      "properties": {
+        "signal_id": {"type": "string", "pattern": "^V2-EAS-[0-9]{4,}$"},
+        "solution_id": {"type": "string"},
+        "signal_type": {"enum": ["direct_endorsement", "budget_or_team", "pilot_to_rollout", "coverage_expansion", "renewal", "kpi_disclosure", "cross_format_transfer", "long_term_persistence", "stop_or_replace", "weak_media_only"]},
+        "strength": {"type": "integer", "minimum": 0, "maximum": 5},
+        "event_date": {"type": ["string", "null"], "format": "date"},
+        "evidence_ids": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+        "interpretation": {"type": "string"},
+        "confidence": {"enum": ["high", "medium", "low"]}
+      },
+      "additionalProperties": false
+    },
+    "solution_pattern": {
+      "type": "object",
+      "required": ["pattern_id", "pattern_name", "definition", "supporting_solution_ids", "retailer_count", "format_fit", "executive_value_mechanism", "success_conditions", "counterexamples", "anti_pattern_risks", "confidence"],
+      "properties": {
+        "pattern_id": {"type": "string", "pattern": "^V2-PAT-[0-9]{3,}$"},
+        "pattern_name": {"type": "string"},
+        "definition": {"type": "string"},
+        "supporting_solution_ids": {"type": "array", "items": {"type": "string"}, "minItems": 2},
+        "retailer_count": {"type": "integer", "minimum": 1},
+        "format_fit": {"type": "array", "items": {"type": "string"}},
+        "executive_value_mechanism": {"type": "string"},
+        "success_conditions": {"type": "array", "items": {"type": "string"}},
+        "counterexamples": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+        "anti_pattern_risks": {"type": "array", "items": {"type": "string"}},
+        "current_value_score": {"type": ["number", "null"], "minimum": 0, "maximum": 100},
+        "historical_context_only": {"type": "boolean"},
+        "confidence": {"enum": ["high", "medium", "low"]}
+      },
+      "additionalProperties": false
+    },
+    "corpus_record": {
+      "type": "object",
+      "required": ["corpus_id", "site", "url", "title", "publication_date", "content_type", "fetch_status", "baseline_or_delta", "relevance", "primary_status", "duplicate_group_id"],
+      "properties": {
+        "corpus_id": {"type": "string", "pattern": "^V2-COR-[0-9]{6,}$"},
+        "site": {"enum": ["retail.ru", "retail.tadviser.ru", "tadviser.ru", "external_primary"]},
+        "url": {"type": "string", "format": "uri"},
+        "title": {"type": "string"},
+        "publication_date": {"type": ["string", "null"], "format": "date"},
+        "event_date": {"type": ["string", "null"], "format": "date"},
+        "content_type": {"enum": ["news", "article", "interview", "case", "company_card", "project_card", "product_card", "photo", "video", "audio", "document", "conference", "other"]},
+        "fetch_status": {"enum": ["fetched", "partial", "blocked", "deleted", "metadata_only", "failed"]},
+        "baseline_or_delta": {"enum": ["baseline", "delta_post_baseline", "targeted_backfill"]},
+        "relevance": {"enum": ["direct", "context", "irrelevant"]},
+        "primary_status": {"enum": ["primary", "direct_speech_P1", "secondary", "vendor", "unknown"]},
+        "duplicate_group_id": {"type": "string"},
+        "multimodal_status": {"enum": ["not_applicable", "metadata_only", "ocr_complete", "transcript_unverified", "transcript_verified", "failed"]},
+        "linked_evidence_ids": {"type": "array", "items": {"type": "string"}}
+      },
+      "additionalProperties": false
+    }
+  }
+}
